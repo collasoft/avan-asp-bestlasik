@@ -1,0 +1,55 @@
+<% @CODEPAGE="65001" language="vbscript" %>
+<% option Explicit %>
+
+<!--#include virtual = "/Avanplus/_FormFunc.asp"-->
+<!--#include virtual = "/Avanplus/_Function.asp"-->
+<!--#include virtual = "/BXM/testjson2.asp" -->
+<%
+dim bxm_api_sorturl
+dim DataToSend
+dim xmlhttp
+dim xmlhttp_result
+
+bxm_api_sorturl = "http://bestlasik.doctorcrm.co.kr/WWW/curl_counsel.php"
+DataToSend = "MODE=PASS"
+DataToSend = DataToSend&"&seq="&request("seq")
+DataToSend = DataToSend&"&c_pw="&request.Form("c_pw")
+DataToSend = DataToSend&"&CLIENTIP="&Request.ServerVariables("REMOTE_ADDR")
+DataToSend = DataToSend&"&KEY=BESTLASIK_"&Request.ServerVariables("LOCAL_ADDR")&"_BXM"
+
+set xmlhttp = server.Createobject("MSXML2.ServerXMLHTTP")
+xmlhttp.Open "POST", bxm_api_sorturl ,false
+xmlhttp.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
+
+xmlhttp.send DataToSend
+xmlhttp_result = xmlhttp.responseText
+
+set xmlhttp = Nothing
+
+If xmlhttp_result="0" Then
+%>
+	<script>
+	alert("비밀번호가 일치하지 않습니다.")
+	window.history.back();
+	</script>
+<%
+Else 
+	DataToSend = "MODE=UPDATE"
+	DataToSend = DataToSend&"&seq="&request("seq")
+	DataToSend = DataToSend&"&c_writer="&request("c_writer")
+	DataToSend = DataToSend&"&c_title="&request("c_title")
+	DataToSend = DataToSend&"&c_contents="&request("c_contents")
+	DataToSend = DataToSend&"&ra01="&request("ra01")
+	DataToSend = DataToSend&"&CLIENTIP="&Request.ServerVariables("REMOTE_ADDR")
+	DataToSend = DataToSend&"&KEY=BESTLASIK_"&Request.ServerVariables("LOCAL_ADDR")&"_BXM"
+
+	set xmlhttp = server.Createobject("MSXML2.ServerXMLHTTP")
+	xmlhttp.Open "POST", bxm_api_sorturl ,false
+	xmlhttp.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
+
+	xmlhttp.send DataToSend
+	xmlhttp_result = xmlhttp.responseText
+
+	Call jsAlertMsgUrl("수정 되었습니다.", "/main01/sub.asp?lasik=I103&seq="&request.QueryString("seq")&"&nPage="&request.QueryString("nPage")&"&gum1="&request.QueryString("gum1")&"&gum2="&request.QueryString("gum2"))
+End if
+%>

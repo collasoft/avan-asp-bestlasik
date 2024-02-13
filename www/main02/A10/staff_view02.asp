@@ -1,0 +1,115 @@
+<!--#include virtual = "/AVANplus/BuilderStart.asp" -->
+<!------------------------------------------------------
+	위 코드는 빌더가 시작되는 함수 호출부분입니다.
+	페이지 맨상단에 들어가야 합니다.
+	(그래서 주석도 하단에 작성함!)
+-------------------------------------------------------->
+<!------------------------------------------------------
+	홈페이지에서 별도로 사용하는 함수 모음입니다.
+-------------------------------------------------------->
+<!--#include file = "_config.asp" -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- #include file="_inc/head.asp" -->
+<!-- head.asp 끝 -->
+
+<!-- s: 현재페이지에만 적용할 특정 스크립트 추가영역 -->
+<link rel="stylesheet" href="_css/sub.css" />
+<!-- e: 현재페이지에만 적용할 특정 스크립트 추가영역 -->
+
+
+</head>
+
+<body>
+<div id="A_Wrap">
+	<div id="A_Header">
+		<!-- #include file="_inc/header.asp" -->
+
+    </div><!-- #A_Header 끝 -->
+	<div class="sub_quick"> 
+		<div class="sub_top"><a href="#">TOP</a></div>
+	</div>
+    <div id="A_Container_Wrap">
+        <!-- Container 시작 -->
+        <div id="A_Container">
+			<div id="visual">
+				<div id="sub_visual" class="visual01">
+					<div class="sub_visual_txt">
+						<p class="visual_txt01">의료진소개</p>
+					</div>
+				</div>
+			</div>
+			<div class="sub_menu_bar">
+				<ul class="sub_menu_title">
+					<li><a href="default.asp"></a></li>
+					<li><p class="sub_menu_txt">병원소개</p>
+						<ul class="sub_menu_box">
+							<li><a href="">백내장</a></li>
+							<li><a href="">노안클리닉</a></li>
+							<li><a href="">눈성형</a></li>
+							<li><a href="">안구종합질환</a></li>
+							<li><a href="">정보센터</a></li>
+							<li><a href="">체험기</a></li>
+							<li><a href="">상담및예약</a></li>
+						</ul>
+					</li>
+					<li><p class="sub_menu_txt">의료진소개</p>
+						<ul class="sub_menu_box">
+							<li><a href="">비전</a></li>
+							<li><a href="">의료진소개</a></li>
+							<li><a href="">둘러보기</a></li>
+							<li><a href="">오시는길</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="sub_content">
+				<!-- 내용 입력 -->
+				<div class="staff"> 
+					<div class="inner">
+					<ul class="staff_view">
+						<li><img src="image/sub/staffview_img02.png" alt=""/></li>
+						<li>
+							<div class="title_wrap">
+								<p class="title">소아사시/외안부 안과전문의</p>
+								<p class="name"><span>박영걸</span> 명예원장</p>
+							</div>
+							
+							<div class="field">
+								<p class="sub_title">진료과목</p>
+								<ul > 
+									<li>소아사시</li>
+									<li>외안부</li>
+								</ul>
+							</div>
+							
+							<div class="intro">
+								<p class="sub_title">약력</p>
+								<ul > 
+									<li>현)전남대학교 의과대학 명예교수</li>
+									<li>전북대학교 대학원 박사</li>
+									<li>전남대학교 의과대학 주임교수, 안과장</li>
+									<li>초대 전남대학교병원 기획조정 실장</li>
+									<li>전남대학교 병원 진료처장</li>
+									<li>한국 사시·소아 안과학회 회장</li>
+									<li>대한안과학회 회장</li>
+									<li>현) 대한안과학회 평의원</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					</div>
+				</div>
+            </div>
+			
+        </div><!-- #A_Container END -->
+        <!-- // Container 끝 --> 
+    </div><!-- #A_Container_Wrap -->
+
+    <div id="A_Footer">
+		<!-- #include file="_inc/footer.asp" -->
+    </div><!-- #A_Footer 끝 -->
+</div><!-- #A_Wrap 끝 -->
+</body>
+</html>

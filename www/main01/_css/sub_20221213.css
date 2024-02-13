@@ -1,0 +1,2987 @@
+
+/* 20190903 진료예약 */
+
+.calenderDiv .titArea {text-align:center;}
+.calenderDiv .titArea h2.tit {font-size:36px; font-weight:500; color:#232323; margin-bottom:15px;}
+.calenderDiv .titArea h2.tit span {color:#812990;}
+.calenderDiv .titArea p.txt {font-size:16px; color:#232323; line-height:1.6;}
+.calenderDiv .titArea p.txt span {color:#999; display:block; }
+.calenderDiv .calArea {border:1px solid #ddd; margin:40px 0 100px; box-sizing:border-box; padding:80px 100px;}
+.calenderDiv .input_form .notice_cal {margin-left:10px; font-size:16px; color:#e61d1d; display:block; margin-top:15px;}
+.calenderDiv .input_form td select {margin:3px 0;}
+
+.w10 {width:10% !important;}
+
+.calenderDiv .input_form {border-top:2px solid #000; margin-top:50px;}
+
+.cal_top {margin: 0 0 60px 0; text-align: center;}
+.cal_top span {display: inline-block; font-size:45px; font-weight:500; color: #000; vertical-align: middle;}
+.cal_top button {display: inline-block; width:22px; height:37px; vertical-align: middle; text-indent: -9999px; border:0;}
+#movePrevMonth {margin: 0 130px 0 0; background: url(../image/sub/cal_arrow1.png) no-repeat 0 0;}
+#moveNextMonth {margin: 0 0 0 130px; background: url(../image/sub/cal_arrow2.png) no-repeat 0 0;}
+#cal_top_month {margin: 0 0 0 5px;}
+
+.calendar {position: relative; width: 100%; border-top: 1px solid #ddd;}
+.calendar:after {display: block; position: absolute; right: 0; bottom: 0; width: 1px; height: calc(100% - 40px); background-color: #ddd; content: '';}
+.calendar .dayofweek {height: 40px;}
+.calendar .dayofweek th {padding: 0 20px; font-size: 16px; font-weight: 500; color: #232323; text-align: right;}
+.calendar th {border-left:1px solid #ddd;}
+.calendar th:last-child {border-right:1px solid #ddd;}
+.calendar th.sunday {color:#b72525;}
+.calendar th.saturday {color:#1e71ab;}
+.calendar tr {height: 115px; border-bottom: 1px solid #ddd;}
+.calendar td {padding: 10px 20px; text-align: right; border-left: 1px solid #ddd; background-color: #fff; vertical-align: top; cursor: pointer;}
+.calendar td.open {background:#f5f5f5}
+.calendar td.sunday .cal-day {color:#b72525;}
+.calendar td.saturday .cal-day {color:#1e71ab;}
+.calendar td .cal-day {font-size: 16px; font-weight:500; color: #333;}
+.calendar td .cal-schedule p {line-height: 1.6; font-size: 14px; font-weight: 300; color: #999;}
+.calendar td.open .cal-day {color: #999;}
+
+
+/* 서브 CSS */
+
+.w100p {width:100% !important;}
+
+/* 공통 */
+#visual { position: relative; height:245px; width: 100%; overflow: hidden;padding-top: 123px;}
+#sub_visual { width: 100%; height:245px; position: relative; background-size:cover; }
+#sub_visual.pc_sub_visual {display: block;}
+#sub_visual.m_sub_visual {display: none;}
+.visual01.pc_sub_visual { background:url(../image/sub/sub_visual01_pc.jpg)no-repeat center bottom;}
+.visual06.pc_sub_visual { background:url(../image/sub/sub_visual01_pc.jpg)no-repeat center bottom;}
+.visual07.pc_sub_visual { background:url(../image/sub/sub_visual03_pc.jpg)no-repeat center bottom;}
+.visual08.pc_sub_visual { background:url(../image/sub/sub_visual04_pc.jpg)no-repeat center bottom;}
+.visual09.pc_sub_visual { background:url(../image/sub/sub_visual05_pc.jpg)no-repeat center bottom;}
+.visual10.pc_sub_visual { background:url(../image/sub/sub_visual06_pc.jpg)no-repeat center bottom;}
+.visual02.pc_sub_visual { background:url(../image/sub/sub_visual01_pc.jpg)no-repeat center bottom;}
+.visual03.pc_sub_visual { background:url(../image/sub/sub_visual02_pc.jpg)no-repeat center bottom;}
+.visual04.pc_sub_visual { background:url(../image/sub/sub_visual03_pc.jpg)no-repeat center bottom;}
+.visual05.pc_sub_visual { background:url(../image/sub/sub_visual04_pc.jpg)no-repeat center bottom;}
+
+
+.visual01.m_sub_visual { background:url(../image/sub/sub_visual01_m.jpg)no-repeat center center;}
+.visual06.m_sub_visual { background:url(../image/sub/sub_visual01_m.jpg)no-repeat center center;}
+.visual07.m_sub_visual { background:url(../image/sub/sub_visual03_m.jpg)no-repeat center center;}
+.visual08.m_sub_visual { background:url(../image/sub/sub_visual04_m.jpg)no-repeat center center;}
+.visual09.m_sub_visual { background:url(../image/sub/sub_visual05_m.jpg)no-repeat center center;}
+.visual10.m_sub_visual { background:url(../image/sub/sub_visual06_m.jpg)no-repeat center center;}
+.visual02.m_sub_visual { background:url(../image/sub/sub_visual01_m.jpg)no-repeat center center;}
+.visual03.m_sub_visual { background:url(../image/sub/sub_visual02_m.jpg)no-repeat center center;}
+.visual04.m_sub_visual { background:url(../image/sub/sub_visual03_m.jpg)no-repeat center center;}
+.visual05.m_sub_visual { background:url(../image/sub/sub_visual04_m.jpg)no-repeat center center;}
+
+
+
+.sub_visual_txt {display: table; width: 100%; height: 100%; text-align: center;}
+.sub_visual_txt .visual_txt01 {display: table-cell; line-height: 50px; font-size: 40px; color: #fff; font-weight: 600; vertical-align: middle;}
+
+.sub_visual_txt p {display: table-cell; line-height: 1.6; font-family: 'Nanum Myeongjo', serif; font-size: 26px; color: #fff; vertical-align: middle;}
+.sub_visual_txt p em {display: block; font-style: normal; font-family: 'Nanum Myeongjo', serif; color: #fff;}
+
+.sub_menu_bar { height:65px; line-height:65px; border-bottom:1px solid #ddd;}
+.sub_menu_bar .sub_menu_title { max-width:1400px; margin:auto; }
+.sub_menu_bar .sub_menu_title > li { float:left; height:65px; border-right:1px solid #ddd; padding:0 20px; position:relative; cursor:pointer; }
+.sub_menu_bar .sub_menu_title > li:nth-child(1) {background: url(../image/sub/home.png)no-repeat center; width:60px; border-left:1px solid #ddd; padding:0; }
+.sub_menu_bar .sub_menu_title > li p {font-size: 16px; color:#191919; font-weight:500; border:0;
+width:200px;  background: url(../image/sub/sub_arrow.png) no-repeat 100% 50% #fff; /* 화살표 모양의 이미지 */}
+select::-ms-expand { display: none; } /* IE 10, 11의 네이티브 화살표 숨기기 */
+.sub_menu_box {position:absolute; top:66px; left: -1px; background:#fff; box-sizing:border-box; border-left:1px solid #eee; border-right:1px solid #eee; display:none;  z-index: 99; }
+.sub_menu_box li {color: #191919; padding: 0 20px; width:240px; border-bottom: 1px solid #eee; box-sizing: border-box; font-size: 16px;}
+.sub_menu_box li:hover { color:#812990; }
+.sub_menu_box li a {display: block;}
+.sub_content {width: 100%; margin: 50px auto 200px;}
+.cont_title { font-size:55px; color:#333; font-weight:600; text-align:center; margin-bottom:80px; padding-top:120px; position:relative; padding-bottom:20px;}
+.cont_title span {color:#812990}
+.cont_title:before {position:absolute; left:50%; margin-left:-23px; bottom:0px; background-color:#222; width:36px; height:3px; content:''; display:block;}
+.cont_title02 {padding-top: 50px; margin-top: 60px; border-top: 1px dashed #dcdfe7;}
+
+/* table */
+.list_txt { float:left; font-size:20px; color:#333  ; margin-top:25px;}
+.list_txt span { font-weight:600; }
+.basic_list { width:100%; border-top:1px solid #ddd; margin:45px 0; }
+.basic_list th, .basic_list td { height:80px; border-bottom:1px solid #ddd; font-size:18px; }
+.basic_list th { font-size:20px; color:#333; font-weight:normal;}
+.basic_list th:first-child { border-left:1px solid #ddd;}
+.basic_list th:last-child { border-right:1px solid #ddd;}
+.basic_list td { text-align:center; }
+.basic_list td img { vertical-align:middle; margin-left:10px; }
+.basic_list td:nth-child(2) { text-align:left; padding-right: 10px;}
+.basic_list .answer01 { font-size:14px; color:#394458; font-weight:600; }
+.basic_list .answer02 { font-size:14px; color:#2866b1; font-weight:600; }
+/*.basic_list td a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-break: break-all; display:inline-block;width:50%;}
+*/
+.re_no { color:#b9bcc2; }
+.re_ok { color:#812990; }
+
+
+
+
+/* 검색 */
+.search_wrap { float: right; margin-bottom:40px; position: relative;}
+.search_wrap select { font-size:16px; width:100px; height:50px; border: 1px solid #ccc; padding: 0 10px; box-sizing: border-box; -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; background: url(../image/sub/sub_arrow.png) no-repeat 90% 50% #fff;     vertical-align: middle;
+}
+.search_wrap input[type=text] { width:280px; height:50px; border: 1px solid #ccc; padding: 0 10px; box-sizing: border-box; margin-left: 5px; vertical-align: middle; -webkit-border-radius:0;
+-webkit-appearance: none; }
+form#list_search{position: relative;}
+.search_wrap input[type=image] {position: absolute; top:0; right: 0; width: 50px; cursor: pointer; -webkit-border-radius:0; -webkit-appearance: none;}
+a.reviewBtn {transition:0.3s; display:block; margin:0 auto; text-align:center; background:#fff; border:2px solid #863194; color:#863194; font-size:18px; padding:15px 0; width:250px;}
+a.reviewBtn:hover {background:#863194; color:#fff;}
+.search_wrap .btn_box{margin: 0 0 0 10px !important;}
+
+/* 서브탭 */
+
+.top_tabwrap { border-bottom:1px solid #ddd; margin-top:40px; height:60px;}
+.top_tabwrap ul {display:table; margin:auto;}
+.top_tabwrap ul li {line-height:60px; float:left; color:#b9bcc2;  padding:0 15px; margin-right:60px; font-weight:600; font-size: 16px;}
+.top_tabwrap ul li:last-child {margin-right:0;}
+.top_tabwrap ul li:hover {color:#191919;}
+.top_tabwrap ul li.on {color:#191919; position:relative;}
+.top_tabwrap ul li.on:after {content:''; position:absolute; left:0; bottom:0; width:100%; height:4px; background:#812990;}
+
+
+.top_tabwrap02 {margin-top:40px;}
+.top_tabwrap02 ul li { line-height:60px; float:left; color:#b9bcc2; margin-right:20px; font-weight:600; font-size:18px; }
+.top_tabwrap02 ul li:last-child { margin-right:0;}
+.top_tabwrap02 ul li:hover { color:#191919;}
+.top_tabwrap02 ul li.on { color:#191919; position:relative;}
+.top_tabwrap02 ul li.on:after { content:''; position:absolute; left:0; bottom:0; width:100%; height:4px; background:#812990;}
+
+
+
+.sub_tab { display:table; margin:0 auto;}
+.sub_tab li { float:left; width:150px; height:50px; text-align:center; border:1px solid #ddd; color:#666; line-height:50px; margin-right:10px; cursor:pointer; box-sizing:border-box;  }
+.sub_tab li:last-child { margin-right:0;}
+.sub_tab li.on , .sub_tab li:hover { background:#812990; color:#fff; }
+.sub_tab li a { width:100%; height:100%; display:inline-block;}
+.sub_tab02 li { width:220px;}
+
+
+
+
+/* 체크박스 */
+input[type="checkbox"] { display:none;}
+input[type="checkbox"] + label { font-size:18px;}
+input[type="checkbox"] + label span { display:inline-block; width:23px; height:23px;  vertical-align:middle; background:url(../image/sub/check.png) left top no-repeat; cursor:pointer; margin-right: 10px;}
+input[type="checkbox"]:checked + label span { background:url(../image/sub/check_on.png) left top no-repeat; }
+
+
+input[type="radio"] { display:none;}
+input[type="radio"] + label { font-size:18px; vertical-align:middle;}
+input[type="radio"] + label span { display:inline-block; width:22px; height:22px;  vertical-align:middle; background:url(../image/sub/radio.png) left top no-repeat; cursor:pointer; margin-right: 10px;}
+input[type="radio"]:checked + label span { background:url(../image/sub/radio_on.png) left top no-repeat; }
+
+
+
+/* 버튼 */
+.subbtn_wrap {  text-align:center; padding-top:40px;}
+.subbtn_wrap input { width:200px; height:60px; line-height:60px; box-sizing:border-box; margin-right:5px; font-size:20px; cursor:pointer;-webkit-border-radius:0;
+-webkit-appearance: none; }
+.subbtn_wrap input:last-child { margin-right:0;}
+.subbtn_wrap input.btn01 { border:1px solid #ddd; color:#888; background:#fff;}
+.subbtn_wrap input.btn02 { border:1px solid #812990; background:#812990; color:#fff; }
+
+
+.viewbtn_wrap {  text-align:center; padding-top:40px;}
+.viewbtn_wrap input {margin:0 2px; width:200px; height:60px; line-height:60px; box-sizing:border-box; font-size:20px; cursor:pointer;-webkit-border-radius:0;
+-webkit-appearance: none; }
+.viewbtn_wrap input:last-child { margin-right:0;}
+.viewbtn_wrap input.btn01 { border:1px solid #ddd; color:#888; background:#fff;}
+.viewbtn_wrap input.btn02 { border:1px solid #812990; background:#812990; color:#fff; }
+
+.btn_left { float:left; }
+.btn_left input:first-child { border-right:0;}
+.btn_right { float:right;}
+
+
+.consulting_top {position: relative;}
+.consulting_top .search_wrap {}
+.consulting .btn_box {margin: 45px 0 0 0;}
+.consulting .btn_box:after {display: block; clear: both; *zoom: 1; content: '';}
+.consulting .btn_box .btn_write {width: 160px; height: 50px; font-size: 16px; color: #333; font-weight: 500; background-color: #fff; border: 1px solid #802e8e; text-align: center;}
+.consulting .btn_box .btn_write i {display: inline-block; width: 25px; height: 24px; margin: 0 5px 0 0; background: url(../image/sub/ic_write.png) no-repeat 0 0;}
+
+.btn_box01{margin: 0 0 0 10px}
+.consulting .btn_box01:after {display: block; clear: both; *zoom: 1; content: '';}
+.consulting .btn_box01 .btn_write {width: 160px; height: 50px; font-size: 16px; color: #333; font-weight: 500; background-color: #fff; border: 1px solid #802e8e; text-align: center; margin-left:10px;}
+.consulting .btn_box01 .btn_write i {display: inline-block; width: 25px; height: 24px; margin: 0 5px 0 0; background: url(../image/sub/ic_write.png) no-repeat 0 0;}
+
+
+select { border:1px solid #ddd; box-sizing:border-box; font-size:16px; padding:0 20px; height:50px;  -webkit-border-radius:0;
+-webkit-appearance: none;   -moz-appearance: none;
+-webkit-appearance: none;
+  appearance: none; color:#b4b7be;
+  background: url(../image/sub/arrow03.png) no-repeat 90% 50% #fff; /* 화살표 모양의 이미지 */}
+  select::-ms-expand { display: none; } /* IE 10, 11의 네이티브 화살표 숨기기 */
+
+
+/* 파일첨부 */
+.filebox input[type="file"] { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }
+.filebox label { display: inline-block; width:90px; text-align:center; line-height:50px; height: 50px; box-sizing: border-box; color: #fff; font-size:20px;  vertical-align: middle; background-color: #ccc; cursor: pointer;  border-radius:2px; } /* named upload */
+.filebox .upload-name { display: inline-block; padding: .5em .75em; /* label의 패딩값과 일치 */ font-size: inherit; font-family: inherit; line-height: normal; vertical-align: middle;  border: 1px solid #ddd;  -webkit-border-radius:0; -webkit-appearance: none; background:#fff ; height: 50px; box-sizing: border-box;}
+
+
+
+/* top */
+
+.pcTxt {display: block;}
+.mTxt {display: none;}
+
+.top_txt { text-align:center;}
+.top_txt .txt01 {padding: 0 20px; font-size:35px; font-weight:600; color:#2e2c2e; margin-top:30px;}
+.top_txt .txt01 span { color:#812990; }
+.top_txt .txt02 { font-size:20px; color:#2e2c2e; margin-bottom:30px;}
+.top_txt .txt03 { font-size:20px; color:#666;}
+.top_txt .txt03 span {color:#191919; font-size:22px; display:inline-block; margin-bottom:5px;}
+
+.top_txt02 { padding:30px 0; border-top:1px solid #ddd; border-bottom:1px solid #ddd; text-align:center; margin-bottom:60px;}
+.top_txt02 .txt01 { font-size:24px; color:#812990; line-height:30px;}
+.top_txt02 .txt02 { font-size:20px; color:#888; }
+.top_txt02 .txt03 {padding: 0 30px; font-size:35px; font-weight:600; color:#191919;}
+.top_txt02 .txt03 span {color:#812990}
+.top_txt02 .txt04 { font-size:20px; color:#333;margin-bottom:30px; }
+.top_txt02 .txt05 { font-size:20px; color:#bbb; }
+.top_txt02 .txt05 span {color: #333;}
+
+.write_box { box-sizing:border-box; width:100%; border:1px solid #ddd; height:; padding:25px; height:184px ; font-size:16px; }
+.write_box::-webkit-input-placeholder { color: #b4b7be;  }
+
+
+
+
+
+/* 비전 */
+.vision .vision_img { margin-top:80px; border-bottom:3px solid #812990; display:inline-block; width:100%; position: relative;}
+.vision .vision_img:after { content:''; height:120px; width:1px; background:#812990; position: absolute; bottom:-123px; left: 0; right: 0; margin: auto;}
+.vision .vision_img li { float:left; width:25%; }
+.vision .vision_img li img { vertical-align:bottom; width:100%;}
+.vision .vision_list { margin: 250px 0 120px; text-align:center; position:relative;padding-bottom:80px; }
+.vision .vision_list .title { width:397px; height:397px; border-radius:50%; background:linear-gradient( -45deg, #e7abd0, #9cace4 ); position:relative; margin:auto;	}
+.vision .vision_list .title:after {display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; width: 276px; height: 276px; border-radius: 50%; background-color: #fff; content: '';}
+.vision .vision_list .title .txt .txt01 {position: absolute; top: 50%; left: 0; right: 0; margin-top: -44px; z-index: 100; font-size:35px; color:#333; font-weight:500; line-height:44px;}
+.vision .vision_list .title .txt .txt01 span { color:#812990; display:block;}
+.vision .vision_list ul { position: absolute; top: 0; left: 0; right: 0; margin: auto; width:397px; height:397px;}
+.vision .vision_list ul li { font-size:24px; color:#333; position:absolute; }
+.vision .vision_list ul li:after { content:''; width:30px; height:3px; background:#812990; display:block; margin:auto; margin-top: 15px;}
+.vision .vision_list ul li span { color:#812990; }
+.vision .vision_list ul li:nth-child(1) { top:-115px; left:0; right: 0; }
+.vision .vision_list ul li:nth-child(2) { top:100px; left:-180px; }
+.vision .vision_list ul li:nth-child(3) { top:100px;  right: -210px; }
+.vision .vision_list ul li:nth-child(4) { bottom:-100px; left:0; }
+.vision .vision_list ul li:nth-child(5) { bottom:-100px; right: 0;}
+.vision .vision_txt .tit {display: block; font-size: 30px; font-weight: 600; color: #812990; margin-bottom: 10px;}
+.vision .vision_txt .txt {color: #191919; margin-bottom: 50px;}
+
+
+
+/* 오시는길 */
+
+.map .map_img {width: 100%; margin-top: 70px;}
+.map .map_img .root_daum_roughmap {width: 100% !important;}
+.map .map_img img {width: 100%; vertical-align: top;}
+.map .map_img .map_img_pc {display: block;}
+.map .map_img .map_img_m {display: none;}
+.map table {width: 100%; margin-top: 30px; border-top: 1px solid #812990;}
+.map table th {box-sizing: border-box; width: 220px; padding: 25px 0 25px 25px; vertical-align: top;}
+.map table th, .map table td {font-size: 18px; border-bottom: 1px solid #ddd; text-align: left;}
+.map table th img {width: 19px; margin-right: 30px; vertical-align: middle;}
+.map table th span {display: inline-block; vertical-align: top;}
+.map table td {padding: 25px 0;}
+.map table td:after {display: block; clear: both; *zoom: 1; content: '';}
+.map table td span {color: #812990;}
+.map table td strong {float: left; width: 155px; font-weight: normal; color: #812990;}
+.map table td ul {float: left;}
+.map table td ul li {margin-bottom: 10px; color: #333;}
+.map table td ul li em {display: inline-block; height: 26px; line-height: 26px; padding: 0 10px; margin-right: 10px; color: #fff; border-radius: 13px;}
+.map table .b_dash {border-bottom: 1px dashed #ddd;}
+.bg_blue {background-color: #385ab0;}
+.bg_green {background-color: #50a332;}
+.bg_red {background-color: #d71118;}
+.bg_dgreen {background-color: #4b992f;}
+.bg_sblue {background-color: #6dacdb;}
+.bg_orange {background-color: #e88831;}
+
+
+/* 의료진소개list */
+.staff .staff_list { overflow:hidden; }
+.staff .staff_list li { width:48.5%; height:320px; margin-right:3%; margin-bottom:3%; border:1px solid #ddd; box-sizing:border-box; float:left; position:relative;}
+.staff .staff_list li:nth-child(2n) { margin-right:0;}
+.staff .staff_list li:hover { border:1px solid #812990; }
+.staff .staff_list li a { width:100%; height:100%; display:inline-block;}
+.staff .staff_list li .img { position:absolute; top:0; left:0; width:285px; height:100% ;border-right: 1px solid #ddd; box-sizing: border-box;}
+.staff .staff_list li .img img { width:100%; height:100%;     vertical-align: bottom;}
+.staff .staff_list li .txt_wrap { padding:40px 40px 0px 325px;     box-sizing: border-box; position:relative; height:100%;}
+.staff .staff_list li .txt { height:222px;}
+.staff .staff_list li .txt .title { font-size:16px; color:#812990; }
+.staff .staff_list li .txt .name { font-size:34px; color:#2e2c2e; }
+.staff .staff_list li .txt .name span { font-weight:600;}
+.staff .staff_list li .txt .txt01 { font-size:24px; color:#666; }
+.staff .staff_list li .more { font-size:16px; color:#b4b7be; height:55px; line-height:55px; border-top:1px solid #ddd; width:100%; background:url(../image/sub/arrow01.png)no-repeat center right;}
+
+.staff .staff_list li:hover .more { background:url(../image/sub/arrow01_on.png)no-repeat center right; color:#f287b7}
+
+
+
+
+/* 의료진소개view */
+.staff_view { overflow:hidden; margin-bottom:40px;}
+.staff_view>li { float:left; box-sizing:border-box; }
+.staff_view>li:nth-child(1) { width:45%; }
+.staff_view>li:nth-child(1) img { width:100%; border:1px solid #ddd; box-sizing:border-box;}
+.staff_view>li:nth-child(2) { width:55%; padding-left:85px;}
+.staff_view>li .title { font-size:24px; color:#812990; }
+.staff_view>li .name { font-size:45px; color:#2e2c2e;}
+.staff_view>li .name span { font-weight:600;}
+.staff_view>li .sub_title { font-size:20px; color:#2e2c2e; margin-top:60px; margin-bottom:20px;}
+.staff_view>li .field ul {width:100%; overflow:hidden; display:table; border-left:1px solid #ddd; box-sizing:border-box;}
+.staff_view>li .field ul li {float:left; width: 20%; border-right:1px solid #ddd; text-align:center ; color:#9196d8; font-size:16px; padding:20px 0; box-sizing:border-box;  border-bottom:1px solid #ddd; border-top:1px solid #ddd;}
+.staff_view>li .field ul li:nth-child(n+6) {margin-top: -1px;}
+.staff_view>li .field ul li img {display:block; margin:auto; margin-bottom:5px;}
+.staff_view>li .intro ul li { font-size:16px; color:#333; line-height:28px; background:url(../image/sub/list_bar.png)no-repeat left center; padding-left:15px;}
+
+.content_title { font-size:20px; color:#333; margin-bottom:20px; }
+.staff .txt02 {margin-bottom: 20px; color: #333;}
+.staff .txt02 li span {margin: 0 10px 0 5px; color: #822b91;}
+.staff table { width:100%;}
+.staff table th { font-weight:normal;}
+.staff table th, .staff table td { font-size:16px; border:1px solid #e8e9eb; height:60px; box-sizing:border-box; }
+.staff table thead th { background:#b4b7be; color:#fff;}
+.staff table tbody th { background:#f2f5f8; color:#888;}
+.staff table tbody td { color:#812990; text-align:center; font-weight:600;}
+
+
+
+
+/* 진료시간 */
+.time .top_txtbox { text-align:center; width:100%; height:300px; background:url(../image/sub/time_bg.png)no-repeat center bottom; background-size:cover; display:table; }
+.time .txt_box { display:table-cell; vertical-align:middle; padding:0 20px;}
+.time .txt_box .txt01 { font-size:35px; font-weight:600; color:#fff; margin-top:30px;}
+.time .txt_box .txt01 span { color:#812990; }
+.time .txt_box .txt02 { font-size:20px; color:#fff; margin-bottom:30px;}
+
+.time .intro_boxwrap { width:100%; height:300px; background:linear-gradient( 90deg, #e5e1f3, #f5e0ef );  position:relative; }
+.time .intro_box {  background:#fff; position:absolute; top: 20px; left: 20px; right: 20px; bottom: 20px;}
+.time .pattern_bg {     background: linear-gradient(45deg, #fff 25%, transparent 0, transparent 50%, #fff 0, #fff 75%, transparent 0);  -webkit-background-size: 30px 30px; background-size: 3px 3px; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.time .intro_box ul { overflow:hidden; height:100%;}
+.time .intro_box ul li { float:left;  padding:0 45px; box-sizing:border-box; border-right:1px solid #ddd; width:33.3%; height:250px; margin:40px 0; }
+.time .intro_box ul li:last-child { border:0;}
+.time .intro_box ul li .title { font-size:24px; color:#333; float:left;width:40%;}
+.time .intro_box ul li .txt_list { float:left; width:60%;}
+.time .intro_box ul li .txt_list .txt01 { color:#b9bcc2; font-size:16px; margin-top:20px;}
+.time .intro_box ul li .txt_list .txt01:first-child { margin-top:0;}
+.time .intro_box ul li .txt_list .txt02 { color:#333; font-size:16px; }
+.time .intro_box ul li .txt_list span { color:#812990; }
+.time .intro_box ul li .txt_list .call { color:#812990; font-size:42px; font-weight:600; line-height: 37px;     margin-bottom: 15px;}
+
+.subject_wrap { text-align:center; border-top:1px solid #d9dbde; margin-top:70px;padding-top:70px; }
+.subject_wrap .title { font-size:35px; color:#333; margin-bottom:50px;}
+.subject_wrap ul { border-top:1px solid #ddd; border-left:1px solid #ddd; overflow: hidden;}
+.subject_wrap ul li { float:left; width:12.5%; height:50px; line-height: 50px; border-right:1px solid #ddd; border-bottom:1px solid #ddd; box-sizing:border-box; font-size:16px; color:#9196d8;}
+.subject_wrap ul li img { display:block; margin:auto;}
+
+
+.btn_wrap { text-align:center; margin-top:60px;}
+.btn_wrap a { width:280px; height:60px; line-height:60px; color:#fff; font-size:16px; display:inline-block; background:#812990}
+.btn_wrap a:first-child { margin-right:5px; }
+.btn_wrap a img {vertical-align:middle; margin-right:10px;}
+.btn_wrap .btn02 {display:inline-block; width: 280px; height:60px; line-height:60px; font-size:16px; border:1px solid #ddd; background:#fff; color:#888; cursor: pointer;}
+.btn_wrap .btn02 img {vertical-align:middle; margin-right:10px;}
+
+
+
+/* 층별구조 */
+.rescue { overflow:hidden; }
+.rescue_menu { float:left; overflow:hidden; width:20%;}
+.rescue_menu p { height:86px; line-height:86px; background:#2d3a49; color:#fff; border-bottom:1px solid #575d6d; box-sizing:border-box; font-size:18px; text-align: center;}
+.rescue_menu li { height:86px; line-height:86px; background:#2d3a49; color:#fff; border-bottom:1px solid #575d6d; box-sizing:border-box; font-size:18px;}
+.rescue_menu li:first-child {background:#656f87; padding-left:28px}
+.rescue_menu li span { color:#656f87; margin-right:10px; }
+.rescue_menu li:last-child { border-bottom:0;}
+.rescue_menu li:hover {background:#812990; }
+.rescue_menu li:hover span { color:#fff; }
+.rescue_menu li a { width:100%; height:100%; display:inline-block; padding-left:35px; box-sizing:border-box; }
+.rescue_content { background-color: #ddd; width: 80%; height: 688px; float:left; position:relative;}
+.rescue_content .slick-slider {height:693px;}
+.rescue_content div img {cursor: pointer;}
+.rescue_menu li.on { background:#812990;}
+.rescue_menu li.on span { color:#fff; }
+.rescue_list div {position: relative;}
+.rescue_list div img {vertical-align: top;}
+.rescue_list .slick-prev {display: inline-block; width: 86px; height: 86px; right: 86px; bottom: -38px; content: '';
+    background: url(../image/sub/rescue_prev.png)no-repeat;
+	border-right: 1px solid #fbf7f6;
+}
+
+.rescue_list .slick-next {display: inline-block; width: 86px; height: 86px; right: 0; bottom: -38px; content: '';
+    background: url(../image/sub/rescue_next.png)no-repeat;
+}
+
+.rescue_content .name_box {box-sizing: border-box; position: absolute; left: 0; right: 0; bottom: 0; width:100%; padding: 0 0 0 40px; height: 86px; line-height: 86px; font-size: 18px; color: #812990; background:rgba(255,255,255,0.95); z-index: 99;}
+.rescue_content .name_box .number { float:right; }
+.rescue_content .name_box .number .pt { color:#b4b6c2; }
+
+.rescue_content .slide_count {position: absolute; bottom: 0; right: 200px; color: #812990;}
+.rescue_content .slide_count span {font-size: 18px;}
+.rescue_content .slide_count .current {color: #812990;}
+.rescue_content .slide_count .total {color: #b4b6c2;}
+
+.rescue .video { display:none;}
+
+.rescue_Imgpopup {display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 1000;}
+.rescue_Imgpopup .popup_wrap {position: relative; width: 80%; max-width: 1120px; top: 50%; transform: translateY(-50%); left: 0; right: 0; margin: 0 auto;}
+.rescue_Imgpopup .popup_wrap .close {position: absolute; top: 10px; right: 10px; width: 29px; height: 29px; cursor: pointer;}
+.rescue_Imgpopup .popup_wrap .close img {width: 100%; vertical-align: top;}
+.rescue_Imgpopup .popup_wrap .popupImg {display: block; width: 100%; margin: 0 auto;}
+
+
+/* 로그인 */
+.sub_login  { overflow:hidden; }
+.sub_login .login_box { width: 48%; height:430px; float:left; background:#fbfbfb; border:1px solid #ddd; box-sizing:border-box;  padding:40px 50px 0; }
+.sub_login .login_box:nth-child(2) 	{ float:right;}
+.sub_login .login_box .title { font-size:30px; color:#333; text-align:center; font-weight:600; }
+.sub_login .login_input  { margin-top:50px;}
+.sub_login .login_input ul li { margin-bottom:5px;}
+.sub_login .login_input .txt { font-size:18px; color:#333; display:inline-block; width:20%;}
+.sub_login .login_input input[type=text],.sub_login .login_input input[type=password] { height:48px; border:1px solid #ddd; width: 80%; box-sizing: border-box; font-size:16px; padding:0 20px ; -webkit-border-radius:0;
+-webkit-appearance: none;}
+.sub_login .login_input input[type=text]::-webkit-input-placeholder { color: #b4b7be;  }
+.sub_login .login_input input[type=password]::-webkit-input-placeholder { color: #b4b7be;  }
+.sub_login .login_input input[type=submit] { width:100%; height:60px; line-height:60px; background:#812990; color:#fff; font-size:24px; border:0;  cursor:pointer; -webkit-border-radius:0;
+-webkit-appearance: none;}
+
+.sub_login .login_input .check { text-align:right; font-size:16px; color:#333; padding:15px 0; }
+.sub_login .login_input .check .check_icon { margin-left:30px;}
+.sub_login .login_btn { margin-top:15px;}
+.sub_login .login_btn a { font-size:16px; color:#333; background:url(../image/sub/arrow02.png)no-repeat center right; padding-right:10px;}
+.sub_login .login_btn a:last-child { float:right;}
+
+.sub_login .sns_login {margin:20px auto }
+.sub_login .sns_login li { width:360px; height:60px; margin: 0 auto; line-height:60px; font-size:18px;  margin-bottom:5px;}
+.sub_login .sns_login li span { display:inline-block; width:60px; height:60px; float:left; border-right:1px solid #fbfbfb; box-sizing: border-box;}
+.sub_login .sns_login li p { display:inline-block; text-align:center; float:left; width:300px;}
+.sub_login .sns_login li:nth-child(1) { background:#2eb300; color:#fff; }
+.sub_login .sns_login li:nth-child(2) { background:#fae80c; color:#3b2a30; }
+/*.sub_login .sns_login li:nth-child(3) { background-image: linear-gradient(to right, #5b52a3, #e71e54 , #fece68); color:#fff; }*/
+.sub_login .sns_login li:nth-child(4) { background:#3b5998; color:#fff; margin-bottom:0px;}
+.sub_login .sns_login li:nth-child(3) { background:#d2262b; color:#fff; }
+.sub_login .sns_login li:nth-child(1) span { background:url(../image/sub/login_n.png)no-repeat center #2eb300;}
+.sub_login .sns_login li:nth-child(2) span { background:url(../image/sub/login_k.png)no-repeat center #fae80c;}
+/*.sub_login .sns_login li:nth-child(3) span { background:url(../image/sub/login_i.png)no-repeat center;}*/
+.sub_login .sns_login li:nth-child(4) span { background:url(../image/sub/login_f.png)no-repeat 50% 50% #3b5998;}
+.sub_login .sns_login li:nth-child(3) span { background:url(../image/sub/login_y.png)no-repeat 50% 50% #d2262b;}
+.sub_login .login_box .bt_txt { text-align:center; font-size:16px; color:#333;}
+
+
+
+
+/* 회원가입 */
+.sub_join .join_tab { overflow:hidden; width:100%; margin-bottom:85px;}
+.sub_join .join_tab li { float:left; width:33.3%; text-align:center; font-size:20px; color:#b4b7be; border-bottom:3px solid #b4b7be; padding-bottom:30px;}
+.sub_join .join_tab li span { font-weight:600;}
+.sub_join .join_tab li.on { color:#812990; border-bottom:3px solid #812990;}
+.sub_join .all_agree { position:relative; margin-bottom:35px;}
+.sub_join .all_agree .txt { font-size:18px; color:#333; line-height:30px; }
+.sub_join .all_agree .check_wrap { position:absolute; height:30px; top:0; right:0; bottom:0; margin:auto;}
+.sub_join .agree_box { margin-bottom:60px; }
+.sub_join .agree_box .title { font-size:24px; color:#812990;  margin-bottom:15px;}
+.sub_join .agree_box textarea { height:184px; border:1px solid #ddd; background:#fbfbfb; color:#95979e;  width:100%; padding:25px; box-sizing:border-box; font-size:16px; resize: none;}
+
+.sub_join .agree_box .txt { text-align:right; margin-top:15px;}
+.sub_join .agree_box .title:last-child { margin-top:60px;}
+
+.input_form table { width:100%; border-top:1px solid #ddd; margin-bottom:50px;}
+.input_form table th, .input_form table td { border-bottom:1px solid #ddd; padding:15px 0;}
+.input_form table td { color:#888; font-size:18px; }
+.input_form table th { font-weight:normal; font-size:20px; color:#333; text-align:left; padding-left:30px; width:22%;}
+.input_form table td input[type="text"] { height:50px; width:60%; border:1px solid #ddd; box-sizing:border-box; font-size:16px; padding:0 20px ; -webkit-border-radius:0;
+-webkit-appearance: none;}
+.input_form table td input[type="password"] {height:50px; width:400px; border:1px solid #ddd; box-sizing:border-box; font-size:16px; padding:0 20px ; -webkit-border-radius:0;
+-webkit-appearance: none; }
+.input_form table td input::-webkit-input-placeholder { color: #b4b7be;  }
+.input_form table td.id input[type="text"] { width:300px;}
+.input_form table td.email input[type="text"] { width:29%;}
+.input_form table td.email select { margin-left:5px;}
+.input_form table td.name input[type="text"] { width:300px ;}
+.input_form table td.call input[type="text"] { width:205px; margin-left:5px;}
+.input_form table td.eye input[type="text"]  { width:80px; margin-right:5px; text-align:center;}
+.input_form table td input[type="button"] { width: 205px; height: 50px; line-height: 50px; color: #888; border: 1px solid #ddd; background: #fff; vertical-align: top; margin-left:5px; font-size:16px; -webkit-border-radius:0; -webkit-appearance: none; cursor: pointer;}
+.input_form table td select { width:205px;}
+.input_form table td textarea { width:100%; border:1px solid #ddd; box-sizing:border-box; height:130px; padding:20px; font-size:18px; color:#888}
+.input_form table td.pass input[type="password"] { width:300px;}
+.sub_join .txt_box { background:#f2f5f8; padding:40px 20px; font-size:16px; color:#8e9297; text-align:center; margin:50px 0;}
+
+
+
+
+/* 아이디찾기 */
+.member_top { background:#f2f5f8; padding:40px 0; margin-bottom:70px;}
+.member_top ul { display:table; margin:auto; width:100%;}
+.member_top ul li { float:left; font-size:18px; color:#b4b7be; width:50%; padding-left:60px; box-sizing:border-box; }
+.member_top ul li span { color:#333; padding-right:60px; font-weight:600;}
+.id_box { background: #f2f5f8; height: 126px; line-height: 126px;     font-size: 20px; color: #b4b7be; text-align:center;}
+.id_box span { padding-right: 40px; color:#333; }
+
+
+
+
+/* 회원탈퇴 */
+.ex_box { border:1px solid #ddd; background:#fbfbfb; color: #95979e; font-size:16px; padding:25px; margin-top:40px;}
+.ex_box .txt01 { font-size:20px; margin-bottom:10px; }
+
+
+
+
+/* 회원정보수정 */
+
+.sns_con .txt { font-size:22px; color:#333; border-bottom:1px solid #ddd; padding-bottom:10px; margin-bottom:20px;}
+.sns_con .sns_login { display: inline-block; width: 100%;}
+.sns_con .sns_login li { width:360px; height:60px; line-height:60px; font-size:18px; float:left; margin-right:5px;}
+.sns_con .sns_login li span { display:inline-block; width:60px; height:60px; float:left; border-right:1px solid #fbfbfb; box-sizing: border-box;}
+.sns_con .sns_login li p { display:inline-block; text-align:center; float:left; width:300px;}
+.sns_con .sns_login li:nth-child(1) { background:#2eb300; color:#fff;  margin-bottom:15px;}
+.sns_con .sns_login li:nth-child(2) { background:#fae80c; color:#3b2a30; }
+.sns_con .sns_login li:nth-child(3) { background:#3b5998; color:#fff;  margin-bottom:0px;}
+
+.sns_con .sns_login li:nth-child(1) span { background:url(../image/sub/login_n.png)no-repeat center #2eb300;}
+.sns_con .sns_login li:nth-child(2) span { background:url(../image/sub/login_k.png)no-repeat center #fae80c;}
+.sns_con .sns_login li:nth-child(3) span { background:url(../image/sub/login_f.png)no-repeat 50% 50% #3b5998;}
+
+.sns_con .sns_login li:nth-child(1).sns_grey { background:#b5b5b5;}
+.sns_con .sns_login li:nth-child(1).sns_grey span {  background:url(../image/sub/login_n.png)no-repeat center #b5b5b5;}
+
+.sns_con .sns_login li:nth-child(2).sns_grey { background:#b5b5b5; color: #fff;}
+.sns_con .sns_login li:nth-child(2).sns_grey span {  background:url(../image/sub/login_k.png)no-repeat center #b5b5b5;}
+
+.sns_con .sns_login li:nth-child(3).sns_grey { background:#b5b5b5; color: #fff;}
+.sns_con .sns_login li:nth-child(3).sns_grey span {  background:url(../image/sub/login_f.png)no-repeat center #b5b5b5;}
+
+.del_txt { font-size:18px; color:#333; margin-bottom:50px;}
+.del_txt a { color:#812990; text-decoration:underline;}
+
+
+
+
+
+/* 자주하는질문 */
+.faq ul li .faq_title {display: table; width: 100%; height:80px; border-bottom: 1px solid #ddd; background: url(../image/sub/faq_icon.png)no-repeat right bottom; cursor: pointer;}
+.faq ul li .faq_title:hover {background: url(../image/sub/faq_icon_hover.png)no-repeat right bottom;}
+.faq ul li .faq_title.open {background: url(../image/sub/faq_icon_on.png)no-repeat right bottom;}
+.faq ul li .faq_title .txt {display: table-cell; font-size: 18px; padding: 0 70px 0 50px; vertical-align: middle;}
+.faq ul li span {display: table-cell; width: 20px; padding-left: 30px; vertical-align: middle;}
+.faq ul li span img {vertical-align: bottom;}
+.faq ul li .faq_title .txt {color: #333;}
+.faq ul li .faq_content {display: none; border-bottom: 1px solid #ddd;}
+.faq ul li .faq_content .txt {display: table-cell; padding: 30px 70px 30px 50px; font-size: 18px; color: #666; vertical-align: middle;}
+.faq ul li .faq_content span {padding-top: 30px; vertical-align: top;}
+
+
+
+/* 상담 및 예약 */
+.top_question { overflow:hidden; border-top:1px solid #ddd; border-bottom:1px solid #ddd; position:relative; margin-bottom:80px;}
+.top_question li { float:left; padding: 21px 0; display:table;min-height: 100px; box-sizing: border-box; font-size:20px; color:#666; }
+.top_question li:first-child { padding-left:80px; }
+.top_question li:nth-child(2) { width:250px; position:absolute; right:250px; text-align:center; border-left:1px solid #ddd;}
+.top_question li:last-child { width:250px;  position:absolute; right:0;text-align:center; background:#f287b7; color:#fff; }
+.top_question li a { display:table-cell; vertical-align:middle ;}
+.top_question li img { vertical-align:middle; margin-right:5px;}
+
+
+.view_wrap .title_box { min-height:80px; border:1px solid #ddd; padding:0 40px; position: relative; display: table; width: 100%; box-sizing: border-box;}
+.view_wrap .title_box .title { display: table-cell; vertical-align: middle; font-size:20px; color:#333; }
+.view_wrap .title_box  .data { float:left; color:#b9bcc2; font-size:16px;  position: absolute; right: 40px; height: 25px; top: 0; bottom: 0; margin: auto;}
+.view_wrap .title_box  .data .name:before { content:''; width:1px; height:12px; background:#bec1c6; display:inline-block; margin:0 10px;}
+.view_wrap .title_box .hit { float:right; font-size:16px; color:#333; margin-left:20px}
+.view_wrap .file_box {height:80px; line-height:80px; border-bottom:1px solid #ddd; padding:0 40px;  font-size:18px; color:#333; }
+.view_wrap .file_box .file { font-size:16px; color:#999; margin-left:20px; cursor:pointer; }
+.view_wrap .file_box .file img { vertical-align:middle; margin-left:5px;}
+.view_wrap .content_box { padding:40px; border-bottom:1px solid #ddd; margin-bottom:40px; font-size:16px;}
+.view_wrap .content_box img {max-width: 100% !important; height: auto !important; vertical-align: top;}
+.view_wrap .content_box > img {display: block; margin: 0 auto;}
+.view_wrap .content_box .qu {width:100%;color:#812990;margin:15px 0 0 0;}
+.consulting .pw_input {text-align:center;  margin-top:35px;}
+.consulting .pw_input input[type="password"]{height:50px; width:410px; border:1px solid #ddd; box-sizing:border-box; font-size:16px; padding:0 20px ; -webkit-border-radius:0; -webkit-appearance: none;}
+
+
+
+
+/* 비밀번호 입력 */
+.private { text-align:center;}
+.private .txt01 { font-size:22px; color:#333; }
+.private .txt02 { font-size:20px; color:#666; }
+.private input[type=password] { width:410px; height:50px; border:1px solid #ddd; padding:0 20px; box-sizing:border-box; margin-top:40px;}
+
+
+
+
+/* 검사진료예약 */
+.agree_txt { font-size:18px; color:#333; }
+.agree_txt a { color:#98278f; text-decoration:underline;  }
+.agree_txt .check { float:right; font-size:18px; }
+
+
+
+/* 고객수술후기 */
+
+.top_question02 {overflow: hidden; margin-bottom: 80px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.top_question02 li {float: left; height: 100px; line-height: 100px; font-size: 20px; color: #666; }
+.top_question02 li:first-child {padding-left: 80px;}
+.top_question02 li:last-child {float: right; width: 250px; text-align: center; background-color: #f287b7;}
+.top_question02 li a {display: block; color: #fff;}
+.top_question02 li a p {display: inline-block; padding-left: 25px; background: url(../image/sub/top_icon03.png) no-repeat 0 center / 20px;}
+
+
+
+.image_list {width: 100%;position: relative; overflow: hidden; box-sizing: border-box; clear:both; border:1px solid #ddd; padding:10px; margin-bottom:20px;}
+.image_list .image {position: relative; float:left; width: 100%; overflow:hidden; }
+.image_list .image:before {display: block; padding-top: 100%; content: '';}
+.image_list .image img {position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%;}
+.image_list .image.video_img {width: 330px; height: 220px;}
+.image_list .image.video_img:before {display: none;}
+.image_list .image.video_img + .txt_box {width: calc(100% - 330px); height: 220px; padding: 10px 30px;}
+.image_list .image.video_img + .txt_box .txt03 {bottom: 10px;}
+.image_list .txt_box {position: relative; float:left; width: calc(100% - 300px); padding: 30px; box-sizing:border-box; height:300px;}
+.image_list .txt_box .txt01 {margin: 0 0 20px 0; font-size: 18px; color: #812990;}
+.image_list .txt_box .txt01 > span { color:#999; font-size:16px; margin-left:20px;}
+.image_list .txt_box .txt01 > span span { margin-left:10px;}
+.image_list .txt_box .title {margin: 0 0 10px 0; font-size: 20px; color: #333;}
+.image_list .txt_box .txt02 {display: block; overflow: hidden; width: 80%; line-height: 1.6; max-height: 4.8em; font-size: 18px; color: #666; text-align: left; text-overflow: ellipsis; white-space: normal; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+.image_list .txt_box .txt03 {position: absolute; left: 30px; bottom: 30px; font-size: 16px; color: #b9bcc2;}
+.image_list .txt_box .txt03 span {display: inline-block; margin: 0 0 0 5px;}
+.image_list .more {position: absolute; bottom: 0; right: 0;}
+.image_list .more img {width: 100%; vertical-align: top;}
+
+.review_imglist .image_list {clear: unset;position: relative;overflow: hidden;box-sizing: border-box;border:1px solid #ddd;padding:10px;margin-bottom:20px;width: calc((100% - 60px)/4);float: left;margin-right: 20px;height: 530px;}
+.review_imglist .image_list:nth-child(4n){margin-right: 0}
+.review_imglist .image {position: relative;float:left;width: 100%;overflow:hidden;}
+.review_imglist .image:before {display: block; padding-top: 100%; content: '';}
+.review_imglist .image img {position: absolute;top: 0;left: 0;right: 0;bottom: 0;width: 100%;height: 100%;}
+.review_imglist .image.video_img {width: 100%; height: 220px;}
+.review_imglist .image.video_img:before {display: none;}
+.review_imglist .image.video_img + .txt_box {width: calc(100% - 330px); height: auto; padding: 10px 20px;padding-bottom: 140px;height: 280px;}
+.review_imglist .image.video_img + .txt_box .txt03 {bottom: 10px;}
+.review_imglist .image.video_img + .txt_box{width: 100%;}
+.review_imglist .txt_box {position: relative;float:left;width: calc(100% - 300px);padding: 20px;box-sizing:border-box;height:200px;width: 100%;padding-bottom: 30px;}
+.review_imglist .txt_box .txt01 {margin: 0 0 20px 0; font-size: 18px; color: #812990;}
+.review_imglist .txt_box .txt01 > span { color:#999; font-size:16px; margin-left:0;display: block;}
+.review_imglist .txt_box .txt01 > span span { margin-left:10px;}
+.review_imglist .txt_box .title {margin: 0 0 10px 0; font-size:19px; color: #333;}
+.review_imglist .txt_box .txt02 {display: block; overflow: hidden; width: 80%; line-height: 1.6; max-height: 4.8em; font-size: 18px; color: #666; text-align: left; text-overflow: ellipsis; white-space: normal; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+display: none;}
+.review_imglist .txt_box .txt03 { font-size: 16px; color: #b9bcc2;margin-top: 20px;display: block;left: 20px;bottom: 20px;}
+.review_imglist .txt_box .txt03 span {display: inline-block; margin: 0 0 0 5px;}
+.review_imglist .more {position: absolute; bottom: 0; right: 0;}
+.review_imglist .more img {width: 100%; vertical-align: top;}
+
+.consulting p{clear: both;}
+
+.notice_list02 .image_list .image{max-width: 300px;}
+@media screen and (max-width:768px) {
+  .notice_list02 .image_list .image{max-width: 100%;}
+
+}
+
+.view_wrap .cate_box {height:80px; line-height:80px; border-bottom:1px solid #ddd; padding:0 40px;  font-size:18px; color:#812990; }
+
+.view_wrap .cate_box .txt01>span { color:#999; font-size:16px; margin-left:20px;}
+.view_wrap .cate_box .txt01>span span { margin-left:10px;}
+.view_wrap .list_box { overflow:hidden;}
+.view_wrap .list_box li { float:left; width:50%; text-align:center; border:1px solid #ddd; line-height:60px; height:60px; box-sizing:border-box; }
+.view_wrap .list_box li:first-child { background:url(../image/sub/prev.png)no-repeat 5% center; border-right:0;}
+.view_wrap .list_box li:first-child span { float:left; padding-left:10%; font-size:20px; color:#333; }
+.view_wrap .list_box li:last-child { background:url(../image/sub/next.png)no-repeat 95% center;}
+.view_wrap .list_box li:last-child span { float:right; font-size:20px; color:#333; padding-right:10%;}
+.view_wrap .list_box li a { font-size:16px; color:#b9bcc2}
+
+
+
+/* 이벤트 */
+.event_list { display:inline-block ; width:100%;}
+.event_list li { float:left; box-sizing:border-box; border:1px solid #ddd; padding:10px; width:49%; margin-bottom:2%; position:relative; max-height:458px;}
+.event_list li:nth-child(2n) {margin-left:2%;}
+.event_list li img { width:100%;}
+.event_list li .txt01 {box-sizing: border-box; overflow: hidden; width: 100%; padding: 0 20px; margin: 25px 0 10px; font-size:20px; color:#333; text-overflow: ellipsis; white-space: nowrap; word-break: break-all;}
+.event_list li .txt02 { font-size:18px; color:#b9bcc2; padding-left:20px;}
+
+.event_list li:hover { border:1px solid #812990;}
+.event_list li .cate_tab { position:absolute; top:-10px; right:0; width:90px; height:90px; background:url(../image/sub/cate_tab.png)no-repeat; color:#fff; font-size:20px; box-sizing: border-box;  padding-left: 13px; padding-top: 22px; z-index:5;}
+.event_list li .img { position:relative; }
+.event_list li .img img { vertical-align:bottom;}
+.event_list li .img .end_bg { position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.5);}
+.event_list li .img .end_bg p { font-size:20px; color:#fff; text-align: center; position: absolute; top: 0; bottom: 0; margin: auto; height: 50px; width: 100%;}
+.event_list li .img .end_bg p:after { width:160px; height:2px; background:#fff; content:''; display:block; margin:20px auto 0;}
+
+.event_title_box { text-align:center; border-bottom:1px solid #ddd; padding-bottom:30px;  }
+.event_title_box .title { font-size:26px; color:#333; font-weight:500; margin-bottom:10px;}
+.event_title_box .day { font-size:16px; color:#b9bcc2;}
+
+
+/* 협력업체 */
+.partner ul { overflow:hidden; }
+.partner ul li {text-align:center; float:left; width:19.2%; margin-right:1%; max-height:100px; border:1px solid #ddd; box-sizing:border-box; margin-bottom:1%; position:relative;}
+.partner ul li:nth-child(5n) { margin-right:0;}
+.partner ul li a>img { width:100%; height:100%; vertical-align: middle;}
+
+.partner ul li .bg { width:100%; height:100%; background:#812990;position:absolute; display:inline-block; top:0; left:0; text-align:center; color:#fff;  display:none;}
+.partner ul li .bg img { vertical-align:middle; margin-left:5px;}
+.partner ul li .bg p { position: absolute; top: 0; bottom: 0; margin: auto; left: 0; right: 0; height: 25px;}
+
+
+
+
+/* 공통라인 */
+.box_line {padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px dashed #dcdfe7;}
+
+
+
+
+/* 3D스마일라식 */
+
+.smile_line {padding: 80px 0 80px; margin: 0 0 80px 0; border-bottom: 1px dashed #dcdfe7;}
+
+.smile .tit {margin-bottom: 30px; font-size: 35px; font-weight: 600; color: #191919;}
+.smile .tit span {color: #812990}
+.smile .txt {line-height: 1.6; font-size: 18px; color: #333;}
+.smile .txt span {color: #812990;}
+
+.smile_advantage {margin-bottom: 100px;}
+.smile_advantage ul {padding-top: 70px;}
+.smile_advantage ul:after {display: block; clear: both; *zoom: 1; content: '';}
+.smile_advantage ul li {float: left; width: 200px; margin-right: 40px; text-align: center;}
+.smile_advantage ul li:last-child {margin-right: 0;}
+.smile_advantage ul li img {width: 100%; margin-bottom: 30px; vertical-align: top;}
+
+.smile_recommed {overflow: hidden; padding: 70px 80px; background-color: #fbfbfb;}
+.smile_recommed .txt {margin-bottom: 70px; font-size: 40px; text-align: center;}
+.smile_recommed .txt span {color: #812990;}
+.smile_recommed ul {float: left; width: 50%;}
+.smile_recommed ul li {padding-left: 70px; line-height: 60px; font-size: 18px; color: #666; background: url(../image/sub/list_check.png) no-repeat 0 center;}
+
+
+.smile_gray .sub_tit {font-size: 22px; color: #110e23; font-weight: bold; margin-bottom: 20px;}
+.smile_gray .sub_tit span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.smile_1mm {box-sizing: border-box; overflow: hidden; width: 100%; padding: 40px; background-color: #f4f4f4;}
+.smile_1mm li {float: left; width: 49%; text-align: center;}
+.smile_1mm li:first-child {margin-right: 2%;}
+.smile_1mm li strong {display: block; height: 60px; line-height: 60px; font-size: 22px; color: #fff; background-color: #80288f;}
+.smile_1mm li div {box-sizing: border-box; min-height: 410px; padding: 35px 0; background-color: #fff;}
+.smile_1mm li:nth-child(1) div {background: #fff url(../image/sub/smile11.png) no-repeat center 35px;}
+.smile_1mm li:nth-child(2) div {background: #fff url(../image/sub/smile12.png) no-repeat center 35px;}
+.smile_1mm li div .txt {margin-top: 280px;}
+
+.smile_3d {margin-top: 35px; margin-bottom: 50px; padding: 40px 300px; background-color: #f4f4f4;}
+.smile_3d img {width: 100%; vertical-align: top;}
+.smile_3d .smile_3d_m {display: none;}
+
+.low_energy { padding: 40px; background-color: #f4f4f4;}
+.low_energy img {width: 100%; vertical-align: top;}
+.low_energy .obl:after {display: block; clear: both; *zoom: 1; content: '';}
+.low_energy .obl li {float: left; width: 49%; margin-right: 2%; font-size: 28px; text-align: center;}
+.low_energy .obl li:nth-child(2) {margin-right: 0;}
+.low_energy .obl li .obl_txt {margin-top: 40px;}
+.low_energy .obl li .obl_txt strong {display: block; color: #333;}
+.low_energy .obl li .obl_txt span {display: inline-block; height: 44px; line-height: 44px; padding: 0 40px; font-weight: bold; color: #fff; background-color: #30354b; border-radius: 25px;}
+.low_energy .obl li:nth-child(2) .obl_txt strong {display: block; color: #80288f;}
+.low_energy .obl li:nth-child(2) .obl_txt span {display: inline-block; height: 44px; line-height: 44px; padding: 0 40px; font-weight: bold; color: #fff; background-color: #80288f; border-radius: 25px;}
+
+.row_advantage .tit {display: block; padding-top: 40px; margin: 60px 0; font-size: 40px; font-weight: normal; border-top: 1px dashed #dcdfe7; text-align: center;}
+.row_advantage .tit span {color: #80288f;}
+.row_advantage ul:after {display: block; clear: both; *zoom: 1; content: '';}
+.row_advantage ul li {float: left; width: 49%; margin-right: 2%; text-align: center;}
+.row_advantage ul li:nth-child(2) {margin-right: 0;}
+.row_advantage ul li strong {display: block; height: 55px; line-height: 55px; font-size: 26px; background-color: #30354b; color: #fff;}
+.row_advantage ul li strong span {color: #b368c0;}
+.row_advantage ul li .img_box {box-sizing: border-box; width: 100%; padding: 20px 70px 0 70px; background-color: #fff;}
+.row_advantage ul li .img_box img {width: 100%; vertical-align: top;}
+
+.smile_surgery ul {overflow: hidden; text-align: center;}
+.smile_surgery ul li {box-sizing: border-box; position: relative; float: left; width: 32%; margin-right: 1%; margin-bottom: 50px; padding: 20px; border: 1px solid #ddd; vertical-align: top;}
+.smile_surgery ul li:last-child {margin-right: 0; margin-bottom: 0;}
+.smile_surgery ul li:nth-child(4) {margin-left: 240px; margin-bottom: 0;}
+.smile_surgery ul li .img_box {margin-bottom: 20px;}
+.smile_surgery ul li .img_box img {width: 100%; height: 100%; vertical-align: top;}
+.smile_surgery ul li .txt_box {display: table; width: 100%; min-height: 48px;}
+.smile_surgery ul li .txt_box p {display: table-cell; vertical-align: middle;}
+.smile_surgery ul li .num {display: block; box-sizing: border-box; position: absolute; top: 30px; left: 30px; width: 80px; height: 80px; padding-top: 10px; line-height: 30px; font-size: 24px; font-weight: 600; color: #fff; background-color: #80288f; border-radius: 40px;}
+
+
+
+
+
+
+
+
+/* 신세계안과를 선택하는 이유 */
+
+.smile_reason {padding-bottom: 120px; width:100%; background: url(../image/sub/smile_reason.png) repeat-y 0 0 / cover; text-align:center;}
+.smile_reason .top_txt  { padding-top:100px; padding-bottom:70px;}
+.smile_reason .top_txt .txt01, .smile_reason .top_txt .txt02{color: #fff;}
+.smile_reason .top_txt .txt01 {margin: 15px 0;}
+.smile_reason .top_txt .txt01 span {color: #9bace4;}
+.smile_reason .top_txt .txt02 span {color: #9bace4;}
+.smile_reason .m_intro_img {display: none;}
+.smile_btn { width:100%;height:100px; text-align:center; line-height:100px; color:#fff; font-size:24px; font-weight:500; background:#863194; display:inline-block; margin-top: 80px;}
+.smile_btn img { margin:0 30px; }
+.smile_btn img:first-child {vertical-align:middle; }
+
+.smile_list03 {overflow: hidden;}
+.smile_list03 li { float: left; border: 1px solid #ddd; padding:10px; width:19.2%; margin-right:1%; box-sizing:border-box; height:450px;}
+.smile_list03 li:last-child { margin-right:0;}
+.smile_list03 li img { width:100%;}
+.smile_list03 li .txt {display: table; width: 100%; margin-top: 20px; min-height: 24px; text-align: center;}
+.smile_list03 li .txt .txt02 {display: table-cell; font-size: 16px; color: #333; vertical-align: middle;}
+
+.smile_list04 { overflow:hidden; }
+.smile_list04 li {position: relative; float: left; box-sizing: border-box; width: 20%; padding: 30px 10px; text-align: center;}
+.smile_list04 li img { width:100%; height:150px;}
+
+.smile .smile_list04 li:last-child { width: 20%; background:#25bcc5; border:1px solid #25bcc5; margin-right:0;}
+.smile_list04 li:last-child:after { display:none;}
+.smile_list04 li .txt01 {margin-top: 10px; font-size: 16px; font-weight: normal; color: #666;}
+.smile .smile_list04 li:last-child .txt01 { color:#fff; }
+
+
+
+
+/* 노안 - 신세계안과를 선택하는 이유 */
+.old_reason {padding-bottom: 120px; width:100%; background:url(../image/sub/smile_reason.png) repeat-y 0 0 / cover; text-align:center;}
+.old_reason .top_txt  { padding-top:100px; padding-bottom:70px;}
+.old_reason .top_txt .txt01, .old_reason .top_txt .txt02{ color:#fff; }
+.old_reason .top_txt .txt01 {padding: 0 40px;}
+.old_reason .top_txt .txt01 span {color: #9bace4;}
+.old_reason .top_txt .txt02 span {color: #9bace4;}
+
+.old_reason .intro_img_m {display: none;}
+
+
+/* 노안클리닉 */
+
+.laser .smile_list  { margin-bottom:70px;}
+
+.laser .laser06_pc {display: block;}
+.laser .laser06_m {display: none;}
+
+.laser .txt01 { font-size:35px; font-weight:600; color:#333; margin-bottom:15px;}
+.laser .txt01 span { color:#812990; }
+.laser .txt02 {margin: 10px 0 0 0; font-size: 16px;}
+.laser .txt .txt02 {text-align: center;}
+.laser .smile_list04 {margin-bottom: 50px;}
+.laser .smile_list04 li {box-sizing: border-box; width: 32%; padding: 20px; margin-right: 1%; border: 1px solid #ddd;}
+.laser .smile_list04 li:last-child {margin-right: 0;}
+.laser .smile_list04 li img {width: 100%; height: auto;  vertical-align: top;}
+.laser .smile_list04 li .txt_box {display: table; width: 100%; min-height: 48px; margin-top: 20px;}
+.laser .smile_list04 li .txt_box .txt01 {display: table-cell; font-size: 16px; color: #333; vertical-align: middle;}
+.laser .smile_list04 li .num {display: block; box-sizing: border-box; position: absolute; top: 30px; left: 30px; width: 80px; height: 80px; padding-top: 10px; background-color: #812990; color: #fff; font-size: 26px; line-height: 30px; font-weight: 600; border-radius: 50%;}
+
+.laser .smile_list03 {margin-top: 40px; margin-bottom: 100px;}
+.laser .smile_list03 li {box-sizing: border-box; float: left; width: 19.2%; height: auto; margin-right: 1%; border: 1px solid #ddd;}
+.laser .smile_list03 li:last-child {margin-right: 0;}
+.laser .smile_list03 li img {width: 100%; vertical-align: top;}
+.laser .smile_list03 li .txt_box {display: table; width: 100%; margin: 10px 0 0 0; text-align: center;}
+.laser .smile_list03 li .txt_box p {display: table-cell; font-size: 16px; font-weight: 500; color: #333; vertical-align: middle;}
+
+.laser img { width:100%;}
+.laserimg_pc {display: block; margin-top: 40px;}
+.laserimg_m {display: none; margin-top: 40px;}
+.laser .laser_bnn {margin-top: 50px;}
+
+.laser_imgbox { border:1px solid #ddd; box-sizing:border-box; padding:10px; margin-top:40px; position:relative; margin-bottom:100px;}
+.laser_imgbox img { vertical-align:bottom;}
+.laser_imgbox ul { width:300px; position:absolute; top:0px; right:10px;  height:100%; padding: 10px 0; box-sizing: border-box;}
+.laser_imgbox ul li { height:20%;  text-align:center; color:#fff; font-size:18px; padding-top: 30%; box-sizing:border-box; }
+.laser_imgbox ul li:nth-child(1) { background:url(../image/sub/laser_icon01.png)no-repeat center 30px rgba(0,0,0,0.6); padding-top: 37%;}
+.laser_imgbox ul li:nth-child(2) { background:url(../image/sub/laser_icon02.png)no-repeat center 30px rgba(0,0,0,0.6);}
+.laser_imgbox ul li:nth-child(3) { background:url(../image/sub/laser_icon03.png)no-repeat center 24px rgba(0,0,0,0.6);}
+.laser_imgbox ul li:nth-child(4) { background:url(../image/sub/laser_icon04.png)no-repeat center 30px rgba(0,0,0,0.6);}
+.laser_imgbox ul li:nth-child(5) { background:url(../image/sub/laser_icon05.png)no-repeat center 30px rgba(0,0,0,0.6);}
+
+.laser_list  { margin-top:40px ; overflow:hidden; }
+.laser_list li { float:left; border:1px solid #ddd; padding:10px; box-sizing:border-box; width: 32%; margin-right:2%; }
+.laser_list li:last-child { margin-right:0;}
+
+
+.laser_list02 { overflow:hidden; margin-bottom:100px;}
+.laser_list02 li { float:left; border:1px solid #ddd; padding:10px; width:48%; margin-right:4%; box-sizing:border-box; position:relative;}
+.laser_list02 li:last-child { margin-right:0;}
+.laser_list02 li:after { content:''; width:14px; height:19px; background:url(../image/sub/list_arrow.png)no-repeat; position: absolute; right: -5.8%; top: 0; bottom: 0; margin: auto;}
+.laser_list02 li:last-child:after{ display:none;}
+
+
+.laser_txtlist {margin-top:40px; margin-bottom:100px; overflow:hidden;}
+.laser_txtlist li {box-sizing:border-box; padding:30px 20px; border-bottom:1px solid #ddd}
+.laser_txtlist li .title {font-size:18px; color:#812990; font-weight:500; margin-bottom:10px; }
+.laser_txtlist li .title span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.laser_txtlist li .txt { font-size:16px; color:#333; }
+
+
+.laser_img {margin: 50px 0 0 0; overflow: hidden;}
+.laser_img li {float: left; width: 50%;}
+.laser_img li:nth-child(1) { box-sizing: border-box; padding: 0 30px 0 0; text-align: right;}
+.laser_img li p {font-size: 20px;}
+.laser_img li img {width: 100%; vertical-align: top;}
+
+
+
+
+/* 신세계안과를 가야하는 이유 */
+.reason_list { overflow:hidden;}
+.reason_list li { width:50%; float:left; height:240px; box-sizing:border-box; background-size:cover; }
+.reason_list li .txt_wrap { display:table-cell; vertical-align:middle;}
+.reason_list li .txt_wrap .txt01 { font-size:28px; color:#333; font-weight:600; }
+.reason_list li .txt_wrap .txt01 span { color:#812990; }
+.reason_list li .txt_wrap .txt02 { font-size:16px; color:#333; margin-top:8px;}
+.reason_list li:nth-child(2),.reason_list li:nth-child(3),.reason_list li:nth-child(6),.reason_list li:nth-child(7),.reason_list li:nth-child(10),.reason_list li:nth-child(11) { display:table; padding:0 50px; background:#fbfbfb;}
+
+.reason_list li:nth-child(1) { background:url(../image/sub/old_img01.png)no-repeat center bottom; }
+.reason_list li:nth-child(4) { background:url(../image/sub/old_img02.png)no-repeat center bottom; }
+.reason_list li:nth-child(5) { background:url(../image/sub/old_img03.png)no-repeat center bottom; }
+.reason_list li:nth-child(8) { background:url(../image/sub/old_img04.png)no-repeat center bottom; }
+.reason_list li:nth-child(9) { background:url(../image/sub/old_img05.png)no-repeat center bottom; }
+.reason_list li:nth-child(12) { background:url(../image/sub/old_img06.png)no-repeat center bottom; }
+
+.reason_list02 { overflow:hidden; display:none;}
+.reason_list02 li { width:100%; box-sizing:border-box; background-size:cover; }
+.reason_list02 li img { width:100%; vertical-align:bottom;}
+.reason_list02 li .txt_wrap { display:table-cell; vertical-align:middle;}
+.reason_list02 li .txt_wrap .txt01 { font-size:28px; color:#333; font-weight:600; }
+.reason_list02 li .txt_wrap .txt01 span { color:#812990; }
+.reason_list02 li .txt_wrap .txt02 { font-size:16px; color:#333; margin-top:8px;}
+.reason_list02 li:nth-child(2n){ display:table; padding:50px 20px; background:#fbfbfb;}
+
+
+
+/* 라식 라섹*/
+
+.lasik .tit {font-size:35px; font-weight:600; color:#191919; margin-bottom:30px;}
+.lasik .tit span {color:#812990}
+
+.lasek .tit {font-size:35px; font-weight:600; color:#191919; margin-bottom:30px;}
+.lasek .tit span {color:#812990}
+
+.lasik_listbox { overflow:hidden;}
+.lasik_listbox li { float:left; width:50%;}
+.lasik_listbox .tit {font-size:35px; font-weight:600; color:#191919; margin-bottom:30px;}
+.lasik_listbox .tit span {color:#812990}
+.lasik_listbox .txt { font-size:16px; color:#333; }
+.lasik_listbox .txt span { color:#812990; }
+.lasik_listbox li:nth-child(2) {padding-left:35px; box-sizing:border-box; }
+.lasik_listbox li img { width:100%;}
+
+.lasik_listbox .lasik_txtlist {margin-top:40px; margin-bottom:100px; overflow:hidden;  border-top:1px solid #ddd}
+.lasik_listbox .lasik_txtlist li {position:relative;box-sizing:border-box; width: 100%; padding: 20px; border-bottom:1px solid #ddd}
+.lasik_listbox .lasik_txtlist li .txt {padding-left:30px; font-size:16px; color:#333; margin-top:10px; }
+.lasik_listbox .lasik_txtlist li .curcle {position:absolute; left:15px; top:33px; background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+
+
+.lasik_surgery ul {overflow: hidden; text-align: center;}
+.lasik_surgery ul li {box-sizing: border-box; position: relative; float: left; width: 48%; margin-right: 2%; margin-bottom: 50px; padding: 20px; border: 1px solid #ddd; vertical-align: top;}
+.lasik_surgery ul li:last-child {margin-right: 0;}
+.lasik_surgery ul li .img_box {margin-bottom: 15px;}
+.lasik_surgery ul li .img_box img {width: 100%; height: 100%; vertical-align: top;}
+.lasik_surgery ul li .num {display: block; box-sizing: border-box; position: absolute; top: 30px; left: 30px; width: 80px; height: 80px; padding-top: 10px; line-height: 30px; font-size: 24px; font-weight: 600; color: #fff; background-color: #80288f; border-radius: 40px;}
+
+
+.lasik_recommend:after {display: block; clear: both; *zoom: 1; content: '';}
+.lasik_recommend li {display: table; box-sizing: border-box; float: left; width: 18%; margin-right: 2%; height: 220px; padding: 0 20px; line-height: 30px; font-size: 18px; background-color: #f5f5f5; color: #812990; text-align: center;}
+.lasik_recommend li:last-child {margin-right: 0;}
+.lasik_recommend li p {display: table-cell; vertical-align: middle;}
+
+
+
+
+.id_lasik ul { overflow:hidden; border-top:1px solid #ddd;}
+.id_lasik ul li {box-sizing:border-box; padding:35px 30px; border-bottom:1px solid #ddd}
+.id_lasik ul li:last-child {border-bottom: 0;}
+.id_lasik ul li .title {font-size:24px; color:#333; font-weight:600; margin-bottom:10px; }
+.id_lasik ul li .title span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:22px; height:22px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:22px; vertical-align:middle; margin-right:10px;}
+.id_lasik ul li .txt { font-size:16px; color:#333; }
+
+.id_lasek ul {overflow:hidden;}
+.id_lasek ul li {box-sizing:border-box; position: relative; padding: 35px 0; float:left; width:48%;}
+.id_lasek ul li:first-child {margin-right: 4%;}
+.id_lasek ul li:first-child:after {display: block; position: absolute; bottom: 80px; right: -45px; width: 40px; height: 40px; background: url(../image/sub/lasek_plus.png) no-repeat 0 0; content: '';}
+.id_lasek ul li .title {font-size:24px; color:#333; font-weight:600; margin-bottom:10px; }
+.id_lasek ul li .title span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.id_lasek ul li .txt {min-height: 75px; font-size:16px; color:#333;}
+
+.id_lasik_recommend:after {display: block; clear: both; *zoom: 1; content: '';}
+.id_lasik_recommend li {display: table; box-sizing: border-box; float: left; width: 24%; margin-right: 1%; height: 120px; padding: 0 20px; line-height: 30px; font-size: 18px; background-color: #f5f5f5; color: #812990; text-align: center;}
+.id_lasik_recommend li:last-child {margin-right: 0;}
+.id_lasik_recommend li p {display: table-cell; vertical-align: middle;}
+
+.id_lasik02 > div {overflow:hidden; width:100%; box-sizing:border-box; border-bottom:1px dashed #ddd; padding:40px 30px; position:relative; clear:both}
+.id_lasik02 > div .title {font-size:24px; color:#333; font-weight:600; margin-bottom:15px;}
+.id_lasik02 > div ul:after {display: block; clear: both; *zoom: 1; content: '';}
+.id_lasik02 > div ul li {float:left;}
+.id_lasik02 > div ul li:nth-child(1) {width:28%; margin-right: 2%;}
+.id_lasik02 > div ul li:nth-child(1) img {width: 100%; vertical-align: top;}
+.id_lasik02 > div ul li:nth-child(2) {width:70%; padding-top:65px;}
+.id_lasik02 > div .title span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.id_lasik02 > div .txt { font-size:16px; color:#333; }
+.id_lasik02 > div .txt span { color:#812990}
+
+.id_lasik03 > div { overflow:hidden; width:100%; box-sizing:border-box; border-bottom:1px dashed #ddd; padding:40px 30px; position:relative; clear:both}
+.id_lasik03 > div .title {  font-size:24px; color:#333; font-weight:600; margin-bottom:15px;}
+.id_lasik03 > div ul li {float:left;}
+.id_lasik03 > div ul li:nth-child(1) {width:10%;}
+.id_lasik03 > div ul li:nth-child(2) {width:90%;}
+.id_lasik03 > div .title span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.id_lasik03 > div .txt { font-size:16px; color:#333; }
+.id_lasik03 > div .txt span { color:#812990}
+
+.id_lasik04 > div { overflow:hidden; width:100%; box-sizing:border-box; border-bottom:1px dashed #ddd; padding:40px 30px; position:relative; clear:both}
+.id_lasik04 > div .title {  font-size:24px; color:#333; font-weight:600; margin-bottom:15px;}
+.id_lasik04 > div ul li {float:left; box-sizing:border-box;}
+.id_lasik04 > div ul li:nth-child(1) {width:30%;}
+.id_lasik04 > div ul li:nth-child(1) img {width:100%;}
+.id_lasik04 > div ul li:nth-child(2) {width:70%; padding-left:40px;}
+.id_lasik04 > div .title span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.id_lasik04 > div .txt { font-size:16px; color:#333; }
+.id_lasik04 > div .txt span { color:#812990;}
+
+.basic_lasik_recommend:after {display: block; clear: both; *zoom: 1; content: '';}
+.basic_lasik_recommend li {display: table; box-sizing: border-box; float: left; width: 18%; margin-right: 2%; height: 220px; padding: 0 20px; line-height: 30px; font-size: 18px; background-color: #f5f5f5; color: #812990; text-align: center;}
+.basic_lasik_recommend li:last-child {margin-right: 0;}
+.basic_lasik_recommend li p {display: table-cell; vertical-align: middle;}
+
+
+.lasek .lasek_box { width:100%; height:130px; background:linear-gradient( 90deg, #bfd0f1, #facfe2 );  position:relative; margin-top:35px;}
+.lasek .lasek_box .pattern_bg {background:linear-gradient(to right, rgba(62,25,111,1) 0%, rgba(129,41,144,1)100%); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.lasek .lasek_box .txt_box {box-sizing: border-box; position: relative; width: 100%; height: 130px; text-align: center;}
+.lasek .lasek_box .txt_box:after {display: block; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; background-color: #fff; content: '';}
+.lasek .lasek_box .txt_box p { position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); font-size: 18px; color: #812990; z-index: 1;}
+.lasek .lasek_box .txt_box p span {color: #333; margin: 0 15px;}
+
+.lasek_benefit:after {display: block; clear: both; *zoom: 1; content: '';}
+.lasek_benefit li {box-sizing: border-box; float: left; width: 24%; margin-right: 1%}
+.lasek_benefit li:last-child {margin-right: 0;}
+.lasek_benefit li img {display: block; margin-bottom: 30px;}
+.lasek_benefit li .benefit_txt {box-sizing: border-box; padding: 150px 20px 0 20px; height: 250px; border: 1px solid #dcdfe7;}
+.lasek_benefit li:nth-child(1) .benefit_txt {background: url(../image/sub/lasek_img06.png) no-repeat center 40px;}
+.lasek_benefit li:nth-child(2) .benefit_txt {background: url(../image/sub/lasek_img07.png) no-repeat center 40px;}
+.lasek_benefit li:nth-child(3) .benefit_txt {background: url(../image/sub/lasek_img08.png) no-repeat center 40px;}
+.lasek_benefit li:nth-child(4) .benefit_txt {background: url(../image/sub/lasek_img09.png) no-repeat center 40px;}
+
+.lasek_surgery {padding: 50px 0 80px;}
+.lasek_surgery:after {display: block; clear: both; *zoom: 1; content: '';}
+.lasek_surgery li {box-sizing: border-box; position: relative; float: left; width: 24%; margin-right: 1%; padding: 20px; border: 1px solid #ddd; text-align: center;}
+.lasek_surgery li:last-child {margin-right: 0;}
+.lasek_surgery li .img_box {width: 100%; margin-bottom: 20px;}
+.lasek_surgery li .img_box img {width: 100%; vertical-align: top;}
+.lasek_surgery li .txt_box {display: table; width: 100%;}
+.lasek_surgery li .txt_box p {display: table-cell; vertical-align: middle;}
+.lasek_surgery li .num {display: block; box-sizing: border-box; position: absolute; top: 30px; left: 30px; width: 80px; height: 80px; padding-top: 10px; background-color: #80288f; color: #fff; font-size: 24px; font-weight: 600; line-height: 30px; border-radius: 50%;}
+
+.lasek_caution {padding: 50px 0; background-color: #f5f5f5;}
+.lasek_caution ul:after {display: block; clear: both; *zoom: 1; content: '';}
+.lasek_caution ul li {float: left; width: 32%; margin-right: 1%; text-align: center;}
+.lasek_caution ul li:last-child {margin-right: 0;}
+.lasek_caution ul li img {width: 100%; vertical-align: top;}
+.lasek_caution ul li p {box-sizing: border-box; min-height: 130px; padding: 30px 10px; margin-top: -1px; border: 1px solid #dcdfe7; background-color: #fff;}
+
+
+.lasek_txtlist {margin-top:40px; margin-bottom:100px; overflow:hidden;  border-top:1px solid #ddd}
+.lasek_txtlist li {box-sizing:border-box; padding:30px 20px; border-bottom:1px solid #ddd}
+.lasek_txtlist li .title {font-size:18px; font-weight: bold; color:#333;}
+.lasek_txtlist li .title span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.lasek_txtlist li .title02 {font-size:18px; color:#2e2c2e; }
+.lasek_txtlist li .title02 span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.lasek_txtlist li .title02 em {color:#812990}
+.lasek_txtlist li .txt { font-size:16px; color:#333; margin-top:10px; }
+
+
+.sub_tit01 {display: block; padding-bottom: 10px; margin-bottom: 30px; font-size: 22px; border-bottom: 1px solid #812990;}
+.sub_tit01 em {color: #812990;}
+
+.lasek_recommend:after {display: block; clear: both; *zoom: 1; content: '';}
+.lasek_recommend li {display: table; box-sizing: border-box; float: left; width: 15%; margin-right: 2%; height: 220px; padding: 0 20px; line-height: 30px; font-size: 18px; background-color: #f5f5f5; color: #812990; text-align: center;}
+.lasek_recommend li:last-child {margin-right: 0;}
+.lasek_recommend li p {display: table-cell; vertical-align: middle;}
+
+
+
+
+
+/* 개인정보처리방침, 이용약관 */
+.data .data_txt01 { font-size:16px; color:#666; line-height: 28px;}
+.data .data_txt02 { font-size:20px; color:#333; font-weight:500; margin-top: 50px; margin-bottom: 10px;}
+.data .data_txt03 { font-size:18px; color:#333; margin-top: 15px; margin-bottom: 5px;}
+
+
+
+
+/* 비급여진료비용 */
+.cost { display:inline-block; width:100%;}
+.cost .cost_standard {display: block; width: 100%; margin: 0 0 10px 0; font-size: 16px; text-align: right; color: #999;}
+.cost_list { float:left; width:50%;}
+.cost_list ul { height:70px; background:#812990;  }
+.cost_list ul li { float:left; text-align:center; line-height:70px; color:#fff; font-size:20px; font-weight:400; position:relative}
+.cost_list ul li:after { content:''; width:1px; height:30px;  background:rgba(255,255,255,0.2); top:0; bottom:0; margin:auto;  position:absolute; right:0; }
+.cost_list ul li:nth-child(1) { width:40%;}
+.cost_list ul li:nth-child(2) { width:60%;}
+.cost_list table { width:100%; margin-top:30px; border-top:1px solid #812990;}
+.cost_list table th,.cost_list table td { text-align:center; font-size:18px; color:#333; height:70px; border-bottom:1px solid #ddd;}
+.cost_list table th {  font-weight:400; }
+.cost_list table td { font-weight:600; background:#f4f5f6;}
+
+.costpage {margin: 0 auto;text-align: center; width: 100%; overflow-x: scroll;}
+
+
+/* 노안이란 */
+
+.smile_list {overflow: hidden;}
+.smile_list li {box-sizing: border-box; float: left; width: 50%;}
+.smile_list li .txt {line-height: 28px; font-size: 18px; color: #333;}
+.smile_list li .txt span {color: #25bcc5;}
+.smile_list li img {width: 100%; vertical-align: top;}
+.smile_list li:nth-child(2) {padding-left: 40px;}
+.smile_list .txt01 { font-size:35px; font-weight:600; color:#333; margin-bottom:15px;}
+.smile_list .txt01 span { color:#812990; }
+.smile_list .txt02 {margin: 10px 0 0 0; font-size: 16px;}
+
+.old .txt01 {margin-bottom: 15px; font-size: 35px; font-weight: 600; color: #333;}
+.old .txt01 span {color: #812990;}
+.old .txt02 {font-size: 16px;}
+.old_img {display: inline-block; width: 100%; margin-top: 40px;}
+.old_img li {box-sizing: border-box; position: relative; float: left; width: 49%; margin-right: 2%; padding-top: 70px; border: 1px solid #ddd; text-align: center;}
+.old_img li:last-child {margin-right: 0;}
+.old_img li:first-child span {background-color: #94278f;}
+.old_img li:last-child span {background-color: #482d8c;}
+.old_img li img {width: 100%; height: 100%; vertical-align: top;}
+.old_img li span {display: inline-block; box-sizing: border-box; position: absolute; top: 0; left: 0; width: 100%; height: 70px; padding-left: 30px; line-height: 70px; font-size: 22px; color: #fff; text-align: left;}
+
+.symptom {margin: 100px 0; padding: 80px 0; background-color: #fef9ff;}
+.symptom ul {display: inline-block; width: 100%; margin-top: 40px;}
+.symptom ul li {box-sizing: border-box; float: left; width: 32%; margin: 0 2% 2% 0; border: 1px solid #dcdfe7; background-color: #fff; text-align:center;}
+.symptom ul li:nth-child(3n) {margin-right: 0;}
+.symptom ul li img {width: 100%; vertical-align: top;}
+.symptom ul li .txt_box {display: table; width: 100%; min-height: 110px;}
+.symptom ul li .txt_box p {display: table-cell; padding: 0 30px; font-size: 18px; font-weight: 500; color: #333; vertical-align: middle;}
+
+.old .test { margin-top:40px;}
+.old .test .title { font-size:24px; color:#333; border-bottom:1px solid #ddd; padding-bottom:15px; margin-bottom:20px;position:relative;}
+.old .test .title span {padding-left:30px; background:url(../image/sub/lasik_icon.png)no-repeat 0 50%; margin-right:10px;  font-weight:600;}
+.old .test .title:after { content:''; width:400px; height:3px; background:#812990; position:absolute; bottom:-1px; left:0; }
+
+.old .test ul { display:inline-block; width:100%;}
+.old .test ul li { float:left; width:49%; margin-right:2%;}
+.old .test ul li:last-child { margin-right:0;}
+.old .test ul.test01 li .test_box { width:100%; height:146px; background:#d80100; text-align:center; position:relative;}
+.old .test ul.test01 li .test_box img { position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; width:382px; height:60px;}
+.old .test ul.test01 li:nth-child(2) .test_box { background:#3ab54a;}
+.old .test ul li p { font-size:16px; color:#333; margin-top:10px;}
+.old .test ul li p span { color:#812990; margin-right:10px; font-weight:600; font-size:22px;}
+.old .test ul.test02 li img { width:100%;}
+.old .btm_txt { font-size:26px; color:#fff; text-align:center; font-weight:400; margin-top:45px; background:url(../image/sub/arrow_bg.png) no-repeat 50% 0 #812990; padding:30px 0;}
+
+.old .method img { margin-top:90px; width:100%;}
+.old .method .method_m {display: none;}
+
+
+.raindrop_surgery {overflow: hidden; margin-top: 50px;}
+.raindrop_surgery li {float: left; width: 18%; margin-left: 2%;}
+.raindrop_surgery li:first-child {margin-left: 0;}
+.raindrop_surgery li .txt_box {margin-top: 15px;}
+.raindrop_surgery li .txt_box span {display: block; font-size: 18px; font-weight: bold; color: #812990;}
+.raindrop_surgery li .txt_box p {font-size: 18px; color: #333;}
+
+
+/* icl */
+.icl .tit {margin:60px 0 15px; font-size:35px; font-weight:600; color:#333;}
+.icl .tit span { color:#812990; }
+
+
+
+.icl_benefit:after {display: block; clear: both; *zoom: 1; content: '';}
+.icl_benefit li {box-sizing: border-box; float: left; width: 24%; margin-right: 1%; margin-bottom: 50px;}
+.icl_benefit li:last-child {margin-right: 0;}
+.icl_benefit li img {display: block; margin-bottom: 30px; height: 55px;}
+.icl_benefit li .benefit_txt {box-sizing: border-box; padding: 150px 20px 0 20px; height: 250px; border: 1px solid #dcdfe7;}
+.icl_benefit li:nth-child(1) .benefit_txt {background: url(../image/sub/icl_img08.png) no-repeat center 40px;}
+.icl_benefit li:nth-child(2) .benefit_txt {background: url(../image/sub/icl_img09.png) no-repeat center 40px;}
+.icl_benefit li:nth-child(3) .benefit_txt {background: url(../image/sub/icl_img10.png) no-repeat center 40px;}
+.icl_benefit li:nth-child(4) .benefit_txt {background: url(../image/sub/icl_img11.png) no-repeat center 40px;}
+.icl_benefit li:nth-child(5) .benefit_txt {background: url(../image/sub/icl_img12.png) no-repeat center 40px;}
+.icl_benefit li:nth-child(6) .benefit_txt {background: url(../image/sub/icl_img13.png) no-repeat center 40px;}
+
+.icl_recommend:after {display: block; clear: both; *zoom: 1; content: '';}
+.icl_recommend li {display: block; box-sizing: border-box; float: left; width: 24%; margin-right: 1%; height: 134px; padding: 20px; line-height: 30px; font-size: 18px; background-color: #f5f5f5; color: #812990; text-align: center;}
+.icl_recommend li:last-child {margin-right: 0;}
+.icl_recommend li strong {display: block; font-size: 18px;}
+.icl_recommend li p {color: #333; font-size: 16px; line-height: 26px;}
+
+
+
+
+/* 렌즈삽입술 */
+
+.lens_txtlist {margin-top:40px; overflow:hidden;  border-top:1px solid #ddd}
+.lens_txtlist li {box-sizing:border-box; padding:30px 20px; border-bottom:1px solid #ddd}
+.lens_txtlist li .title {font-size:18px; color:#812990;}
+.lens_txtlist li .title span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.lens_txtlist li .title02 {font-size:18px; color:#2e2c2e; }
+.lens_txtlist li .title02 span { background:url(../image/sub/lasik_icon.png)no-repeat ; width:28px; height:28px; display:inline-block; color:#fff; font-size:16px; text-align:center ; line-height:28px; vertical-align:middle; margin-right:10px;}
+.lens_txtlist li .title02 em {color:#812990}
+.lens_txtlist li .txt { font-size:16px; color:#333; margin-top:10px; }
+
+
+.lens_benefit:after {display: block; clear: both; *zoom: 1; content: '';}
+.lens_benefit li {box-sizing: border-box; float: left; width: 24%; margin-right: 1%}
+.lens_benefit li:last-child {margin-right: 0;}
+.lens_benefit li img {display: block; margin-bottom: 30px; height: 55px;}
+.lens_benefit li .benefit_txt {box-sizing: border-box; padding: 150px 20px 0 20px; height: 250px; border: 1px solid #dcdfe7;}
+.lens_benefit li:nth-child(1) .benefit_txt {background: url(../image/sub/lens_img11.png) no-repeat center 40px;}
+.lens_benefit li:nth-child(2) .benefit_txt {background: url(../image/sub/lens_img12.png) no-repeat center 40px;}
+.lens_benefit li:nth-child(3) .benefit_txt {background: url(../image/sub/lens_img13.png) no-repeat center 40px;}
+.lens_benefit li:nth-child(4) .benefit_txt {background: url(../image/sub/lens_img14.png) no-repeat center 40px;}
+
+.lens_surgery {padding: 50px 0 0 0;}
+.lens_surgery:after {display: block; clear: both; *zoom: 1; content: '';}
+.lens_surgery li {box-sizing: border-box; position: relative; float: left; width: 32%; margin-right: 1%; padding: 20px; border: 1px solid #ddd; text-align: center;}
+.lens_surgery li:last-child {margin-right: 0;}
+.lens_surgery li .img_box {width: 100%; margin-bottom: 20px;}
+.lens_surgery li .img_box img {width: 100%; vertical-align: top;}
+.lens_surgery li .txt_box {display: table; width: 100%;}
+.lens_surgery li .txt_box p {display: table-cell; vertical-align: middle;}
+.lens_surgery li .num {display: block; box-sizing: border-box; position: absolute; top: 30px; left: 30px; width: 80px; height: 80px; padding-top: 10px; background-color: #812990; color: #fff; font-size: 24px; font-weight: 600; line-height: 30px; border-radius: 50%;}
+
+
+
+.sub_quick {position: fixed; right: 20px; bottom: 20px; z-index:105; transition:1s;}
+.sub_quick .sub_quick_top {display: none; border-bottom:0; width:60px; height:60px; background: #812990; border-radius:50%;}
+.sub_quick .sub_quick_top span {display: block; line-height: 60px; font-size: 18px; color:#fff; text-align: center;}
+.sub_quick .sub_dropDown {display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0,0,0,0.6); z-index: 91;}
+.sub_quick .sub_dropDown .sub_dropDown_close {display: block; position: absolute; right: 20px; bottom: 20px; width: 60px; height: 60px; border-radius: 50%; background: #812990 url(../image/common/btn_close.png) no-repeat center; text-indent: -9999px; cursor: pointer;}
+.sub_quick .sub_dropDown ul {display: none; position: absolute; bottom: 80px; right: 20px;}
+.sub_quick .sub_dropDown ul li {margin: 0 0 20px 0;}
+.sub_quick .sub_dropDown ul li a {display: block; position: relative; box-sizing: border-box; height: 60px; line-height: 60px; padding-right: 80px; font-size: 20px; color: #fff; text-align: right;}
+.sub_quick .sub_dropDown ul li:nth-child(1) a:after {display: block; position: absolute; top: 50%; transform: translateY(-50%); right: 0; width: 60px; height: 60px; border-radius: 50%; background: #812990 url(../image/common/quick_counsel01.png) no-repeat center / 25px 34px; content: '';}
+.sub_quick .sub_dropDown ul li:nth-child(2) a:after {display: block; position: absolute; top: 50%; transform: translateY(-50%); right: 0; width: 60px; height: 60px; border-radius: 50%; background: #812990 url(../image/common/quick_counsel02.png) no-repeat center / 34px 32px; content: '';}
+.sub_quick .sub_dropDown ul li:nth-child(3) a:after {display: block; position: absolute; top: 50%; transform: translateY(-50%); right: 0; width: 60px; height: 60px; border-radius: 50%; background: #812990 url(../image/common/quick_counsel03.png) no-repeat center / 34px 26px; content: '';}
+
+
+
+
+
+/* 20190717 신세계스마일이란 왜 신세계안과일까? 렌즈삽입술이란? 추가 */
+/* 신세계스마일이란 */
+.sensitivity_box {padding: 100px 0; background: url(../image/sub/smile_sensitivity_bg.jpg) no-repeat 0 0 / cover;}
+.sensitivity_box img {display: block; margin: 0 auto;}
+.sensitivity_box .txt_box {padding: 80px 0; text-align: center;}
+.sensitivity_box .txt_box p {margin: 30px 0 0 0; font-family: 'S-Core Dream'; font-size: 64px; font-weight: 300; color: #fff;}
+.sensitivity_box .txt_box p:nth-child(1) {margin: 0;}
+.sensitivity_box .txt_box p:nth-child(4) {margin: 0; line-height: 80px;}
+.sensitivity_box .txt_box p em {font-family: 'S-Core Dream'; font-size: 76px; color: #ffdc75;}
+
+.ksci_box {box-sizing: border-box; width: 100%; padding: 100px 70px 95px; text-align: center; background: url(../image/sub/smile_bg01.jpg) no-repeat 0 0 / cover;}
+.ksci_box img {max-width: 100%; vertical-align: top;}
+.ksci_box span {display: block; margin: 25px 0 0 0; font-size: 24px; font-weight: 400; color: #dcbc78;}
+.ksci_box .sub_txt01 {color: #fff;}
+.ksci_box .sub_txt01 img {display: inline-block; margin: 0 25px 0 0; vertical-align: top;}
+.ksci_box .medal_list {width:800px; margin: 70px auto 90px;}
+.ksci_box .medal_list:after {display: block; clear: both; *zoom: 1; content: '';}
+.ksci_box .medal_list li {display:inline-block; margin: 0 60px 0 0}
+.ksci_box .medal_list li:nth-child(3n+3) {margin:0;}
+.ksci_box .medal_list li .img_wrap {display: table; height:300px;}
+.ksci_box .medal_list li .img_wrap div {display: table-cell; vertical-align: middle;}
+.ksci_box .medal_list li .img_wrap div img {width: 100%;}
+
+.global_box {box-sizing: border-box; width: 100%; padding: 90px 120px; margin: 40px auto 0; background: url(../image/sub/smile_bg02.jpg) no-repeat right 0 / cover;}
+.global_box .txt_box {display: table; box-sizing: border-box; width: 520px; height: 520px; text-align: center; border: 20px solid rgba(255, 255, 255, 0.4); background-color: transparent;}
+.global_box .txt_box div {display: table-cell; vertical-align: middle;}
+.global_box .txt_box img {vertical-align: top;}
+.global_box .txt_box strong {display: block; line-height: 80px; font-family: 'S-Core Dream'; font-size: 52px; color: #fff;}
+
+.smile_pride_list {padding: 100px 0 40px;}
+.smile_pride_list:after {display: block; clear: both; *zoom: 1; content: '';}
+.smile_pride_list li {float: left; box-sizing: border-box; width: 450px; height: 700px; margin: 0 0 0 25px; color: #fff; text-align: center;}
+.smile_pride_list li:first-child {margin: 0;}
+.smile_pride_list .smile_pride_con01 {padding: 75px 0 0 0; background: url(../image/sub/smile_bg03.jpg) no-repeat center bottom / cover;}
+.smile_pride_list .smile_pride_con02 {position: relative; padding: 60px 35px; background: url(../image/sub/smile_bg04.jpg) no-repeat center bottom / cover;}
+.smile_pride_list .smile_pride_con03 {position: relative; padding: 40px 0 0 0; background: url(../image/sub/smile_bg05.jpg) no-repeat center bottom / cover;}
+.smile_pride_list .smile_pride_con03 .name {position: absolute; right: 50px; bottom: 90px; font-family: 'S-Core Dream'; font-size: 14px; font-weight: 500; color: #333;}
+.smile_pride_list .smile_pride_con03 .name span {font-family: 'S-Core Dream'; font-size: 18px;}
+.smile_pride_con01 .top_txt span {display: block; margin: 0 0 20px 0; font-family: 'S-Core Dream'; font-size: 20px; font-weight: 500; color: #fecd81;}
+.smile_pride_con01 .top_txt strong {font-family: 'S-Core Dream'; line-height: 56px; font-size: 46px; font-weight: 300; letter-spacing: -1px;}
+.smile_pride_con01 .top_txt strong em {font-family: 'S-Core Dream'; color: #fecd81;}
+.smile_pride_con02 .top_txt span {display: block; padding: 10px 0; margin: 0 0 30px 0; font-family: 'S-Core Dream'; font-size: 30px; font-weight: 500; color: #fff; border-top: 1px solid #fff; border-bottom: 1px solid #fff; letter-spacing: -2px;}
+.smile_pride_con02 .top_txt span em {font-family: 'S-Core Dream'; font-size: 36px; font-weight: 500; color: #fecd81;}
+.smile_pride_con02 .top_txt strong {font-family: 'S-Core Dream'; line-height: 46px; font-size: 36px; font-weight: 300; letter-spacing: -1px;}
+.smile_pride_con02 .standard {position: absolute; left: 10px; bottom: 10px; font-family: 'S-Core Dream'; font-size: 14px; font-weight: 200; color: rgba(255, 255, 255, 0.5);}
+.smile_pride_con03 .top_txt span {display: block; font-family: 'S-Core Dream'; font-size: 24px;}
+.smile_pride_con03 .top_txt strong {font-family: 'S-Core Dream'; line-height: 64px; font-size: 60px; font-weight: 300; letter-spacing: -1px;}
+.smile_pride_con03 .top_txt strong em {display: block; color: #f8a531;}
+.smile_pride_con03 .bot_txt {position: absolute; left: 0; right: 0; bottom: 30px; margin: 0 auto; width: 360px; height: 50px; background-color: rgba(0, 0, 0, 0.5);}
+.smile_pride_con03 .bot_txt p {line-height: 50px; font-family: 'S-Core Dream'; font-size: 20px;}
+
+.smile_feature {padding: 90px 0 0 0;}
+.smile_feature .sub_tit {display: block; margin: 0 0 50px 0; font-family: 'S-Core Dream'; font-size: 38px; font-weight: 200; color: #333; text-align: center;}
+.smile_feature .sub_tit em {font-family: 'S-Core Dream'; color: #802e8e;}
+.smile_feature_list li:after {display: block; clear: both; *zoom: 1; content: '';}
+.smile_feature_list li .img_box {float: left; width: 700px;}
+.smile_feature_list li .img_box img {width: 100%; vertical-align: top;}
+.smile_feature_list li .txt_box {float: left; overflow: hidden; box-sizing: border-box; width: 700px; height: 280px; padding: 80px 0 0 100px; border: 1px solid #ddd;}
+.smile_feature_list li .txt_box strong {display: block; margin: 0 0 15px 0; font-size: 40px; font-weight: 300; color: #333;}
+.smile_feature_list li .txt_box p {line-height: 30px; font-size: 18px; color: #666;}
+.smile_feature_list li .txt_box p em {font-weight: 600; color: #7f2d8d;}
+.smile_feature_list li:nth-child(2) .img_box {float: right;}
+
+.smile_science .sub_tit {position: relative; display: block; margin: 0 0 30px 0; padding: 0 0 0 40px; font-size: 26px; color: #110e23;}
+.smile_science .sub_tit:before {position: absolute; top: 10px; left: 0; display: block; width: 20px; height: 21px; background: url(../image/sub/lasik_icon.png) no-repeat 0 0; content: '';}
+.science_box01 {box-sizing: border-box; width: 100%; padding: 110px 0 80px; margin: 100px 0; background: url(../image/sub/smile_bg06.jpg) no-repeat center 0 / cover;}
+.science_box01 .top_txt .sub_copy {display: block; margin: 0 0 70px 0; font-size: 38px; color: #d0bbed;}
+.science_box01 .top_txt .txt01 {padding: 0; margin: 0; font-family: 'S-Core Dream'; font-size: 50px; font-weight: 200; color: #fff;}
+.science_box01 .top_txt .txt01 span {position: relative; font-family: 'S-Core Dream'; color: #fff;}
+.science_box01 .top_txt .txt01 span:before {display: block; position: absolute; top: -16px; left: 0; right: 0; margin: 0 auto; width: 6px; height: 6px; background-color: #fff; border-radius: 50%; content: '';}
+.science_box01 .top_txt .txt01 em {position: relative; display: inline-block; font-family: 'S-Core Dream';}
+.science_box01 .top_txt .txt01 em:before {display: block; position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 3px; background-color: #ffdc75; content: '';}
+.science_box01 .top_txt .txt02 {margin: 0 0 25px 0; font-family: 'S-Core Dream'; font-size: 60px; font-weight: 200; color: #fff;}
+.science_box01 .top_txt .txt02 strong {font-family: 'S-Core Dream'; font-weight: 600; color: #ffdc75;}
+.science_box01 .top_txt .txt03 {line-height: 30px; font-size: 20px; font-weight: 300; color: rgba(255, 255, 255, 0.8);}
+.science_box01 ul {width: 825px; margin: 50px auto;}
+.science_box01 ul:after {display: block; clear: both; *zoom: 1; content: '';}
+.science_box01 ul li {float: left; margin: 0 0 0 10px;}
+.science_box01 ul li:first-child {margin: 0;}
+.science_box01 ul li p {font-size: 20px; color: rgba(255, 255, 255, 0.5); text-align: center;}
+.science_box01 ul li.point p {position: relative; font-size: 26px; font-weight: 600; color: #fff;}
+.science_box01 ul li.point p:before {display: block; position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 7px; height: 16px; background: url(../image/sub/smile_point_bg01.png) no-repeat 0 0; content: '';}
+.science_box01 ul li.point p:after {display: block; position: absolute; top: 50%; transform: translateY(-50%); right: 0; width: 7px; height: 16px; background: url(../image/sub/smile_point_bg02.png) no-repeat 0 0; content: '';}
+.science_box01 .bot_txt {width: 648px; padding: 45px 0; margin: 0 auto; text-align: center; background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;}
+.science_box01 .bot_txt p {line-height: 36px; font-size: 20px; font-weight: 300; color: #fff;}
+.science_box02 {box-sizing: border-box; overflow: hidden; width: 100%; padding: 110px 0 60px; background: url(../image/sub/smile_bg07.jpg) no-repeat center 0 / cover; border: 1px solid #ddd;}
+.science_box02 .top_txt .txt01 {padding: 0; margin: 0; font-family: 'S-Core Dream'; font-size: 40px; font-weight: 200; color: #333;}
+.science_box02 .top_txt .txt01 span {display: inline-block; padding: 0 15px; font-family: 'S-Core Dream'; font-weight: 500; color: #fff; background-color: #802e8e;}
+.science_box02 .top_txt .txt02 {margin: 0; font-family: 'S-Core Dream'; font-size: 68px; font-weight: 200; color: #333;}
+.science_box02 .top_txt .txt02 strong {font-family: 'S-Core Dream'; font-weight: 500; color: #802e8e;}
+.science_box02 ul {width: 1010px; margin: 60px auto 0;}
+.science_box02 ul:after {display: block; clear: both; *zoom: 1; content: '';}
+.science_box02 ul li {float: left; padding: 40px 0 0 0;}
+.science_box02 ul li img {display: block; margin: 0 auto;}
+.science_box02 ul li .txt {text-align: center;}
+.science_box02 ul li .txt strong {display: block; margin: 25px 0 10px; font-size: 30px; color: #bbb;}
+.science_box02 ul li .txt p {line-height: 30px; font-size: 22px; color: #666;}
+.science_box02 ul .point_smile {margin: 0 15px;}
+.science_box02 ul .point_smile .txt strong {color: #333;}
+.science_box02 ul .point_low .txt strong {margin: 10px 0; line-height: 1.3; color: #333;}
+.science_box02 ul .point_low {position: relative; padding: 0 0 0 85px;}
+.science_box02 ul .point_low:before {display: block; position: absolute; top: 124px; left: 0; width: 44px; height: 24px; background: url(../image/sub/smile_arrow.png) no-repeat 0 0; content: '';}
+.science_box02 ul .point_low .txt strong span {display: block;}
+
+.smile_special {position: relative; overflow: hidden; box-sizing: border-box; width: 100%; padding: 60px 0 0 0; margin: 80px 0 0 0; background: url(../image/sub/smile_bg08.jpg) no-repeat 0 0 / cover;}
+.smile_special img {display: block; margin: 0 auto; vertical-align: top;}
+.smile_special .smile_special_txt {margin: 0 auto 30px;}
+.smile_special .txt_box {position: absolute; left: 0; right: 0; bottom: 0; margin: 0 auto; width: 100%; padding: 20px 0; text-align: center; background-color: rgba(0, 0, 0, 0.8);}
+.smile_special .txt_box p {line-height: 66px; font-family: 'S-Core Dream'; font-size: 30px; font-weight: 300; color: #fff;}
+.smile_special .txt_box p em {font-family: 'S-Core Dream'; font-size: 38px; font-weight: 500;}
+
+/* 왜 신세계안과일까? */
+.smile_reason_new .sensitivity_box {padding: 100px 0; background: url(../image/sub/smile_reason_sensitivity_bg.jpg) no-repeat 0 0 / cover;}
+.award_box1 {overflow:hidden; padding: 180px 0; background: url(../image/sub/smile_reason_bg0204_1.jpg) no-repeat 0 0 / cover;}
+.award_box1 .txt_box {float:left; width:940px;}
+.award_box1 .img_box {float:right;}
+.smile_reason_new .ksci_box {padding: 130px 0 170px; background: url(../image/sub/smile_reason_bg01.jpg) no-repeat 0 0 / cover;}
+.smile_reason_new .ksci_box .ksci_top_txt .img_box {position: relative; box-sizing: border-box; width: 100%; padding: 0 60px;}
+.smile_reason_new .ksci_box .ksci_top_txt .img_box:before {display: block; position: absolute; top: 50%; transform: translateY(-50%); left: 10%; width: 254px; height: 601px; background: url(../image/sub/ksci_txt_leftbg.png) no-repeat 0 0; content: '';}
+.smile_reason_new .ksci_box .ksci_top_txt .img_box:after {display: block; position: absolute; top: 50%; transform: translateY(-50%); right: 10%; width: 254px; height: 601px; background: url(../image/sub/ksci_txt_rightbg.png) no-repeat 0 0; content: '';}
+.smile_reason_new .ksci_box .ksci_top_txt .txt_box {text-align: center;}
+.smile_reason_new .ksci_box .ksci_top_txt .txt_box p {margin: 0 0 30px 0; line-height: 70px; font-family: 'S-Core Dream'; font-size: 50px; font-weight: 300; color: #fff;}
+.smile_reason_new .ksci_box .ksci_top_txt .txt_box p em {font-family: 'S-Core Dream'; font-size: 60px; color: #ffdc75;}
+.smile_reason_new .ksci_box .ksci_top_txt .txt_box .double_quote {font-family: 'Nanum Myeongjo'; font-size: 100px; color: #fff;}
+.smile_reason_new .ksci_box .medal_list {width: 700px; margin: 40px auto 50px;}
+.smile_reason_new .ksci_box .medal_list li {margin: 0 0 0 0;}
+.smile_reason_new .ksci_box .medal_list li:first-child {margin: 0;}
+.smile_reason_new .ksci_box .medal_list li .img_wrap {height: 300px;}
+.smile_reason_new .global_box {width: 100%; margin: 70px auto 0; padding: 0; background: none;}
+.smile_reason_new .global_box .txt_box {display: block; overflow: hidden; width: 1200px; height: 1240px; padding: 95px 0 0 0; margin: 0 auto;}
+.smile_reason_new .global_box .txt_box div {display: block; margin: 0 0 65px 0;}
+.smile_reason_new .global_box .txt_box strong {margin: 20px 0; font-size: 70px;}
+.smile_reason_new .science_box01 {background: url(../image/sub/smile_reason_bg02.jpg) no-repeat center 0 / cover;}
+.smile_reason_new .science_box02 {background: url(../image/sub/smile_reason_bg03.jpg) no-repeat center 0 / cover; border: 0;}
+
+.smile_reason_new .smile_pride_list {padding: 60px 0 120px;}
+.smile_reason_new .smile_feature {padding: 0;}
+.smile_reason_new .science_box01 {margin: 100px 0 0 0;}
+.evoicl_box {display: block; box-sizing: border-box; margin: 100px 0; padding: 60px 150px 95px; background: url(../image/sub/smile_reason_bg04.jpg) no-repeat center 0 / cover;}
+.evoicl_box .top_txt {text-align: center;}
+.evoicl_box .top_txt li {display: inline-block; padding: 0 0 0 30px;}
+.evoicl_box .top_txt li:nth-child(1) {position: relative; padding: 0 30px 0 0;}
+.evoicl_box .top_txt li:nth-child(1):after {display: block; position: absolute; top: 0; right: 0; width: 2px; height: 50px; background-color: #fff; content: '';}
+.evoicl_box .top_txt li p {display: block; padding: 0 10px; height: 50px; line-height: 50px; font-family: 'S-Core Dream'; font-size: 42px; font-weight: 200; color: #fff; background-color: #02496c;}
+.evoicl_box .top_txt li p em {font-family: 'S-Core Dream'; font-weight: 500;}
+.evoicl_box .top_txt li strong {display: block; padding: 0 10px; height: 50px; line-height: 50px; font-family: 'S-Core Dream'; font-size: 42px; font-weight: 600; color: #fff; background-color: #02496c;}
+.evoicl_box > strong {display: block; margin: 25px 0 70px; font-family: 'S-Core Dream'; font-size: 80px; font-weight: 600; color: #fff; text-align: center; text-shadow: 10px 10px 20px rgba(32, 127, 159, 0.3);}
+.evoicl_box .list {position: relative; height: 272px; background: url(../image/sub/evo_eye.png) no-repeat center center ;}
+.evoicl_box .list li {position: absolute; box-sizing: border-box; width: 160px; height: 60px; line-height: 60px; font-size: 30px; color: #fff; border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 10px; text-align: center;}
+.evoicl_box .list li.evo {font-weight: 600; border: 2px solid #02496c; background-color: #02496c;}
+.evoicl_box .list li:nth-child(1) {top: 0; left: 120px;}
+.evoicl_box .list li:nth-child(2) {top: 90px; left: -10px;}
+.evoicl_box .list li:nth-child(3) {top: 0; right: 120px;}
+.evoicl_box .list li:nth-child(4) {top: 80px; right: 0;}
+.evoicl_box .list li:before {display: block; position: absolute; bottom: -26px; left: 0; right: 0; margin: 0 auto; width: 1px; height: 25px; background-color: rgba(255, 255, 255, 0.5); content: '';}
+.evoicl_box .list li:after {display: block; position: absolute; bottom: -26px; left: 50%; width: 260px; height: 1px; background-color: rgba(255, 255, 255, 0.5); content: '';}
+.evoicl_box .list li:nth-child(1):before {display: none;}
+.evoicl_box .list li:nth-child(1):after {bottom: 50%; left: 100%; width: 190px;}
+.evoicl_box .list li:nth-child(2):before {bottom: 50%; left: auto; right: -310px;}
+.evoicl_box .list li:nth-child(2):after {bottom: 50%; left: 100%; width: 310px;}
+.evoicl_box .list li:nth-child(4):before {bottom: -96px; height: 95px;}
+.evoicl_box .list li:nth-child(4):after {bottom: -96px; left: auto; right: 50%; width: 430px;}
+.evoicl_box .list li.evo:before {bottom: -96px; height: 94px; background-color: #fff;}
+.evoicl_box .list li.evo:after {bottom: -96px; left: auto; right: 50%; width: 210px; background-color: #fff;}
+
+.machine_box {box-sizing: border-box; width: 100%; padding: 50px; border: 1px solid #ddd;}
+.machine_box > strong {display: block; margin: 0 auto 30px; font-family: 'S-Core Dream'; font-size: 38px; color: #333; text-align: center;}
+.machine_box > p {line-height: 40px; font-family: 'S-Core Dream'; font-size: 26px; font-weight: 200; color: #333; text-align: center;}
+.machine_box > p span {font-family: 'S-Core Dream'; font-weight: 400;}
+.machine_box > p em {font-family: 'S-Core Dream'; font-weight: 400; color:#802e8e;}
+.machine_list {margin: 80px 0 0 0;}
+.machine_list:after {display: block; clear: both; *zoom: 1; content: '';}
+.machine_list li {position: relative; overflow: hidden; float: left; box-sizing: border-box; width: 418px; height: 580px; margin: 0 0 0 20px; border: 1px solid #ddd;}
+.machine_list li:first-child {margin: 0;}
+.machine_list li img {display: block;}
+.machine_list li:nth-child(1) img {margin: 40px auto 0;}
+.machine_list li:nth-child(2) img {margin: 85px auto 0;}
+.machine_list li:nth-child(3) img {margin: 50px auto 0;}
+.machine_list li .txt_box {position: absolute; bottom: 0; left: 0; right: 0; box-sizing: border-box; width: 100%; height: 260px; padding: 70px 0 0 40px;}
+.machine_list li:nth-child(1) .txt_box {background: url(../image/sub/machine_list_bg01.png) no-repeat 0 0 / cover;}
+.machine_list li:nth-child(2) .txt_box {background: url(../image/sub/machine_list_bg02.png) no-repeat 0 0 / cover;}
+.machine_list li:nth-child(3) .txt_box {background: url(../image/sub/machine_list_bg03.png) no-repeat 0 0 / cover;}
+.machine_list li .txt_box strong {display: block; margin: 0 0 20px 0; line-height: 40px; font-size: 40px; font-weight: 600; color: #fff;}
+.machine_list li .txt_box p {line-height: 36px; font-size: 24px; font-weight: 300; color: #fff;}
+.machine_list li .txt_box span {box-sizing: border-box; position: absolute; right: 30px; top: 0; width: 120px; height: 120px; padding: 25px 0 0 0; font-size: 24px; line-height: 28px; font-weight: 600; border: 3px solid #fff; border-radius: 50%; color: #fff; text-align: center;}
+.machine_list li:nth-child(1) .txt_box span {background-color: #9e2fb1;}
+.machine_list li:nth-child(2) .txt_box span {background-color: #503cd0;}
+.machine_list li:nth-child(3) .txt_box span {background-color: #3b96b8;}
+
+.smile_office {position: relative; box-sizing: border-box; width: 100%; height: 400px; padding: 60px 110px; margin: 100px 0 0 0; background: url(../image/sub/smile_reason_bg05.jpg) no-repeat center bottom / cover;}
+.smile_office img {position: absolute; left: 110px; bottom: 0;}
+.smile_office ul {padding: 0 0 0 50%;}
+.smile_office ul li {margin: 25px 0 0 0;}
+.smile_office ul li:first-child {margin: 0;}
+.smile_office ul li:after {display: block; clear: both; *zoom: 1; content: '';}
+.smile_office ul li i {display: block; float: left; width: 70px; height: 56px; margin: 0 15px 0 0;}
+.smile_office ul li p {float: left; font-family: 'S-Core Dream'; font-size: 40px; font-weight: 300; color: #fff;}
+.smile_office ul li p em {font-family: 'S-Core Dream'; font-weight: 600;}
+.smile_office ul li .ic_office {background: url(../image/sub/ic_office.png) no-repeat center center;}
+.smile_office ul li .ic_car {background: url(../image/sub/ic_car.png) no-repeat center center;}
+.smile_office ul li .ic_eye {background: url(../image/sub/ic_eye.png) no-repeat center center;}
+
+/* 렌즈삽입술이란 */
+.lens_new .sensitivity_box {background: url(../image/sub/lens_sensitivity_bg.jpg) no-repeat 0 0 / cover;}
+.lens_new .lens_award {padding:50px 0; text-align:center; background: url(../image/sub/lens_0204_bg.jpg) no-repeat 0 0 / cover;}
+.lens_new .lens_award .txt1 {font-size:31px; color:#fff; margin:25px 0;}
+.lens_new .lens_award .txt2 {font-size:31px; color:#63d0fd; margin:25px 0; font-weight:500;}
+.icl_area {margin: 100px 0 0 0; padding: 200px 0 110px; background: url(../image/sub/icl_area_bg.jpg) no-repeat center 0 / cover; text-align: center;}
+.icl_area img {display: block; margin: 0 auto;}
+.icl_area p {display: block; margin: 40px 0 0 0; line-height: 46px; font-size: 26px; color: #fff; opacity: 0.6;}
+.icl_area .top_box {position: relative; width: 1120px; margin: 0 auto 40px;}
+.icl_area .top_box:before {display: block; position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 93px; height: 202px; background: url(../image/sub/wing_left02.png) no-repeat 0 0; content: '';}
+.icl_area .top_box:after {display: block; position: absolute; top: 50%; transform: translateY(-50%); right: 0; width: 93px; height: 202px; background: url(../image/sub/wing_right02.png) no-repeat 0 0; content: '';}
+.lens_new .smile_special {margin: 100px 0 0 0;}
+.lens_icl {position: relative; box-sizing: border-box; width: 100%; margin: 40px 0; padding: 65px 0; background: url(../image/sub/lens_bg01.jpg) no-repeat center 0 / cover; text-align: center;}
+.lens_icl:before {display: block; position: absolute; top: 50%; transform: translateY(-50%); left: 180px; width: 184px; height: 390px; background: url(../image/sub/wing_left.png) no-repeat 0 0; content: '';}
+.lens_icl:after {display: block; position: absolute; top: 50%; transform: translateY(-50%); right: 180px; width: 184px; height: 390px; background: url(../image/sub/wing_right.png) no-repeat 0 0; content: '';}
+.lens_icl .txt {margin: 0 auto 35px; width: 420px; height: 60px; background-color: rgba(0, 0, 0, 0.5); text-align: center; border-left: 1px solid #fff; border-right: 1px solid #fff;}
+.lens_icl .txt span {line-height: 60px; font-size: 36px; font-weight: 500; color: #fff;}
+.lens_doctor {overflow: hidden; box-sizing: border-box; width: 100%; background: url(../image/sub/lens_bg02.jpg) no-repeat center 0;}
+.lens_doctor p {padding: 60px 0; font-family: 'S-Core Dream'; font-size: 40px; color: #fff; text-align: center;}
+.lens_doctor p strong {font-family: 'S-Core Dream'; font-size: 60px;}
+.lens_doctor p strong em {font-family: 'S-Core Dream'; font-size: 60px; color: #ffdfa1;}
+.lens_doctor img {vertical-align: top;}
+.lens_list {box-sizing: border-box; width: 100%; margin: 130px 0 100px;}
+.lens_list:after {display: block; clear: both; *zoom: 1; content: '';}
+.lens_list li {position: relative; float: left; width: 32%; height: 400px; margin: 0 0 0 2%; box-sizing: border-box; border: 1px solid #ddd;}
+.lens_list li:first-child {margin: 0;}
+.lens_list li span {position: absolute; top: -70px; left: 0; right: 0; margin: 0 auto; box-sizing: border-box; width: 200px; height: 200px; border-radius: 50%; border: 1px solid #ddd; background-color: #fff;}
+.lens_list li span img {position: absolute; top: 50%; transform: translateY(-50%); left: 0; right: 0; margin: 0 auto;}
+.lens_list li .txt_box {padding: 160px 0 0 0; text-align: center;}
+.lens_list li .txt_box strong {display: block; margin: 0 0 20px 0; line-height: 40px; font-size: 30px; font-weight: 300; color: #333;}
+.lens_list li .txt_box p {display: block; font-size: 16px; line-height: 26px; color: #666;}
+.lens_new .evoicl_box {margin: 100px 0 0 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mb0 { margin-bottom:0 !important;}
+.mt40 { margin-top:40px;}
+.mr20 { margin-right:20px;}
+.mb50 { margin-bottom:50px;}
+.pt150 {padding-top: 150px;}
+
+
+.t_block {display: none;}
+.m_block {display: none;}
+
+
+
+
+/* tablet */
+@media screen and (min-width:868px) and (max-width:1410px) {
+	#visual { padding-top:80px;}
+	#sub_visual.pc_sub_visual {display: none;}
+	#sub_visual.m_sub_visual {display: block;}
+	.staff .staff_list li { width:100%; margin-right:0;}
+	.time .intro_box ul li .title { float:none; width:100%; margin-bottom:20px;}
+	.time .intro_box ul li .txt_list { float:none; width:100%;}
+	.time .intro_boxwrap { height:370px;}
+	.subject_wrap ul li {width: 50%; height: 80px; line-height: 80px; font-size: 24px;}
+
+	.rescue_content {float: none; width: 100%; height: auto;}
+	.rescue_menu {float: none; width: 100%;}
+	.rescue_menu li {float: right; width:50%; border-left: 1px solid #575d6d;}
+	.rescue_menu li:nth-child(8) {width: 100%; border-bottom:0;}
+	.rescue_list img { width:100%; }
+	.rescue_list .slick-prev, .rescue_list .slick-next { bottom:-43px;}
+
+	.faq ul li span { left:50px }
+
+	.sub_login .sns_login li {width: 100%;}
+	.sub_login .sns_login li a {display: block; position: relative;}
+	.sub_login .sns_login li a span {position: absolute;}
+	.sub_login .sns_login li a p {box-sizing: border-box; width: 100%; padding-left: 60px;}
+
+	.top_question li:first-child { width:100%; border-bottom:1px solid #ddd; text-align:center; padding:21px;  }
+	.top_question li:nth-child(2),.top_question li:last-child { position:relative; width:50%; right:0; border-left:0;}
+
+	.top_question02 li:first-child { padding-left:20px;}
+
+	.sub_tab { display:inline-block; width:100%; }
+	.sub_tab li { width:33%; margin-right: 0.3%; margin-bottom: 0.3%;}
+	.sub_tab02 li { width:49.8%;}
+	.sub_tab02 li:nth-child(2n){ margin-right:0;}
+
+	.smile_advantage ul li {margin-bottom: 30px;}
+
+
+	.laser_imgbox ul  { width:100%; height:auto; bottom:10px; left:0; padding:0 10px; top:inherit;}
+	.laser_imgbox ul li { float:left; height:200px; width:20%; padding-top:110px; }
+	.laser_imgbox ul li:nth-child(1) { padding-top:126px;}
+	.vision .vision_list .title,.vision .vision_list ul  { width:320px; height:320px;}
+	.vision .vision_list .title .txt { width:222px; height:222px;}
+	.id_lasik ul li { padding:15px 20px;}
+	.id_lasik02 > div ul li:nth-child(1) {width:38%;}
+	.id_lasik02 > div ul li:nth-child(2) {width:60%; padding-top: 40px;}
+	.id_lasek ul li .txt {min-height: 96px;}
+	.id_lasek ul li:first-child:after {display: none;}
+	.lasek .lasek_box .txt_box p span {margin:0 5px;}
+	.old .method img { margin-top:50px;}
+
+	.laser .smile_list04 li {padding: 10px;}
+	.laser .smile_list04 li .txt_box {min-height: 72px; margin-top: 10px;}
+	.laser .smile_list03 li {width: 32%; padding: 20px; margin: 0 1% 30px 0;}
+	.laser .smile_list03 li:nth-child(3n) {margin-right: 0;}
+	.laser .smile_list03 li .txt_box {margin-top: 20px;}
+
+
+	.smile_reason .intro_img {width: 80%;}
+	.old_reason .intro_img {width: 80%;}
+	.smile_3d {padding: 40px 100px;}
+	.low_energy .obl li .obl_txt span {margin-top: 10px;}
+	.row_advantage ul li {float: none; width: 100%; margin-right: 0; margin-bottom: 50px;}
+	.row_advantage ul li:nth-child(2) {margin-bottom: 0;}
+
+	.smile_surgery ul li {width: 49%; margin-bottom: 20px;}
+	.smile_surgery ul li:nth-child(4) {margin-left: 0; margin-bottom: 20px;}
+	.smile_surgery ul li p {min-height: 48px;}
+	.smile_recommed ul {width: 100%; margin-right: 0;}
+
+	.basic_lasik_recommend li {width: 48%; margin-right: 2%; margin-bottom: 20px;}
+
+	.lasek_recommend li {width: 31%; margin-bottom: 20px;}
+
+	.lasek_benefit li .benefit_txt {height: 280px}
+	.lasek_caution ul li p {min-height: 160px;}
+	.lasek_surgery li {width: 49%; padding: 10px; margin-right: 2%; margin-bottom: 2%;}
+	.lasek_surgery li:nth-child(2n) {margin-right: 0;}
+	.lasek_surgery li .img_box {margin-bottom: 10px;}
+	.lasek_surgery li .txt_box {min-height: 48px;}
+	.lens_benefit li {width: 49%; margin-right: 1%; margin-bottom: 30px;}
+
+	.icl_benefit li {width: 32%;}
+	.icl_recommend li {width: 48%; margin-right: 2%; margin-bottom: 20px;}
+
+	.lens_surgery li {padding: 10px;}
+	.lens_surgery li .img_box {margin-bottom: 10px;}
+
+
+
+	/* 신세계스마일이란	*/
+
+	.ksci_box .medal_list {width: 100%; margin: 60px auto 50px;}
+	.ksci_box .medal_list li {width: 32%; margin: 0 0 0 2%;}
+	.ksci_box .medal_list li .img_wrap {height: 300px;}
+
+	.global_box {padding: 40px 50px;}
+	.global_box .txt_box {width: 420px; height: 420px; padding: 50px;}
+	.global_box .txt_box img {max-width: 100%;}
+	.global_box .txt_box strong {font-size: 36px;}
+
+	.smile_pride_list li {width: 32%; margin: 0 0 0 2%;}
+	.smile_pride_list .smile_pride_con01 {padding: 60px 0 0 0;}
+	.smile_pride_list .smile_pride_con02 {padding: 40px 15px;}
+	.smile_pride_con01 .top_txt span {font-size: 18px;}
+	.smile_pride_con01 .top_txt strong {line-height: 40px; font-size: 30px;}
+	.smile_pride_con02 .top_txt span {margin: 0 0 10px 0; font-size: 18px;}
+	.smile_pride_con02 .top_txt strong {line-height: 34px; font-size: 24px;}
+	.smile_pride_con03 .top_txt span {margin: 0 0 10px 0; font-size: 20px;}
+	.smile_pride_con03 .top_txt strong {line-height: 44px; font-size: 40px;}
+	.smile_pride_con03 .bot_txt {box-sizing: border-box; width: 90%; height: auto; padding: 10px 20px;}
+	.smile_pride_con03 .bot_txt p {line-height: 1.6;}
+	.smile_feature_list li .img_box {position: relative; width: 50%;}
+	.smile_feature_list li .img_box:after {display: block; padding-top: 40%; content: '';}
+	.smile_feature_list li .img_box img {position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; margin: 0 auto; height: auto;}
+	.smile_feature_list li .txt_box {position: relative; width: 50%; height: auto; padding: 0; border: 0;}
+	.smile_feature_list li .txt_box:after {display: block; padding-top: 40%; content: '';}
+	.smile_feature_list li .txt_box div {position: absolute; top: 0; left: 0; right: 0; bottom: 0; box-sizing: border-box; width: 100%; margin: 0 auto; height: auto; padding: 20px; border: 1px solid #ddd;}
+	.smile_feature_list li .txt_box strong {margin: 0 0 10px 0; font-size: 28px;}
+	.smile_feature_list li .txt_box p {line-height: 26px; font-size: 16px;}
+
+	.science_box01 .top_txt .txt02 {font-size: 48px;}
+	.science_box02 .top_txt .txt01 {font-size: 30px;}
+	.science_box02 .top_txt .txt02 {font-size: 48px;}
+	.science_box02 {padding: 80px 30px;}
+	.science_box02 ul {width: 100%;}
+	.science_box02 ul li {box-sizing: border-box; width: 32%; padding: 20px 0 0 0;}
+	.science_box02 ul li img {max-width: 80%;}
+	.science_box02 ul .point_smile {margin: 0 0 0 2%;}
+	.science_box02 ul .point_low {margin: 0 0 0 2%; padding: 0 0 0 40px;}
+	.science_box02 ul li .txt p {font-size: 18px;}
+
+	.smile_special img {width: 80%;}
+	.smile_special .txt_box p {line-height: 60px; font-size: 36px;}
+
+	.t_block {display: block;}
+	.m_none {display: none;}
+
+
+	/* 20190717 신세계스마일이란 왜 신세계안과일까? 렌즈삽입술이란? 추가 */
+	/* 신세계스마일이란 */
+
+	.sensitivity_box .txt_box p {font-size: 50px;}
+	.sensitivity_box .txt_box p em {font-size: 60px;}
+
+	.ksci_box .medal_list {width: 100%; margin: 60px auto 50px;}
+	.smile_reason_new .ksci_box .medal_list {width: 100%;}
+	.ksci_box .medal_list li {width: 32%; margin: 0 0 0 2%;}
+	.ksci_box .medal_list li .img_wrap {height: 300px;}
+
+	.global_box {padding: 40px 50px;}
+	.global_box .txt_box {width: 420px; height: 420px; padding: 50px;}
+	.global_box .txt_box img {max-width: 100%;}
+	.global_box .txt_box strong {font-size: 36px;}
+
+	.smile_pride_list li {width: 32%; margin: 0 0 0 2%;}
+	.smile_pride_list .smile_pride_con01 {padding: 60px 0 0 0;}
+	.smile_pride_list .smile_pride_con02 {padding: 40px 15px;}
+	.smile_pride_list .smile_pride_con03 .name {right: 20px; bottom: 110px;}
+	.smile_pride_con01 .top_txt span {font-size: 18px;}
+	.smile_pride_con01 .top_txt strong {line-height: 40px; font-size: 30px;}
+	.smile_pride_con02 .top_txt span {margin: 0 0 10px 0; font-size: 18px;}
+	.smile_pride_con02 .top_txt strong {line-height: 34px; font-size: 24px;}
+	.smile_pride_con03 .top_txt span {margin: 0 0 10px 0; font-size: 20px;}
+	.smile_pride_con03 .top_txt strong {line-height: 44px; font-size: 40px;}
+	.smile_pride_con03 .bot_txt {box-sizing: border-box; width: 90%; height: auto; padding: 10px 20px;}
+	.smile_pride_con03 .bot_txt p {font-size: 18px; line-height: 1.6;}
+	.smile_feature_list li .img_box {position: relative; width: 50%;}
+	.smile_feature_list li .img_box:after {display: block; padding-top: 40%; content: '';}
+	.smile_feature_list li .img_box img {position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; margin: 0 auto; height: auto;}
+	.smile_feature_list li .txt_box {position: relative; width: 50%; height: auto; padding: 0; border: 0;}
+	.smile_feature_list li .txt_box:after {display: block; padding-top: 40%; content: '';}
+	.smile_feature_list li .txt_box div {position: absolute; top: 0; left: 0; right: 0; bottom: 0; box-sizing: border-box; width: 100%; margin: 0 auto; height: auto; padding: 20px; border: 1px solid #ddd;}
+	.smile_feature_list li .txt_box strong {margin: 0 0 10px 0; font-size: 28px;}
+	.smile_feature_list li .txt_box p {line-height: 26px; font-size: 16px;}
+
+	.science_box01 .top_txt .txt02 {font-size: 48px;}
+	.science_box02 .top_txt .txt01 {font-size: 30px;}
+	.science_box02 .top_txt .txt02 {font-size: 48px;}
+	.science_box02 {padding: 80px 30px;}
+	.science_box02 ul {width: 100%;}
+	.science_box02 ul li {box-sizing: border-box; width: 32%; padding: 20px 0 0 0;}
+	.science_box02 ul li img {max-width: 80%;}
+	.science_box02 ul .point_smile {margin: 0 0 0 2%;}
+	.science_box02 ul .point_low {margin: 0 0 0 2%; padding: 0 0 0 40px;}
+	.science_box02 ul li .txt p {font-size: 18px;}
+
+	.smile_special img {width: 80%;}
+	.smile_special .txt_box p {line-height: 60px; font-size: 36px;}
+
+	/* 왜 신세계안과일까? */
+	.smile_reason_new .ksci_box .ksci_top_txt .img_box {padding: 0 160px;}
+	.smile_reason_new .ksci_box .ksci_top_txt .img_box:before {top: 0; transform: none; left: 40px; width: 150px; height: 354px; background-size: 150px 354px;}
+	.smile_reason_new .ksci_box .ksci_top_txt .img_box:after {top: 0; transform: none; right: 40px; width: 150px; height: 354px; background-size: 150px 354px;}
+	.smile_reason_new .global_box .txt_box {width: 80%; height: 970px; padding: 95px 30px 0;}
+	.smile_reason_new .global_box .txt_box > img {width: 600px;}
+	.evoicl_box {padding: 60px 30px 95px;}
+	.evoicl_box .top_txt li p {font-size: 32px;}
+	.evoicl_box .top_txt li strong {font-size: 32px;}
+	.evoicl_box > strong {font-size: 60px;}
+	.evoicl_box .list {width: 760px; margin: 0 auto; background-size: 400px;}
+	.evoicl_box .list li:after {width: 130px;}
+	.evoicl_box .list li.evo:after {width: 90px;}
+	.evoicl_box .list li:nth-child(1) {top: 20px; left: 0;}
+	.evoicl_box .list li:nth-child(1):after {width: 170px;}
+	.evoicl_box .list li:nth-child(2) {top: 100px; left: 0;}
+	.evoicl_box .list li:nth-child(2):before {right: -150px;}
+	.evoicl_box .list li:nth-child(2):after {width: 150px;}
+	.evoicl_box .list li:nth-child(4) {top: 90px;}
+	.evoicl_box .list li:nth-child(4):before {height: 55px; bottom: -56px;}
+	.evoicl_box .list li:nth-child(4):after {width: 300px; bottom: -56px;}
+
+	.machine_box {padding: 50px 30px;}
+	.machine_list li {width: 32%; margin: 0 0 0 2%; height: 470px;}
+	.machine_list li img {width: 90%;}
+	.machine_list li:nth-child(2) img {margin: 45px auto 0;}
+	.machine_list li .txt_box {padding: 90px 0 0 20px;}
+	.machine_list li .txt_box strong {font-size: 30px;}
+	.machine_list li .txt_box p {font-size: 18px;}
+	.machine_list li .txt_box span {right: 10px; width: 100px; height: 100px; font-size: 20px; padding: 20px 0 0 0;}
+
+	.smile_office {padding: 70px 30px;}
+	.smile_office img {left: 30px; width: 340px;}
+	.smile_office ul li p {font-size: 30px;}
+	.smile_office ul li i {width: 60px;}
+
+	/* 렌즈삽입술이란 */
+	.icl_area {padding: 150px 0 50px;}
+	.icl_area .top_box {width: 80%;}
+	.icl_area img {width: 60%;}
+	.lens_icl:before {left: 30px; width: 150px; height: 320px; background-size: 150px 320px;}
+	.lens_icl:after {right: 30px; width: 150px; height: 320px; background-size: 150px 320px;}
+	.lens_icl img {max-width: 60%;}
+	.lens_doctor p strong {font-size: 50px; letter-spacing: -1px;}
+	.lens_doctor p strong em {font-size: 50px; letter-spacing: -1px;}
+	.lens_doctor img {width: 100%;}
+	.lens_list li {padding: 20px; height: 450px;}
+	.lens_list li .txt_box strong {font-size: 24px;}
+
+	.award_box1 .txt_box {width:70%;}
+	.award_box1 .txt_box img {width:100%;}
+	.award_box1 .img_box {width:30%;}
+	.award_box1 .img_box img {width:100%;}
+
+	.lens_new .lens_award .lens_award_txt {width:75%;}
+}
+
+
+
+
+
+
+@media screen and (min-width:481px) and (max-width:867px) {
+
+	input[type="checkbox"] + label span {width: 30px; height: 30px; background: url(../image/sub/check_m.png) left top no-repeat;}
+	input[type="checkbox"]:checked + label span {background: url(../image/sub/check_on_m.png) left top no-repeat;}
+	select {background: url(../image/sub/arrow03_m.png) no-repeat 90% 50% #fff;}
+
+
+	/* 서브비주얼 */
+	#visual {padding-top: 100px;}
+	#sub_visual.pc_sub_visual {display: none;}
+	#sub_visual.m_sub_visual {display: block;}
+	.sub_visual_txt {width: 90%; margin: 0 auto;}
+	.sub_visual_txt .visual_txt01 {font-size: 50px;}
+
+
+	/* 서브메뉴 */
+	.sub_menu_bar {height: 80px; line-height: 80px;}
+	.sub_menu_box li {width: 100%;}
+	.sub_menu_bar .sub_menu_title > li {box-sizing: border-box; padding: 0 10px; height: 100%;}
+	.sub_menu_bar .sub_menu_title > li:nth-child(1) {display: none;}
+	.sub_menu_bar .sub_menu_title > li:nth-child(2) {width: 40%;}
+	.sub_menu_bar .sub_menu_title > li:nth-child(3) {width: 60%; border-right: 0;}
+	.sub_menu_bar .sub_menu_title > li p {width: 100%; font-size: 24px; background: url(../image/sub/sub_arrow_m.png) no-repeat 100% 50% #fff;}
+	.sub_menu_box {top: 81px; left: 0; width: 100%;}
+	.sub_menu_box li {width: 100%; padding: 0 10px; font-size: 26px;}
+	.sub_menu_box li:not(.nohover):hover { color:#191919; }
+
+	.sub_quick {right: 30px; bottom: 160px;}
+	.sub_quick .sub_top {width: 100px; height: 100px; background-position: center 25px;}
+	.sub_quick .sub_top a {padding-top: 35px; font-size: 30px;}
+	.sub_quick .sub_quick_top {width: 80px; height: 80px;}
+	.sub_quick .sub_quick_top span {line-height: 80px; font-size: 24px;}
+	.sub_quick .sub_dropDown .sub_dropDown_close {right: 30px; bottom: 160px; width: 80px; height: 80px;}
+	.sub_quick .sub_dropDown ul {right: 30px; bottom: 250px;}
+	.sub_quick .sub_dropDown ul li a {height: 80px; line-height: 80px; padding-right: 100px;}
+	.sub_quick .sub_dropDown ul li:nth-child(1) a:after {width: 80px; height: 80px; background-size: auto;}
+	.sub_quick .sub_dropDown ul li:nth-child(2) a:after {width: 80px; height: 80px; background-size: auto;}
+	.sub_quick .sub_dropDown ul li:nth-child(3) a:after {width: 80px; height: 80px; background-size: auto;}
+
+
+
+
+	/* 병원소개 */
+
+	.vision .vision_img li { width:50%;}
+	.vision .vision_list .title, .vision .vision_list ul  {width: 300px; height: 300px;}
+	.vision .vision_list .title:after {width: 230px; height: 230px;}
+	.vision .vision_list ul li {font-size: 30px;}
+	.vision .vision_list ul li:nth-child(1) {top:-100px;}
+	.vision .vision_list ul li:nth-child(2) {left: -110px;}
+	.vision .vision_list ul li:nth-child(3) {right: -155px;}
+	.vision .vision_list ul li:nth-child(4) {left:-20px;}
+	.vision .vision_list ul li:nth-child(5) {right:-20px;}
+	.vision .vision_txt .tit {font-size: 34px;}
+	.vision .vision_txt .txt {font-size: 28px;}
+
+	.staff .staff_list li {width: 100%; height: 202px; margin-right: 0;}
+	.staff .staff_list li .img {width: 180px}
+	.staff .staff_list li .txt_wrap {padding: 20px 20px 0 190px;}
+	.staff .staff_list li .txt {height: 122px;}
+	.staff .staff_list li .txt .title {font-size: 22px;}
+
+	.staff_view > li {float: none;}
+	.staff_view > li:nth-child(1){width: 100%;}
+	.staff_view > li:nth-child(2){width: 100%; padding: 40px 0 0 0;}
+	.staff_view > li .title {font-size: 28px;}
+	.staff_view > li .sub_title {font-size: 26px;}
+	.staff_view > li .field ul li {font-size: 20px;}
+	.staff_view > li .intro ul li {margin-bottom: 20px; font-size: 22px;}
+	.content_title {font-size: 26px;}
+	.staff .txt02 {font-size: 22px;}
+	.staff table th, .staff table td {font-size: 22px;}
+
+	.top_tabwrap ul li {font-size: 26px;}
+	.time .txt_box .txt01 {font-size: 38px;}
+	.time .txt_box .txt02 {font-size: 30px;}
+	.time .intro_box ul {box-sizing: border-box; padding: 20px;}
+	.time .intro_box ul li .title {float: none; width: 100%; margin-bottom: 20px; font-size: 34px;}
+	.time .intro_box ul li .txt_list {float: none; width: 100%;}
+	.time .intro_box ul li .txt_list .txt01 {font-size: 28px;}
+	.time .intro_box ul li .txt_list .txt02 {font-size: 28px;}
+	.time .intro_boxwrap {height: 1000px;}
+	.time .intro_box ul li {float: none; width: 100%; height: auto; padding: 30px 20px; margin: 0; border-right: 0; border-bottom: 1px solid #ddd;}
+	.btn_wrap a {display: block; width: 100%; height: 80px; line-height: 80px; font-size: 24px;}
+	.btn_wrap a:first-child {margin: 0 0 10px 0;}
+	.btn_wrap .btn02 {width: 100%; height: 80px; line-height: 80px; font-size: 24px;}
+	.subject_wrap ul li {width: 50%; height: 80px; line-height: 80px; font-size: 24px;}
+
+	.rescue_menu {float: none; width: 100%;}
+	.rescue_menu p {font-size: 28px;}
+	.rescue_menu li {float: right; width:50%; font-size: 26px; border-left: 1px solid #575d6d;}
+	.rescue_menu li:first-child {width: 100%;}
+	.rescue_menu li:nth-child(8) {width: 100%; border-bottom:0;}
+	.rescue_menu li a {padding-left: 20px;}
+	.rescue_content {float: none; width: 100%; height: auto;}
+	.rescue_content .name_box {padding: 0 0 0 20px; font-size: 24px;}
+
+	.rescue_list img {width: 100%;}
+	.rescue_list .slick-prev, .rescue_list .slick-next { bottom:-43px;}
+	.rescue_Imgpopup .popup_wrap {width: 95%;}
+
+
+	.map .map_img .map_img_pc {display: none;}
+	.map .map_img .map_img_m {display: block;}
+	.map table th {width: 220px; padding: 25px 0 25px 10px;}
+	.map table th img {margin-right: 15px;}
+	.map table th, .map table td {font-size: 26px;}
+	.map table td strong {width: 200px; margin-bottom: 15px;}
+	.map table td ul li {margin-bottom: 20px;}
+	.map table td ul li em {display: block; box-sizing: border-box; width: 100px; padding: 0; height: 50px; line-height: 50px; border-radius: 25px; text-align: center;}
+
+	.top_txt02 {padding: 30px;}
+	.top_txt02 .txt04 {margin-bottom: 10px; font-size: 24px;}
+	.top_txt02 .txt05 {font-size: 24px;}
+
+
+	/* 로그인, 회원가입, 회원가입 입력폼 */
+	.sub_login .sub_menu_box li {width:100%;}
+	.sub_login .login_box {float: none; width:100%; height: auto; padding: 40px 20px; margin-bottom:20px;}
+	.sub_login .login_box .title {font-size: 40px;}
+	.sub_login .login_box .bt_txt {font-size: 26px;}
+	.sub_login .login_input ul li:first-child {margin-bottom: 20px;}
+	.sub_login .login_input .txt {display: block; width: 100%; margin-bottom: 10px; font-size: 28px;}
+	.sub_login .login_input input[type=text], .sub_login .login_input input[type=password] {width: 100%; height: 70px; line-height: 70px; font-size: 26px;}
+	input[type="checkbox"] + label {font-size: 26px;}
+	.sub_login .login_input input[type=submit] {height: 80px; line-height: 80px; font-size: 32px;}
+	.sub_login .login_btn a {display: block; font-size: 26px; text-align: right;}
+	.sub_login .login_btn a:last-child {float: none; margin-top: 5px;}
+
+	.sub_login .sns_login li {width: 100%;}
+	.sub_login .sns_login li a {position: relative;}
+	.sub_login .sns_login li a span {position: absolute;}
+	.sub_login .sns_login li a p {box-sizing: border-box; width: 100%; padding-left: 60px; font-size: 26px;}
+
+	.sub_join .all_agree .txt {width:100%; margin-bottom: 30px; font-size: 26px;}
+	.sub_join .all_agree .check_wrap {display: block; position: static; width: 100%; text-align: right;}
+	.sub_join .agree_box .title {font-size: 30px;}
+	.sub_join .agree_box textarea {font-size: 26px;}
+	.subbtn_wrap input {height: 80px; line-height: 80px; font-size: 32px;}
+	.sub_join .join_tab li {box-sizing: border-box; min-height: 91px; font-size: 26px;}
+	.sub_join .join_tab li span {display: block;}
+	.agree_txt .check { float:none; display:block; text-align:right;}
+
+	.input_form table th {width: 25%; padding-left: 10px; font-size: 26px;}
+	.input_form table td {padding: 15px 10px;}
+	.input_form table td input[type="text"], .input_form table td input[type="password"] {width: 100%; height: 70px; line-height: 70px; font-size: 26px;}
+	.input_form table td.name input[type="text"] {width: 100%; font-size: 26px;}
+	.input_form table td.id input[type="text"] {width: 100%; font-size: 26px;}
+	.input_form table td input[type="button"] {width: 250px; height: 70px; line-height: 70px; margin: 20px 0 0 0; font-size: 26px;}
+	.input_form table td select {width: 48%; height: 70px; line-height: 70px; margin: 20px 0 0 0; font-size: 26px;}
+
+	.input_form table td.email input[type="text"] {width: 46%;}
+	.input_form table td.email span {width: 2%;}
+	.input_form table td.email select {margin: 20px 0 0 0;}
+	.input_form table td.call input[type="text"] {width: 140px; font-size: 26px;}
+	.input_form table td.call select {width: 140px;}
+
+	.member_top {padding:20px 0;}
+	.member_top ul li { font-size:20px; width:100%; margin:10px 0;}
+	.member_top ul li span { padding-right:40px;}
+
+	.cost_list ul li {font-size: 28px;}
+	.cost_list table th, .cost_list table td {padding: 0 10px; height: 110px; font-size: 26px;}
+
+	.faq ul li span {padding-left: 15px;}
+	.faq ul li .faq_title .txt {padding: 10px 70px 10px 30px; font-size: 26px;}
+	.faq ul li .faq_content .txt {padding: 30px 70px 30px 30px; font-size: 26px;}
+
+	.top_tabwrap02 ul {overflow: hidden;}
+	.top_tabwrap02 ul li {font-size: 26px;}
+  .consulting .btn_box01 .btn_write{margin-bottom: 10px;}
+	.search_wrap {overflow: hidden; float: none; margin: 20px 0 40px 0;clear: both;}
+	.search_wrap select {float: left; width: 30%; height: 70px; line-height: 70px; font-size: 26px; background: url(../image/sub/sub_arrow_m.png) no-repeat 90% 50% #fff;}
+	.search_wrap input[type=text] {width: 69%; margin-left: 1%; height: 70px; line-height: 70px; font-size: 26px;}
+	.search_wrap input[type=image] {width: 70px;}
+
+	.list_txt {float: none; font-size: 28px;}
+	.basic_list th, .basic_list td {font-size: 24px;}
+	.basic_list td {padding: 20px 0;}
+
+	/* 고객수술후기 */
+
+	.top_question li:first-child { width:100%; border-bottom:1px solid #ddd; text-align:center; padding-left:0; font-size: 28px;}
+	.top_question li:nth-child(2),.top_question li:last-child { position:relative; width:50%; right:0; border-left:0;}
+
+	.top_question02 {border-bottom: 0;}
+	.top_question02 li {float: none; font-size: 30px; line-height: 1.6;}
+	.top_question02 li:first-child {height: auto; padding:18px 20px; margin-bottom: 30px; border-bottom: 1px solid #ddd;}
+	.top_question02 li:last-child {position: static; width: 100%; height: 80px; line-height: 80px;}
+	.top_question02 li a p {padding-left: 35px; background-size: 30px;}
+
+	.image_list {padding: 20px;width: 100%; margin: 0;margin-bottom: 20px}
+	.image_list .image {float: none; width: 100%;}
+	.image_list .image img {width: 100%;}
+	.image_list .image.video_img {width: 100%; height: auto;}
+	.image_list .image.video_img img {position: static;}
+	.image_list .image.video_img + .txt_box {width: 100%; height: auto; padding: 30px 30px 30px 0;}
+	.image_list .txt_box {float: none; padding-left:0; width:100%; height:auto;}
+	.image_list .txt_box .title {font-size: 30px;}
+	.image_list .txt_box .txt01 {font-size: 24px;}
+	.image_list .txt_box .txt01 > span {display: block; margin: 0; font-size: 24px;}
+	.image_list .txt_box .txt02 {width: 100%; margin-bottom:80px; font-size: 26px;}
+	.image_list .txt_box .txt03 {left: 0; font-size: 24px;}
+	.image_list .more {width: 80px;}
+
+
+.review_imglist .image_list {padding: 20px;width: 100%; margin: 0;margin-bottom: 20px;height: auto;}
+.review_imglist .image_list .image {float: none; width: 100%;}
+.review_imglist .image_list .image img {width: 100%;}
+.review_imglist .image_list .image.video_img {width: 100%; height: auto;}
+.review_imglist .image_list .image.video_img img {position: static;}
+.review_imglist .image_list .image.video_img + .txt_box {width: 100%; height: auto; padding: 30px 30px 30px 0;}
+.review_imglist .image_list .txt_box {float: none; padding-left:0; width:100%; height:auto;}
+.review_imglist .image_list .txt_box .title {font-size: 30px;}
+.review_imglist .image_list .txt_box .txt01 {font-size: 24px;}
+.review_imglist .image_list .txt_box .txt01 > span {display: block; margin: 0; font-size: 24px;}
+.review_imglist .image_list .txt_box .txt02 {width: 100%; margin-bottom:80px; font-size: 26px;}
+.review_imglist .image_list .txt_box .txt03 {position: relative;left: 0; font-size: 24px;margin-top: 20px;bottom: auto;}
+.review_imglist .image_list .more {width: 80px;}
+
+
+
+	.consulting .input_form table th {  width:20%;}
+
+	.event_list li { width:100%; max-height:inherit; margin-bottom: 30px;}
+	.event_list li:nth-child(2n) { margin-left:0;}
+	.event_list li .txt01 {font-size: 30px;}
+	.event_list li .txt02 {font-size: 26px;}
+	.partner ul li {width: 49%; max-height: 140px; margin: 0 2% 2% 0;}
+	.partner ul li:nth-child(5n) {margin: 0 2% 2% 0;}
+	.partner ul li:nth-child(2n) {margin-right: 0;}
+	.partner ul li .bg p {height: 35px; line-height: 35px; font-size: 26px;}
+
+
+	/* 서브탭 */
+
+	.sub_tab {display: block; overflow: hidden; width:100%;}
+	.sub_tab li {width: 48%; height: 80px; line-height: 80px; margin: 0 2% 2% 0; font-size: 26px;}
+	.sub_tab li:nth-child(2n) {margin-right: 0;}
+	.sub_tab02 li {width: 100%; height: 80px; line-height: 80px; margin: 0 0 10px 0; font-size: 26px;}
+
+
+	.cont_title {font-size: 55px;}
+
+
+	.pcTxt {display: none;}
+	.mTxt {display: block;}
+
+	/* 3D스마일 */
+	.smile .txt {font-size: 28px;}
+
+	.smile_advantage ul {padding-top: 0;}
+	.smile_advantage ul li {width: 48%; margin-right: 4%; margin-bottom: 50px;}
+	.smile_advantage ul li:nth-child(2n) {margin-right: 0;}
+
+	.smile_list li { width:100%; float:none;}
+	.smile_list li:nth-child(2) { padding-left:0; padding-top:20px;}
+	.smile_list .txt02 {margin: 10px 0 30px; font-size: 26px;}
+
+	.smile_gray .sub_tit {font-size: 30px;}
+
+	.smile_1mm {padding: 20px;}
+	.smile_1mm li {width: 100%;}
+	.smile_1mm li:first-child {margin-right: 0; margin-bottom: 30px;}
+	.smile_1mm li strong {height: 70px; line-height: 70px; font-size: 28px;}
+
+	.smile_3d {padding: 40px 20px 20px;}
+	.smile_3d .smile_3d_pc {display: none;}
+	.smile_3d .smile_3d_m {display: block;}
+
+	.low_energy {padding: 20px;}
+	.low_energy .obl li {width: 100%; margin-right: 0; margin-bottom: 50px;}
+	.low_energy .obl li:nth-child(2) {margin-bottom: 0;}
+	.low_energy .obl li .obl_txt span {margin-top: 10px;}
+
+	.row_advantage .tit {font-size: 34px;}
+	.row_advantage ul li {float: none; width: 100%; margin-right: 0; margin-bottom: 50px;}
+	.row_advantage ul li:nth-child(2) {margin-bottom: 0;}
+	.row_advantage ul li strong {height: 70px; line-height: 70px; font-size: 28px;}
+
+	.smile_surgery ul li {width: 100%; padding: 10px; margin-right: 0; margin-bottom: 20px;}
+	.smile_surgery ul li:nth-child(4) {margin-left: 0; margin-bottom: 20px;}
+	.smile_surgery ul li .img_box {margin-bottom: 10px;}
+	.smile_surgery ul li p {font-size: 26px; margin-bottom: 20px;}
+
+	.smile_recommed {padding: 40px 20px;}
+	.smile_recommed ul {float: none; width: 100%; margin-right: 0;}
+	.smile_recommed .txt {margin-bottom: 50px; font-size: 34px;}
+	.smile_recommed ul li {padding-left: 50px; margin-bottom: 30px; line-height: 38px; font-size: 26px; background-position: 0 0;}
+
+	.smile_reason .intro_img {display: none;}
+	.smile_reason .m_intro_img {display: block; width: 90%; margin: 0 auto;}
+
+	.smile_list04 li .txt01 {font-size: 26px;}
+	.smile_list03 li .txt {margin-top: 10px;}
+	.smile_list03 li .txt .txt02 {font-size: 26px;}
+
+	.laserimg_pc {display: none;}
+	.laserimg_m {display: block;}
+	.laser .txt02 {font-size: 26px;}
+	.smile_list04 li .txt01 {font-size: 26px;}
+
+
+
+
+	.laser .smile_list04 li {float: none; width: 100%; margin: 0 0 30px 0; padding: 10px;}
+	.laser .smile_list04 li .txt_box {margin-top: 10px;}
+	.laser .smile_list04 li .txt_box .txt01 {padding: 0 30px; font-size: 26px;}
+	.laser .smile_list03 li { width: 48%; padding: 10px; margin: 0 2% 2% 0;}
+	.laser .smile_list03 li .txt_box {margin-top: 20px; height: 114px;}
+	.laser .smile_list03 li .txt_box p {font-size: 26px;}
+
+	.laser .laser06_pc {display: none;}
+	.laser .laser06_m {display: block;}
+
+
+	.laser_imgbox {min-height: 425px;}
+	.laser_imgbox img {margin-bottom: 10px;}
+	.laser_imgbox ul {overflow: hidden; position: static; width:100%; height:auto; padding: 0; bottom:10px; left:0; ; top:inherit;}
+	.laser_imgbox ul li { float:left; height:200px; width: 100%; padding-top:110px; margin-bottom: 10px; font-size: 26px;}
+	.laser_imgbox ul li:nth-child(1) { padding-top:126px;}
+	.laser_list02 li:after  { right:-6.8%;}
+
+	.laser_list li {width: 100%; margin: 0 0 30px 0;}
+	.laser_list02 li {width: 100%; margin: 0 0 30px 0;}
+	.laser_txtlist li .title {position: relative; padding-left: 30px; font-size: 28px;}
+	.laser_txtlist li .title span {position: absolute; top: 10px; left: 0;}
+	.laser_txtlist li .txt {padding-left: 30px; font-size: 26px;}
+
+/*	.basic_list .day { display:none;}*/
+	.view_wrap .title_box , .view_wrap .file_box{ padding:20px; }
+	.view_wrap .content_box { padding:40px 20px;}
+	.view_wrap .content_box iframe {width: 100%; max-width: 640px;}
+	.view_wrap .title_box .title {display:block; margin-bottom:5px;}
+	.view_wrap .title_box .data {float:initial; position:initial; }
+	.reason_list { display:none;}
+	.reason_list02 { display:block;}
+	.lasik_list li img { margin:auto; display:block;}
+	.lasik_list li:nth-child(1),.lasik_list li:nth-child(2) { width:100% ;}
+	.lasik_list li:nth-child(2) { padding-left:0; margin-top:30px;}
+	.lasik_list .txt {font-size: 26px;}
+
+	.id_lasik ul li { width:100%; padding: 30px; }
+	.id_lasik { padding:0; }
+	.id_lasik02 > div:first-child {border-top: 1px solid #ddd;}
+	.id_lasik02 > div ul li:nth-child(1) {width:100%;}
+	.id_lasik02 > div ul li:nth-child(2) {width:100%;}
+	.id_lasik03 > div ul li:nth-child(1) {width:100%;}
+	.id_lasik03 > div ul li:nth-child(2) {width:100%;}
+	.id_lasik04 > div ul li:nth-child(1) {width:100%;}
+	.id_lasik04 > div ul li:nth-child(2) {width:100%; padding-left:0px;}
+	.id_lasek ul li {width:100%;}
+	.id_lasik_recommend li {width: 100%; height: 100px; padding: 30px; margin-right: 0; margin-bottom: 20px;}
+	.id_lasik_recommend li p {font-size: 26px;}
+	.id_lasik ul li .title {font-size: 28px;}
+	.id_lasik ul li .txt {font-size: 26px;}
+	.sub_tit01 {font-size: 30px;}
+	.id_lasik02 > div .title {font-size: 28px;}
+	.id_lasik02 > div .txt {font-size: 26px;}
+	.id_lasek ul li .title {font-size: 28px;}
+	.id_lasek ul li .txt {min-height: 96px; font-size: 26px;}
+	.lasek .lasek_box {height: 200px;}
+	.lasek .lasek_box .txt_box {height: 200px; padding: 50px 20px;}
+	.lasek .lasek_box .txt_box p {padding: 0 30px; font-size: 26px;}
+	.lasek .lasek_box .txt_box p span {margin: 0 10px; }
+
+	.lasek_txtlist li .title {font-size: 28px;}
+	.lasek_txtlist li .txt {font-size: 26px;}
+	.lasek_recommend li p {font-size: 26px; line-height: 1.6;}
+
+
+	.cost_list { float:none; width:100%;}
+	.cost_list:first-child { margin-bottom:50px;}
+
+
+
+	/* 노안클리닉 */
+
+	.old .txt02 {font-size: 26px;}
+	.old_img li span {font-size: 28px;}
+	.old_img li { float:none; margin-right:0; width:100%; }
+	.old_img li:first-child { margin-bottom:2%;}
+
+	.symptom ul li {width: 100%; margin: 0 0 30px 0;}
+	.symptom ul li .txt_box {min-height: 130px;}
+	.symptom ul li .txt_box p {font-size: 26px;}
+
+
+	.old .method img { margin-top:30px;}
+	.old .method .method_pc {display: none;}
+	.old .method .method_m {display: block;}
+	.old .test ul li { float:none; width:100%;}
+	.old .test ul li:first-child { margin-bottom:40px;}
+	.old_reason .intro_img {display: none;}
+	.old_reason .intro_img_m {display: block; width: 90%; margin: 0 auto;}
+
+	.lasik_listbox li {width: 100%; margin-bottom: 30px;}
+	.lasik_listbox li:nth-child(2) {padding-left: 0;}
+	.lasik_listbox .lasik_txtlist li:nth-child(2) {padding: 20px;}
+	.lasik_surgery ul li {width: 100%; margin-right: 0; margin-bottom: 30px;}
+	.lasik_surgery ul li p {font-size: 26px;}
+	.lasik_listbox .lasik_txtlist li {margin-bottom: 0;}
+	.lasik_listbox .lasik_txtlist li .txt {position: relative; padding-left: 30px; font-size: 26px;}
+	.lasik_listbox .lasik_txtlist li .txt span {position: absolute; top: 8px; left: 0;}
+
+	.basic_lasik_recommend li {width: 100%; height: 180px; margin-right: 0%; margin-bottom: 20px;}
+	.basic_lasik_recommend li p {font-size: 26px; line-height: 1.6;}
+	.lasek_recommend li {width: 100%; margin: 0 0 20px 0; height: auto; padding: 30px;}
+
+	.lasek_benefit li {width: 100%; margin: 0 0 50px 0;}
+	.lasek_benefit li .benefit_txt {height: auto; font-size: 26px; text-align: center;}
+	.lasek_benefit li .benefit_txt p {padding: 20px 50px;}
+	.lasek_surgery li {float: none; width: 100%; min-height: 200px; margin: 0 0 30px 0;}
+	.lasek_surgery p {font-size: 26px;}
+
+	.lasek_caution ul li {width: 100%; margin-right: 0; margin-bottom: 50px;}
+	.lasek_caution ul li p {min-height: 130px; padding: 30px; font-size: 26px;}
+
+	.lens_benefit li {width: 100%; margin-right: 0; margin-bottom: 50px;}
+	.lens_benefit li img {height: 73px;}
+	.lens_benefit li p {font-size: 26px; text-align: center;}
+	.lens_surgery li {width: 100%; margin: 0 0 30px 0;}
+	.lens_surgery li {font-size: 26px;}
+
+	.icl_benefit li {width: 100%; margin-right: 0;}
+	.icl_benefit li img {height: 73px;}
+	.icl_benefit li .benefit_txt {height: auto; padding: 180px 20px 20px 20px; font-size: 26px; text-align: center;}
+	.icl_recommend li {width: 100%; height: auto; margin-right: 0%; margin-bottom: 20px;}
+	.icl_recommend li strong {font-size: 28px; margin-bottom: 10px;}
+	.icl_recommend li p {font-size: 26px; line-height: 1.6;}
+
+	.lens_txtlist li .title {font-size: 28px;}
+	.lens_txtlist li .txt {font-size: 26px;}
+	.lens_txtlist li .title02 {font-size: 28px;}
+
+
+	.smile_btn {font-size: 28px;}
+	.smile_btn img {margin: 0 0 0 10px;}
+	.smile_btn img:first-child {display: none;}
+
+
+	.raindrop_surgery li {width: 48%; margin: 0 2% 50px 0;}
+	.raindrop_surgery li:nth-child(2n) {margin-right: 0;}
+	.raindrop_surgery li .txt_box {min-height: 108px;}
+
+
+
+
+
+	/* 신세계스마일이란	*/
+
+	.ksci_box {padding: 60px 30px;}
+	.ksci_box .ksci_top_txt img {max-width: 80%;}
+	.ksci_box .medal_list {width: 100%; margin: 40px auto 30px;}
+	.ksci_box .medal_list li {width: 32%; margin: 0 0 0 2%;}
+	.ksci_box .medal_list li .img_wrap {height: 170px;}
+	.ksci_box span {font-size: 24px;}
+	.ksci_box .sub_txt01 {font-size: 20px;}
+
+	.global_box {padding: 30px;}
+	.global_box .txt_box {width: 300px; height: 300px; padding: 30px; border: 10px solid rgba(255, 255, 255, 0.4);}
+	.global_box .txt_box img {max-width: 100%;}
+	.global_box .txt_box strong {font-size: 28px;}
+
+	.smile_pride_list li {float: none; width: 100%; height: 860px; margin: 30px 0 0 0;}
+	.smile_pride_con03 .bot_txt {box-sizing: border-box; width: 90%; height: auto; padding: 10px 20px;}
+	.smile_pride_con03 .bot_txt p {line-height: 1.6;}
+	.smile_feature_list li .img_box {float: none; width: 100%;}
+	.smile_feature_list li:nth-child(2) .img_box {float: none;}
+	.smile_feature_list li .txt_box {float: none; width: 100%; height: auto; padding: 30px 30px 50px;}
+	.smile_feature_list li .txt_box strong {margin: 0 0 10px 0; font-size: 28px;}
+	.smile_feature_list li .txt_box p {line-height: 26px; font-size: 16px;}
+
+	.science_box01 {padding: 110px 30px 60px;}
+	.science_box01 .top_txt .txt01 {font-size: 30px;}
+	.science_box01 .top_txt .txt02 {margin: 10px 0 20px; line-height: 1.2; font-size: 46px;}
+	.science_box02 .top_txt .txt01 {margin: 0 0 10px 0; font-size: 26px;}
+	.science_box02 .top_txt .txt02 {font-size: 48px;}
+	.science_box01 ul {width: 100%;}
+	.science_box01 ul li {width: 26%; margin: 0 0 0 2%;}
+	.science_box01 ul li img {max-width: 100%;}
+	.science_box01 ul li.point {width: 44%;}
+	.science_box01 ul li p {line-height: 1.2; font-size: 18px;}
+	.science_box01 ul li.point p:before {left: -20px;}
+	.science_box01 ul li.point p:after {right: -20px;}
+	.science_box01 .bot_txt {box-sizing: border-box; width: 100%; padding: 45px 20px;}
+	.science_box01 .bot_txt p {font-size: 18px;}
+
+	.science_box02 {padding: 80px 30px;}
+	.science_box02 ul {width: 100%;}
+	.science_box02 ul li {box-sizing: border-box; float: none; width: 100%; padding: 0;}
+	.science_box02 ul li:after {display: block; clear: both; *zoom: 1; content: '';}
+	.science_box02 ul .point_smile {margin: 30px 0 0 0;}
+	.science_box02 ul .point_low {margin: 40px 0 0 0;; padding: 50px 0 0 0;}
+	.science_box02 ul .point_low:before {top: 0; left: 0; right: 0; transform: rotate(90deg); margin: 0 auto;}
+	.science_box02 ul li img {float: left; width: 40%;}
+	.science_box02 ul li .txt {float: left; box-sizing: border-box; width: 60%; padding: 0 0 0 30px; text-align: left;}
+	.science_box02 ul li .txt strong {margin: 0;}
+	.science_box02 ul li .txt p {line-height: 26px; font-size: 18px; letter-spacing: -1px;}
+
+
+	.smile_special img {width: 80%;}
+	.smile_special .txt_box {padding: 10px 0 15px;}
+	.smile_special .txt_box p {line-height: 36px; font-size: 22px;}
+
+	.m_block {display: block;}
+	.m_none {display: none;}
+
+
+
+
+
+	/* 20190717 신세계스마일이란 왜 신세계안과일까? 렌즈삽입술이란? 추가 */
+	/* 신세계스마일이란	*/
+	.sensitivity_box .txt_box p {font-size: 35px;}
+	.sensitivity_box .txt_box p em {font-size: 40px;}
+
+	.ksci_box {padding: 60px 30px;}
+	.ksci_box .ksci_top_txt img {max-width: 80%;}
+	.ksci_box .medal_list {width: 100%; margin: 40px auto 30px;}
+	.ksci_box .medal_list li {width: 32%; margin: 0 0 0 2%;}
+	.ksci_box .medal_list li .img_wrap {height: 170px;}
+	.ksci_box span {font-size: 26px;}
+	.ksci_box .sub_txt01 {font-size: 28px;}
+
+	.global_box {padding: 30px;}
+	.global_box .txt_box {width: 300px; height: 300px; padding: 30px; border: 10px solid rgba(255, 255, 255, 0.4);}
+	.global_box .txt_box img {max-width: 100%;}
+	.global_box .txt_box strong {font-size: 28px;}
+
+	.smile_pride_list li {float: none; width: 100%; height: 860px; margin: 30px 0 0 0;}
+	.smile_pride_con01 .top_txt span {font-size: 26px;}
+	.smile_pride_con02 .top_txt span {font-size: 26px;}
+	.smile_pride_con03 .top_txt span {font-size: 26px; margin: 0 0 10px 0;}
+	.smile_pride_list .smile_pride_con03 {padding: 50px 0 0 0;}
+	.smile_pride_list .smile_pride_con03 .name {right: 80px; bottom: 140px;}
+	.smile_pride_con03 .bot_txt {box-sizing: border-box; width: 90%; height: auto; padding: 10px 20px;}
+	.smile_pride_con03 .bot_txt p {line-height: 1.6; font-size: 26px;}
+	.smile_feature_list li .img_box {float: none; width: 100%;}
+	.smile_feature_list li:nth-child(2) .img_box {float: none;}
+	.smile_feature_list li .txt_box {float: none; width: 100%; height: auto; padding: 30px 30px 50px;}
+	.smile_feature_list li .txt_box strong {margin: 0 0 10px 0; font-size: 36px; font-weight: 600;}
+	.smile_feature_list li .txt_box p {line-height: 1.6; font-size: 26px;}
+
+	.science_box01 {padding: 110px 30px 60px;}
+	.science_box01 .top_txt .txt01 {font-size: 30px;}
+	.science_box01 .top_txt .txt02 {margin: 10px 0 20px; line-height: 1.2; font-size: 46px;}
+	.science_box02 .top_txt .txt01 {margin: 0 0 10px 0; font-size: 36px;}
+	.science_box02 .top_txt .txt02 {font-size: 54px;}
+	.science_box01 .top_txt .txt03 {font-size: 26px;}
+	.science_box01 ul {width: 100%;}
+	.science_box01 ul li {width: 26%; margin: 0 0 0 2%;}
+	.science_box01 ul li img {max-width: 100%;}
+	.science_box01 ul li.point {width: 44%;}
+	.science_box01 ul li p {line-height: 1.2; font-size: 22px;}
+	.science_box01 ul li.point p:before {left: -20px;}
+	.science_box01 ul li.point p:after {right: -20px;}
+	.science_box01 .bot_txt {box-sizing: border-box; width: 100%; padding: 45px 20px;}
+	.science_box01 .bot_txt p {font-size: 26px;}
+
+	.science_box02 {padding: 80px 30px;}
+	.science_box02 ul {width: 100%;}
+	.science_box02 ul li {box-sizing: border-box; float: none; width: 100%; padding: 0;}
+	.science_box02 ul li:after {display: block; clear: both; *zoom: 1; content: '';}
+	.science_box02 ul .point_smile {margin: 30px 0 0 0;}
+	.science_box02 ul .point_low {margin: 40px 0 0 0;; padding: 50px 0 0 0;}
+	.science_box02 ul .point_low:before {top: 0; left: 0; right: 0; transform: rotate(90deg); margin: 0 auto;}
+	.science_box02 ul li img {float: left; width: 40%;}
+	.science_box02 ul li .txt {float: left; box-sizing: border-box; width: 60%; padding: 0 0 0 30px; text-align: left;}
+	.science_box02 ul li .txt strong {font-size: 36px;}
+	.science_box02 ul li .txt p {letter-spacing: -1px; font-size: 26px;}
+
+	.smile_special {padding: 50px 0 80px; margin: 40px 0;}
+	.smile_special img {width: 90%;}
+	.smile_special .txt_box {padding: 20px 0;}
+	.smile_special .txt_box p {line-height: 1.3; font-size: 36px;}
+	.smile_special .txt_box p em {font-size: 38px;}
+
+	.m_block {display: block;}
+	.m_none {display: none;}
+
+
+
+	/* 왜 신세계안과일까? */
+	.smile_reason_new .ksci_box {padding: 50px 0 30px;}
+	.smile_reason_new .ksci_box .ksci_top_txt .img_box {padding: 0 30px; margin: 50px 0 0 0;}
+	.smile_reason_new .ksci_box .ksci_top_txt .img_box:before {display: none;}
+	.smile_reason_new .ksci_box .ksci_top_txt .img_box:after {display: none;}
+	.smile_reason_new .global_box .txt_box {width: 90%; height: 625px; padding: 50px 40px 0;}
+	.smile_reason_new .global_box .txt_box > img {width: 100%; max-width: 340px;}
+	.smile_reason_new .global_box .txt_box img {width: 100%; max-width: 340px;}
+	.smile_reason_new .global_box .txt_box strong {font-size: 44px; margin: 10px 0;}
+	.smile_reason_new .ksci_box .ksci_top_txt .txt_box {padding: 0 20px;}
+	.smile_reason_new .ksci_box .ksci_top_txt .txt_box .double_quote {font-size: 80px; line-height: 80px; margin: 0;}
+	.smile_reason_new .ksci_box .ksci_top_txt .txt_box p {margin: 0 0 20px 0; font-size: 30px; line-height: 36px;}
+	.smile_reason_new .ksci_box .ksci_top_txt .txt_box p em {font-size: 30px;}
+	.smile_reason_new .ksci_box .ksci_top_txt .txt_box .double_quote:last-child {margin: 60px 0 0 0;}
+	.smile_reason_new .ksci_box .medal_list {box-sizing: border-box; width: 100%; padding: 0 20px;}
+	.smile_reason_new .ksci_box .medal_list li {width: 32%; margin: 0 0 0 2%;}
+	.smile_reason_new .ksci_box .medal_list li .img_wrap {height: 170px;}
+	.smile_reason_new .ksci_box .medal_list li .img_wrap div img {max-width: 100%;}
+	.ksci_box .sub_txt01 img {display: block; margin: 0 auto 20px; }
+	.evoicl_box {margin: 40px 0; padding: 60px 30px;}
+	.evoicl_box .top_txt li {display: block; width: 100%; padding: 10px 0 0 0;}
+	.evoicl_box .top_txt li:nth-child(1) {padding:  0;}
+	.evoicl_box .top_txt li:nth-child(1):after {display: none;}
+	.evoicl_box .top_txt li p {height: 60px; line-height: 60px; font-size: 30px;}
+	.evoicl_box .top_txt li strong {height: 60px; line-height: 60px; font-size: 30px;}
+	.evoicl_box > strong {font-size: 50px; line-height: 1.3}
+	.evoicl_box .list {width: 100%; height: 200px; margin: 0 auto; background-size: 360px;}
+	.evoicl_box .list li {width: 120px; height: 50px; line-height: 48px; font-size: 24px;}
+	.evoicl_box .list li:after {width: 100px;}
+	.evoicl_box .list li:nth-child(1) {width: 80px; left: 0;}
+	.evoicl_box .list li:nth-child(1):after {width: 130px;}
+	.evoicl_box .list li:nth-child(2) {width: 80px; top: 75px; left: 0;}
+	.evoicl_box .list li:nth-child(2):before {right: -130px;}
+	.evoicl_box .list li:nth-child(2):after {width: 130px; bottom: 50%;}
+	.evoicl_box .list li.evo {top: 20px; right: 0;}
+	.evoicl_box .list li.evo:before {height: 45px; bottom: -46px;}
+	.evoicl_box .list li.evo:after {width: 130px; bottom: -46px;}
+	.evoicl_box .list li:nth-child(4) {width: 80px; top: 140px; right: -10px;}
+	.evoicl_box .list li:nth-child(4):before {display: none;}
+	.evoicl_box .list li:nth-child(4):after {width: 170px; bottom: 50%; right: 100%;}
+
+	.machine_box {padding: 50px 30px;}
+	.machine_list li {width: 100%; margin: 30px 0 0 0; height: 470px;}
+	.machine_list li img {width: auto;}
+	.machine_list li:nth-child(2) img {margin: 45px auto 0;}
+	.machine_list li .txt_box {padding: 60px 0 0 20px;}
+	.machine_list li .txt_box span {top: 30px; right: 20px;}
+	.machine_list li .txt_box p {font-size: 26px;}
+
+	.smile_office {overflow: hidden; padding: 70px 30px; height: 750px; margin: 40px 0 0 0; text-align: center;}
+	.smile_office img {left: 0; right: 0; margin: 0 auto; width: 340px;}
+	.smile_office ul {display: inline-block; padding: 0;}
+	.smile_office ul li p {padding: 10px 0 0 0; font-size: 30px; text-align: left;}
+
+	/* 렌즈삽입술이란 */
+	.icl_area {padding: 100px 0 50px; margin: 50px 0 0 0;}
+	.icl_area .top_box {width: 80%;}
+	.icl_area .trophy_box {margin: 0 auto -40px;}
+	.icl_area img {width: 60%;}
+	.lens_new .smile_special {margin: 50px 0 0 0;}
+	.lens_icl:before {left: 30px; transform: none; width: 60px; height: 120px; background-size: 60px 120px;}
+	.lens_icl:after {right: 30px; transform: none; width: 60px; height: 120px; background-size: 60px 120px;}
+	.lens_icl .txt {width: 350px;}
+	.lens_icl .txt span {font-size: 26px;}
+	.lens_icl img {max-width: 60%;}
+	.lens_doctor p {font-size: 28px;}
+	.lens_doctor p strong {font-size: 40px; letter-spacing: -1px;}
+	.lens_doctor p strong em {font-size: 40px; letter-spacing: -1px;}
+	.lens_doctor img {width: 100%;}
+	.lens_list li {float: none; width: 100%; margin: 100px 0 0 0; padding: 20px; height: auto;}
+	.lens_list li .txt_box {padding: 160px 0 50px;}
+	.lens_list li .txt_box p {font-size: 26px; line-height: 36px;}
+	.lens_list li .txt_box strong {line-height: 46px; font-size: 36px; font-weight: 600;}
+	.rescue_content .slick-slider {height:auto !important;}
+
+
+	.consulting .btn_box .btn_write {width: 180px; height: 70px; font-size: 24px;}
+
+	/* 20190903 추가 */
+	.calendar tr {height:65px;}
+	.calenderDiv .calArea {padding:50px 30px;}
+	.calenderDiv .input_form .notice_cal {font-size:21px;}
+	.cal_top span {font-size:30px;}
+	input[type="radio"] + label {font-size:26px;}
+
+	/* 20200204 추가 */
+	.award_box1 .txt_box {width:100%;}
+	.award_box1 .txt_box img {width:100%;}
+	.award_box1 .img_box {float:initial; text-align:center;}
+	.award_box1 .img_box img {margin:50px 0 0 30px;}
+
+	.lens_new .lens_award .lens_award_txt {width:90%;}
+	.lens_new .lens_award .lens_award_logo {width:50%;}
+
+
+}
+
+
+
+
+
+
+/* mobile */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+	.rescue_content .slick-slider {height:auto !important;}
+
+	input[type="checkbox"] + label span {width: 30px; height: 30px; background: url(../image/sub/check_m.png) left top no-repeat;}
+	input[type="checkbox"]:checked + label span {background: url(../image/sub/check_on_m.png) left top no-repeat;}
+	select {background: url(../image/sub/arrow03_m.png) no-repeat 90% 50% #fff;}
+
+	.cont_title {font-size: 34px;}
+	.lasik_list li .tit {font-size:28px;}
+	.icl .txt01 {font-size:28px;}
+	.top_txt02 .txt03 {font-size:28px;}
+	.smile_list li .tit {font-size:28px;}
+
+
+	/* 서브비주얼 */
+	#visual { padding-top:100px;}
+	#sub_visual.pc_sub_visual {display: none;}
+	#sub_visual.m_sub_visual {display: block;}
+	.sub_visual_txt .visual_txt01 {font-size:28px;}
+
+
+	/* 서브메뉴 */
+	.sub_menu_bar {height: 80px; line-height: 80px;}
+	.sub_menu_box li {width: 100%;}
+	.sub_menu_bar .sub_menu_title > li {box-sizing: border-box; padding: 0 10px; height: 100%;}
+	.sub_menu_bar .sub_menu_title > li:nth-child(1) {display: none;}
+	.sub_menu_bar .sub_menu_title > li:nth-child(2) {width: 40%;}
+	.sub_menu_bar .sub_menu_title > li:nth-child(3) {width: 60%; border-right: 0;}
+	.sub_menu_bar .sub_menu_title > li p {width: 100%; font-size: 24px; background: url(../image/sub/sub_arrow_m.png) no-repeat 100% 50% #fff;}
+	.sub_menu_box {top: 81px; left: 0; width: 100%;}
+	.sub_menu_box li {width: 100%; padding: 0 10px; font-size: 26px;}
+	.sub_menu_box li:not(.nohover):hover { color:#191919; }
+
+	/* 병원소개 */
+
+	.vision .vision_img li { width:50%;}
+	.vision .vision_list .title, .vision .vision_list ul  {width: 230px; height: 230px;}
+	.vision .vision_list .title:after {width: 180px; height: 180px;}
+	.vision .vision_list .title .txt .txt01 {font-size: 30px; top: 53%; line-height: 40px;}
+	.vision .vision_list ul li {font-size: 26px;}
+	.vision .vision_list ul li:nth-child(1) {top:-100px;}
+	.vision .vision_list ul li:nth-child(2) {left: -60px;}
+	.vision .vision_list ul li:nth-child(3) {right: -90px; width: 95px;}
+	.vision .vision_list ul li:nth-child(4) {left:-20px;}
+	.vision .vision_list ul li:nth-child(5) {right:-20px;}
+	.vision .vision_txt .tit {font-size: 34px;}
+	.vision .vision_txt .txt {font-size: 28px;}
+
+	.staff .staff_list li {width: 100%; height: 169px; margin-right: 0;}
+	.staff .staff_list li .img {width: 150px}
+	.staff .staff_list li .txt_wrap {padding: 10px 10px 0 160px;}
+	.staff .staff_list li .txt {height: 115px;}
+	.staff .staff_list li .txt .name {font-size: 26px;}
+	.staff .staff_list li .txt .title {font-size: 16px;}
+	.staff .staff_list li .more {height: 40px; line-height: 40px;}
+	.staff_view > li {float: none;}
+	.staff_view > li:nth-child(1){width: 100%;}
+	.staff_view > li:nth-child(2){width: 100%; padding: 40px 0 0 0;}
+	.staff_view > li .title {font-size: 28px;}
+	.staff_view > li .sub_title {font-size: 26px;}
+	.staff_view > li .field ul li {font-size: 22px;}
+	.staff_view > li .intro ul li {margin-bottom: 20px; font-size: 22px;}
+	.content_title {font-size: 26px;}
+	.staff .txt02 {font-size: 22px;}
+	.staff table th, .staff table td {font-size: 22px;}
+
+	.top_tabwrap ul li {font-size: 26px; margin-right: 0;}
+	.time .txt_box .txt01 {font-size: 38px;}
+	.time .txt_box .txt02 {font-size: 30px;}
+	.time .intro_box ul {box-sizing: border-box; padding: 20px;}
+	.time .intro_box ul li .title {float: none; width: 100%; margin-bottom: 20px; font-size: 34px;}
+	.time .intro_box ul li .txt_list {float: none; width: 100%;}
+	.time .intro_box ul li .txt_list .txt01 {font-size: 28px;}
+	.time .intro_box ul li .txt_list .txt02 {font-size: 28px;}
+	.time .intro_boxwrap {height: 1000px;}
+	.time .intro_box ul li {float: none; width: 100%; height: auto; padding: 30px 20px; margin: 0; border-right: 0; border-bottom: 1px solid #ddd;}
+	.btn_wrap a {display: block; width: 100%; height: 80px; line-height: 80px; font-size: 24px;}
+	.btn_wrap a:first-child {margin: 0 0 10px 0;}
+	.btn_wrap .btn02 {width: 100%; height: 80px; line-height: 80px; font-size: 24px;}
+	.subject_wrap ul li {width: 100%; height: 80px; line-height: 80px; font-size: 24px;}
+
+	.rescue_menu {float: none; width: 100%;}
+	.rescue_menu p {font-size: 28px;}
+	.rescue_menu li {float: right; width:50%; font-size: 26px; border-left: 1px solid #575d6d;}
+	.rescue_menu li:first-child {width: 100%;}
+	.rescue_menu li:nth-child(8) {width: 100%; border-bottom:0;}
+	.rescue_menu li a {padding-left: 10px;}
+	.rescue_content {float: none; width: 100%; height: auto;}
+	.rescue_content .name_box {padding: 0 0 0 10px; font-size: 24px;}
+	.rescue_list img {width: 100%;}
+	.rescue_list .slick-prev, .rescue_list .slick-next { bottom:-43px;}
+	.rescue_Imgpopup .popup_wrap {width: 95%;}
+
+
+	.map .map_img .map_img_pc {display: none;}
+	.map .map_img .map_img_m {display: block;}
+	.map table th {width: 220px; padding: 25px 0 25px 10px;}
+	.map table th img {margin-right: 15px;}
+	.map table th, .map table td {font-size: 26px;}
+	.map table td strong {width: 200px; margin-bottom: 15px;}
+	.map table td ul li {margin-bottom: 20px;}
+	.map table td ul li em {display: block; box-sizing: border-box; width: 100px; padding: 0; height: 50px; line-height: 50px; border-radius: 25px; text-align: center;}
+
+
+
+	.sub_login .sub_menu_box li {width:100%;}
+	.sub_login .login_box {float: none; width:100%; height: auto; padding: 40px 20px; margin-bottom:20px;}
+	.sub_login .login_box .title {font-size: 40px;}
+	.sub_login .login_box .bt_txt {font-size: 26px;}
+	.sub_login .login_input ul li:first-child {margin-bottom: 20px;}
+	.sub_login .login_input .txt {display: block; width: 100%; margin-bottom: 10px; font-size: 28px;}
+	.sub_login .login_input input[type=text], .sub_login .login_input input[type=password] {width: 100%; height: 70px; line-height: 70px; font-size: 26px;}
+	input[type="checkbox"] + label {font-size: 26px;}
+	.sub_login .login_input input[type=submit] {height: 80px; line-height: 80px; font-size: 32px;}
+	.sub_login .login_input .check .check_icon {margin-left: 10px;}
+	.sub_login .login_btn a {display: block; font-size: 26px; text-align: right;}
+	.sub_login .login_btn a:last-child {float: none; margin-top: 5px;}
+
+	.sub_login .sns_login li {width: 100%;}
+	.sub_login .sns_login li a {position: relative;}
+	.sub_login .sns_login li a span {position: absolute;}
+	.sub_login .sns_login li a p {box-sizing: border-box; width: 100%; padding-left: 60px; font-size: 24px;}
+
+	.sub_join .join_tab li {box-sizing: border-box; min-height: 91px; font-size: 23px;}
+	.sub_join .join_tab li span {display: block;}
+	.sub_join .all_agree .txt {width:100%; margin-bottom: 30px; font-size: 26px;}
+	.sub_join .all_agree .check_wrap {display: block; position: static; width: 100%; text-align: right;}
+	.sub_join .agree_box .title {font-size: 30px;}
+	.sub_join .agree_box textarea {font-size: 26px;}
+
+	.subbtn_wrap input {width: 48%; height: 80px; line-height: 80px; font-size: 32px;}
+
+	.input_form table th {width: 25%; padding-left: 10px; font-size: 26px;}
+	.input_form table td {padding: 15px 10px;}
+	.input_form table td input[type="text"], .input_form table td input[type="password"] {width: 100%; height: 70px; line-height: 70px; font-size: 26px;}
+	.input_form table td.name input[type="text"] {width: 100%; font-size: 26px;}
+	.input_form table td.id input[type="text"] {width: 100%; font-size: 26px;}
+	.input_form table td input[type="button"] {width: 250px; height: 70px; line-height: 70px; margin: 20px 0 0 0; font-size: 26px;}
+	.input_form table td select {width:48%; height: 70px; line-height: 70px; margin: 20px 0 0 0; font-size: 26px;}
+	.input_form table td.email input[type="text"] {width: 46%;}
+	.input_form table td.email span {width: 2%;}
+	.input_form table td.email select {margin: 20px 0 0 0;}
+	.input_form table td.call input[type="text"] {width: 140px; font-size: 26px;}
+
+	.member_top {padding:20px 0;}
+	.member_top ul li { font-size:20px; width:100%; margin:10px 0;}
+	.member_top ul li span { padding-right:40px;}
+
+	.cost_list ul li {font-size: 28px;}
+	.cost_list table th, .cost_list table td {padding: 0 10px; height: 110px; font-size: 26px;}
+
+	.faq ul li span {padding-left: 15px;}
+	.faq ul li .faq_title .txt {padding: 10px 70px 10px 30px; font-size: 26px;}
+	.faq ul li .faq_content .txt {padding: 30px 70px 30px 30px; font-size: 26px;}
+
+	.top_tabwrap02 ul {overflow: hidden;}
+	.top_tabwrap02 ul li {font-size: 26px;}
+
+	.search_wrap {overflow: hidden; float: none; margin: 20px 0 40px 0;}
+	.search_wrap select {float: left; width: 30%; height: 70px; line-height: 70px; font-size: 26px; background: url(../image/sub/sub_arrow_m.png) no-repeat 90% 50% #fff;}
+	.search_wrap input[type=text] {width: 69%; margin-left: 1%; height: 70px; line-height: 70px; font-size: 26px;}
+	.search_wrap input[type=image] {width: 70px;}
+
+
+	.list_txt {float: none; font-size: 28px;}
+	.basic_list th, .basic_list td {font-size: 24px;}
+	.basic_list td {padding: 20px 0;}
+
+	.top_question li:first-child { width:100%; border-bottom:1px solid #ddd; text-align:center;  padding-left:0; font-size: 28px;}
+	.top_question li:nth-child(2),.top_question li:last-child { position:relative; width:50%; right:0; border-left:0;}
+
+	.top_question02 {border-bottom: 0;}
+	.top_question02 li {float: none; font-size: 30px; line-height: 1.6;}
+	.top_question02 li:first-child {height: auto; padding:18px 20px; margin-bottom: 30px; border-bottom: 1px solid #ddd;}
+	.top_question02 li:last-child {position: static; width: 100%; height: 80px; line-height: 80px;}
+	.top_question02 li a p {padding-left: 35px; background-size: 30px;}
+
+	.agree_txt .check { float:none; display:block; text-align:right;}
+	.image_list {padding: 20px;}
+	.image_list .image {float: none; width: 100%;}
+	.image_list .image img { width:100% ;}
+	.image_list .image.video_img {width: 100%; height: auto;}
+	.image_list .image.video_img img {position: static;}
+	.image_list .image.video_img + .txt_box {width: 100%; height: auto; padding: 30px 30px 30px 0;}
+	.image_list .txt_box {float: none; padding-left:0; width:100%; height:auto;}
+	.image_list .txt_box .title {font-size: 30px;}
+	.image_list .txt_box .txt01 {font-size: 24px;}
+	.image_list .txt_box .txt01 > span {display: block; margin: 0; font-size: 24px;}
+	.image_list .txt_box .txt02 {margin-bottom:80px; font-size: 26px;}
+	.image_list .txt_box .txt03 {font-size: 24px;}
+	.image_list .more {width: 80px;}
+
+.review_imglist .image_list {padding: 20px;}
+.review_imglist .image_list .image {float: none; width: 100%;}
+.review_imglist .image_list .image img { width:100% ;}
+.review_imglist .image_list .image.video_img {width: 100%; height: auto;}
+.review_imglist .image_list .image.video_img img {position: static;}
+.review_imglist .image_list .image.video_img + .txt_box {width: 100%; height: auto; padding: 30px 30px 30px 0;}
+.review_imglist .image_list .txt_box {float: none; padding-left:0; width:100%; height:auto;}
+.review_imglist .image_list .txt_box .title {font-size: 30px;}
+.review_imglist  .image_list .txt_box .txt01 {font-size: 24px;}
+.review_imglist .image_list .txt_box .txt01 > span {display: block; margin: 0; font-size: 24px;}
+.review_imglist .image_list .txt_box .txt02 {margin-bottom:80px; font-size: 26px;}
+.review_imglist  .image_list .txt_box .txt03 {font-size: 24px;}
+.review_imglist  .image_list .more {width: 80px;}
+
+
+
+
+	.sub_tab {display: block; overflow: hidden; width:100%;}
+	.sub_tab li {width: 100%; height: 80px; line-height: 80px; margin: 0 0 10px 0; font-size: 26px;}
+
+	.event_list li { width:100%; max-height:inherit; margin-bottom: 30px;}
+	.event_list li:nth-child(2n) { margin-left:0; }
+	.event_list li .txt01 {font-size: 30px;}
+	.event_list li .txt02 {font-size: 26px;}
+	.partner ul li {width: 49%; max-height: 140px; margin: 0 2% 2% 0;}
+	.partner ul li:nth-child(5n) {margin: 0 2% 2% 0;}
+	.partner ul li:nth-child(2n) {margin-right: 0;}
+	.partner ul li .bg p {height: 35px; line-height: 35px; font-size: 26px;}
+
+	.sub_tab02 li { width:100%; height: 80px; line-height: 80px; margin: 0 0 10px 0; font-size: 26px;}
+	.sub_tab02 li:nth-child(2n){ margin-right:0;}
+
+
+	.pcTxt {display: none;}
+	.mTxt {display: block;}
+
+
+	.smile_list li { width:100%; float:none;  }
+	.smile_list li:nth-child(2) { padding-left:0;  padding-top:20px;}
+	.smile_list02 li  { width:100%;}
+	.smile_list02 li:nth-child(1)  { margin-right:0%;}
+	.smile_list02 li img { width:100%;}
+	.smile_list04 li { width:33.3%; margin-bottom:4%;}
+	.smile_list04 li:nth-child(3) { margin-right:0;}
+	.smile_list04 li:last-child { width:38%; }
+	.smile_list04 li:after { right:-11%;}
+	.smile_list04 li:nth-child(3):after { display:none;}
+	.smile .list_txtbox { padding:0 10px;}
+	.smile .list_txtbox ul li { padding-left: 50px;}
+	.smile .list_txtbox ul { float:none; width:100%;}
+	.smile_list05 {padding: 0 30px;}
+	.smile_list05 li {width: 100%; margin-right: 0;}
+	.smile_list05 li:nth-child(2n) {margin-right: 0;}
+	.smile_list05 li:nth-child(3n) {margin-right: 0%;}
+
+
+	.view_wrap .title_box , .view_wrap .file_box{ padding:0 20px; }
+	.view_wrap .content_box { padding:40px 20px;}
+	.reason_list { display:none;}
+	.reason_list02 { display:block;}
+	.lasik_list li img {margin:auto; display:block;}
+	.lasik_list li:nth-child(1),.lasik_list li:nth-child(2) { width:100% ;}
+	.lasik_list li:nth-child(2) { padding-left:0; margin-top:30px;}
+	.id_lasik ul li { width:100%; padding:30px; }
+	.id_lasik { padding:0; }
+	.id_lasik02 > div:first-child {border-top: 1px solid #ddd;}
+	.id_lasik02 > div ul li:nth-child(1) {width:100%;}
+	.id_lasik02 > div ul li:nth-child(2) {width:100%;}
+	.id_lasik03 > div ul li:nth-child(1) {width:100%;}
+	.id_lasik03 > div ul li:nth-child(2) {width:100%;}
+	.id_lasik04 > div ul li:nth-child(1) {width:100%;}
+	.id_lasik04 > div ul li:nth-child(2) {width:100%; padding-left:0;}
+	.id_lasik_recommend li {width: 100%; height: 100px; padding: 30px; margin-right: 0; margin-bottom: 20px;}
+	.id_lasik_recommend li p {font-size: 26px;}
+	.id_lasik ul li .title {font-size: 28px;}
+	.id_lasik ul li .txt {font-size: 26px;}
+	.sub_tit01 {font-size: 30px;}
+	.id_lasik02 > div .title {font-size: 28px;}
+	.id_lasik02 > div .txt {font-size: 26px;}
+	.id_lasek ul li .title {font-size: 28px;}
+	.id_lasek ul li .txt {font-size: 26px;}
+	.lasek .lasek_box {height: 200px;}
+	.lasek .lasek_box .txt_box {height: 200px;}
+	.lasek .lasek_box .txt_box p {padding: 0 30px; font-size: 26px;}
+	.lasek .lasek_box .txt_box p span {margin: 0 10px;}
+
+	.lasek_txtlist li .title {font-size: 28px;}
+	.lasek_txtlist li .txt {font-size: 26px;}
+	.lasek_recommend li p {font-size: 26px; line-height: 1.6;}
+
+	.id_lasek ul li {width:100%;}
+	.cost_list { float:none; width:100%;}
+	.cost_list:first-child { margin-bottom:50px;}
+
+
+
+	/* 노안클리닉 */
+	.old .txt02 {font-size: 26px;}
+	.old_img li span {font-size: 28px;}
+
+	.symptom ul li {width: 100%; margin: 0 0 30px 0;}
+	.symptom ul li .txt_box {min-height: 160px;}
+	.symptom ul li .txt_box p {font-size: 26px;}
+
+	.old_img li { float:none; margin-right:0; width:100%; }
+	.old_img li:first-child { margin-bottom:2%;}
+
+	.symptom ul li {width: 100%; margin: 0 0 30px 0;}
+	.symptom ul li p {font-size: 26px;}
+
+	.old .method img { margin-top:30px;}
+	.old .method .method_pc {display: none;}
+	.old .method .method_m {display: block;}
+	.old .test ul li { float:none; width:100%;}
+	.old .test ul li:first-child { margin-bottom:40px;}
+
+	.old_reason .intro_img {display: none;}
+	.old_reason .intro_img_m {display: block; width: 90%; margin: 0 auto;}
+
+	.laser .smile_list04 li {float: none; width: 100%; margin: 0 0 30px 0; padding: 10px;}
+	.laser .smile_list04 li .txt_box {margin-top: 10px;}
+	.laser .smile_list04 li .txt_box .txt01 {padding: 0 30px; font-size: 26px;}
+	.laser .smile_list03 li {width: 48%; padding: 10px; margin: 0 2% 2% 0;}
+	.laser .smile_list03 li .txt_box {margin-top: 20px; height: 114px;}
+	.laser .smile_list03 li .txt_box p {font-size: 26px;}
+
+
+	.laser .laser06_pc {display: none;}
+	.laser .laser06_m {display: block;}
+
+
+
+	/* 스마일 */
+	.smile .txt {font-size: 28px;}
+
+	.smile_advantage ul {padding-top: 0;}
+	.smile_advantage ul li {width: 48%; margin-right: 2%; margin-bottom: 30px;}
+	.smile_advantage ul li:nth-child(2n) {margin-right: 0;}
+
+	.smile_list li { width:100%; float:none;}
+	.smile_list li:nth-child(2) { padding-left:0; padding-top:20px;}
+	.smile_list .txt02 {margin: 10px 0 30px; font-size: 26px;}
+
+	.smile_gray .sub_tit {font-size: 30px;}
+
+	.smile_1mm {padding: 20px;}
+	.smile_1mm li {width: 100%;}
+	.smile_1mm li:first-child {margin-right: 0; margin-bottom: 30px;}
+	.smile_1mm li strong {height: 70px; line-height: 70px; font-size: 28px;}
+
+	.smile_3d {padding: 20px;}
+	.smile_3d .smile_3d_pc {display: none;}
+	.smile_3d .smile_3d_m {display: block;}
+
+	.low_energy {padding: 20px;}
+	.low_energy .obl li {width: 100%; margin-right: 0; margin-bottom: 50px;}
+	.low_energy .obl li:nth-child(2) {margin-bottom: 0;}
+	.low_energy .obl li .obl_txt span {margin-top: 10px;}
+
+	.row_advantage .tit {font-size: 34px; margin-bottom: 30px;}
+	.row_advantage ul li {float: none; width: 100%; margin-right: 0; margin-bottom: 50px;}
+	.row_advantage ul li:nth-child(2) {margin-bottom: 0;}
+	.row_advantage ul li strong {height: 70px; line-height: 70px; font-size: 28px;}
+	.row_advantage ul li .img_box {padding: 20px 20px 0 20px;}
+
+	.smile_surgery ul li {width: 100%; min-height: 300px; padding: 10px; margin-right: 0; margin-bottom: 20px;}
+	.smile_surgery ul li:nth-child(4) {margin-left: 0;}
+	.smile_surgery ul li .img_box {margin-bottom: 10px;}
+	.smile_surgery ul li p {font-size: 26px; margin-bottom: 20px;}
+
+	.smile_recommed {padding: 40px 20px;}
+	.smile_recommed ul {float: none; width: 100%; margin-right: 0;}
+	.smile_recommed .txt {margin-bottom: 50px; font-size: 34px;}
+	.smile_recommed ul li {padding-left: 50px; margin-bottom: 30px; line-height: 38px; font-size: 26px; background-position: 0 0;}
+
+	.smile_reason .intro_img {display: none;}
+	.smile_reason .m_intro_img {display: block; width: 90%; margin: 0 auto;}
+
+	.laserimg_pc {display: none;}
+	.laserimg_m {display: block;}
+
+	.laser .txt02 {font-size: 26px;}
+
+	.smile_list04 li .txt01 {font-size: 26px;}
+	.smile_list03 li .txt {margin-top: 10px;}
+	.smile_list03 li .txt .txt02 {font-size: 26px;}
+
+
+
+	.laser_imgbox {min-height: 425px;}
+	.laser_imgbox img {margin-bottom: 10px;}
+	.laser_imgbox ul {overflow: hidden; position: static; width:100%; height:auto; padding: 0; bottom:10px; left:0; ; top:inherit;}
+	.laser_imgbox ul li { float:left; height:200px; width: 100%; padding-top:110px; margin-bottom: 10px; font-size: 26px;}
+	.laser_imgbox ul li:nth-child(1) { padding-top:126px;}
+
+	.laser_list li {width: 100%; margin: 0 0 30px 0;}
+	.laser_list02 li {width: 100%; margin: 0 0 30px 0;}
+	.laser_txtlist li .title {position: relative; padding-left: 30px; font-size: 28px;}
+	.laser_txtlist li .title span {position: absolute; top: 10px; left: 0;}
+	.laser_txtlist li .txt {padding-left: 30px; font-size: 26px;}
+
+
+	.lasik_listbox li {width: 100%; margin-bottom: 30px;}
+	.lasik_listbox li:nth-child(2) {padding-left: 0;}
+	.lasik_listbox .lasik_txtlist li:nth-child(2) {padding: 20px;}
+	.lasik_surgery ul li {width: 100%; margin-right: 0; margin-bottom: 30px;}
+	.lasik_surgery ul li p {font-size: 26px;}
+	.lasik_listbox .lasik_txtlist li {margin-bottom: 0;}
+	.lasik_list .txt {font-size: 26px;}
+	.lasik_listbox .lasik_txtlist li .txt {position: relative; padding-left: 30px; font-size: 26px;}
+	.lasik_listbox .lasik_txtlist li .txt span {position: absolute; top: 8px; left: 0;}
+
+	.basic_lasik_recommend li {width: 100%; margin-right: 0%; margin-bottom: 20px;}
+	.basic_lasik_recommend li p {font-size: 26px; line-height: 1.6;}
+
+	.lasek_recommend li {width: 100%; margin: 0 0 20px 0; height: auto; padding: 30px;}
+
+	.lasek_benefit li {width: 100%; margin: 0 0 50px 0;}
+	.lasek_benefit li .benefit_txt {height: auto; font-size: 26px; text-align: center;}
+	.lasek_benefit li .benefit_txt p {padding: 20px 50px;}
+	.lasek_surgery li {float: none; width: 100%; min-height: 200px; margin: 0 0 30px 0;}
+	.lasek_surgery p {font-size: 26px;}
+
+	.lasek_caution ul li {width: 100%; margin-right: 0; margin-bottom: 50px;}
+	.lasek_caution ul li p {min-height: 130px; padding: 30px; font-size: 26px;}
+
+
+
+	.lens_benefit li {width: 100%; margin-right: 0; margin-bottom: 50px;}
+	.lens_benefit li img {height: 73px;}
+	.lens_benefit li p {font-size: 26px; text-align: center;}
+	.lens_surgery li {width: 100%; margin: 0 0 30px 0;}
+	.lens_surgery li {font-size: 26px;}
+
+	.icl_benefit li {width: 100%; margin-right: 0;}
+	.icl_benefit li img {height: 73px;}
+	.icl_benefit li .benefit_txt {height: auto; padding: 180px 20px 20px 20px; font-size: 26px; text-align: center;}
+	.icl_recommend li {width: 100%; height: auto; margin-right: 0%; margin-bottom: 20px;}
+	.icl_recommend li strong {font-size: 28px; margin-bottom: 10px;}
+	.icl_recommend li p {font-size: 26px; line-height: 1.6;}
+
+	.lens_txtlist li .title {font-size: 28px;}
+	.lens_txtlist li .txt {font-size: 26px;}
+	.lens_txtlist li .title02 {font-size: 28px;}
+
+	.smile_btn {font-size: 28px;}
+	.smile_btn img {margin: 0 0 0 10px;}
+	.smile_btn img:first-child {display: none;}
+
+	.raindrop_surgery li {width: 48%; margin: 0 2% 50px 0;}
+	.raindrop_surgery li:nth-child(2n) {margin-right: 0;}
+	.raindrop_surgery li .txt_box {min-height: 108px;}
+
+
+
+
+	/* 신세계스마일이란	*/
+
+	.ksci_box {padding: 60px 30px;}
+	.ksci_box .ksci_top_txt img {max-width: 80%;}
+	.ksci_box .medal_list {width: 100%; margin: 40px auto 30px;}
+	.ksci_box .medal_list li {width: 32%; margin: 0 0 0 2%;}
+	.ksci_box .medal_list li .img_wrap {height: 170px;}
+	.ksci_box span {font-size: 24px;}
+	.ksci_box .sub_txt01 {font-size: 20px;}
+
+	.global_box {padding: 30px;}
+	.global_box .txt_box {width: 300px; height: 300px; padding: 30px; border: 10px solid rgba(255, 255, 255, 0.4);}
+	.global_box .txt_box img {max-width: 100%;}
+	.global_box .txt_box strong {font-size: 28px;}
+
+	.smile_pride_list li {float: none; width: 100%; height: 860px; margin: 30px 0 0 0;}
+	.smile_pride_con03 .bot_txt {box-sizing: border-box; width: 90%; height: auto; padding: 10px 20px;}
+	.smile_pride_con03 .bot_txt p {line-height: 1.6;}
+	.smile_feature_list li .img_box {float: none; width: 100%;}
+	.smile_feature_list li:nth-child(2) .img_box {float: none;}
+	.smile_feature_list li .txt_box {float: none; width: 100%; height: auto; padding: 30px 30px 50px;}
+	.smile_feature_list li .txt_box strong {margin: 0 0 10px 0; font-size: 28px;}
+	.smile_feature_list li .txt_box p {line-height: 26px; font-size: 16px;}
+
+	.science_box01 {padding: 110px 30px 60px;}
+	.science_box01 .top_txt .txt01 {font-size: 30px;}
+	.science_box01 .top_txt .txt02 {margin: 10px 0 20px; line-height: 1.2; font-size: 46px;}
+	.science_box02 .top_txt .txt01 {margin: 0 0 10px 0; font-size: 26px;}
+	.science_box02 .top_txt .txt02 {font-size: 48px;}
+	.science_box01 ul {width: 100%;}
+	.science_box01 ul li {width: 26%; margin: 0 0 0 2%;}
+	.science_box01 ul li img {max-width: 100%;}
+	.science_box01 ul li.point {width: 44%;}
+	.science_box01 ul li p {line-height: 1.2; font-size: 18px;}
+	.science_box01 ul li.point p:before {left: -20px;}
+	.science_box01 ul li.point p:after {right: -20px;}
+	.science_box01 .bot_txt {box-sizing: border-box; width: 100%; padding: 45px 20px;}
+	.science_box01 .bot_txt p {font-size: 18px;}
+
+	.science_box02 {padding: 80px 30px;}
+	.science_box02 ul {width: 100%;}
+	.science_box02 ul li {box-sizing: border-box; float: none; width: 100%; padding: 0;}
+	.science_box02 ul li:after {display: block; clear: both; *zoom: 1; content: '';}
+	.science_box02 ul .point_smile {margin: 30px 0 0 0;}
+	.science_box02 ul .point_low {margin: 40px 0 0 0;; padding: 50px 0 0 0;}
+	.science_box02 ul .point_low:before {top: 0; left: 0; right: 0; transform: rotate(90deg); margin: 0 auto;}
+	.science_box02 ul li img {float: left; width: 40%;}
+	.science_box02 ul li .txt {float: left; box-sizing: border-box; width: 60%; padding: 0 0 0 30px; text-align: left;}
+	.science_box02 ul li .txt strong {margin: 0;}
+	.science_box02 ul li .txt p {line-height: 26px; font-size: 18px; letter-spacing: -1px;}
+
+
+	.smile_special img {width: 80%;}
+	.smile_special .txt_box {padding: 10px 0 15px;}
+	.smile_special .txt_box p {line-height: 36px; font-size: 22px;}
+
+	.m_block {display: block;}
+	.m_none {display: none;}
+
+
+	/* 20190903 추가 */
+	.calendar tr {height:65px;}
+	.calenderDiv .calArea {padding:50px 30px;}
+	.calenderDiv .input_form .notice_cal {font-size:21px;}
+	.cal_top span {font-size:30px;}
+	.input_form table td.call select {width: 140px;}
+	.input_form table td.call input[type="text"] {width:140px; font-size:26px;}
+	input[type="radio"] + label {font-size:26px;}
+
+
+
+}

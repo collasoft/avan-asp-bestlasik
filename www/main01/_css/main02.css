@@ -1,0 +1,742 @@
+i {display:inline-block; vertical-align:middle;}
+button {cursor:pointer;}
+.f_right {float:right !important;}
+
+
+/* 개인정보처리방침 팝업 */
+.popup {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:1000; background-color: rgba(0,0,0,0.8);}
+.popup .popup_wrap { box-sizing: border-box; position: relative; top: 50%; transform: translateY(-50%); left: 0; right: 0; margin: 0 auto; width: 1000px; padding: 30px 40px 50px; background-color: #fff; border: 1px solid #dedede;}
+.popup .popup_wrap .popup_tit {margin-bottom: 30px; border-bottom: 2px solid #80288f; padding-bottom:15px;}
+.popup .popup_wrap .popup_tit:after {display: block; clear: both; *zoom: 1; content: '';}
+.popup .popup_wrap .popup_tit strong {font-size:28px; color: #000; font-weight: 500; }
+.popup .popup_wrap .popup_tit .btn_close {float: right; width: 17px; height: 16px; margin-top:15px; background: url(../image/sub/icon_close.png) no-repeat 0 0; border:0; text-indent: -9999px;}
+.popup .popup_wrap .popup_con  {height:600px; overflow-y:scroll;}
+.popup .popup_wrap .data_txt01 { font-size:16px; color:#666; line-height: 28px;}
+.popup .popup_wrap .data_txt02 { font-size:20px; color:#333; font-weight:500; margin-top: 50px; margin-bottom: 10px;}
+.popup .popup_wrap .data_txt03 { font-size:18px; color:#333; margin-top: 15px; margin-bottom: 5px;}
+
+
+
+
+/* intro */
+
+.intro_main {position:relative; width:100%; height:100%; background:#fff; overflow:hidden;}
+.intro_main.pc_ver {display: block;}
+.m_ver {display: none;}
+.intro_main strong{display:block;font-size:0;text-indent:-9999px}
+.intro_main ul{height:100%}
+.intro_main ul:after{content:'';display:block;clear:both}
+.intro_main ul li{position:relative;overflow:visible !important;float:left;width:50%;height:100%}
+.intro_main ul li .logo {position:absolute; top:47px;}
+.intro_main ul li .bg{position:absolute;top:50%;width:58px;height:114px;margin-top:-57px;opacity:0}
+.intro_main ul li .bg_logo{position:relative; top:45%; padding-bottom: 180px}
+
+.intro_main ul li .area{display:inline-block}
+.intro_main ul li .area p{color:#666; font-size:30px;}
+.intro_main ul li .area .btn_go_site{display:none; width:310px; height:50px ;margin-top:50px; color:#b457c4;font-size:20px; line-height:50px; text-align:center; border-radius:30px; background:#fff}
+
+.intro_main ul li .copyright{display:block;position:absolute;bottom:0;color:#333;font-size:13px;line-height:20px}
+.intro_main ul li.hover .bg{opacity:1}
+.intro_main ul li.hover .area p{color:#fff;font-size:70px; font-weight:600;}
+.intro_main ul li.hover .area .btn_go_site{display:inline-block}
+.intro_main ul li.hover .copyright{display:none}
+
+
+.intro_main ul li.auction .logo {right:50px;}
+.intro_main ul li.bell .logo {left:50px;}
+.intro_main ul li.auction{text-align:right}
+.intro_main ul li.auction .bg{right:-50px;background:url(../image/main/left_arrow.png) no-repeat 0 0}
+.intro_main ul li.auction .area{position:relative;right:100px;width:300px;padding-bottom:155px;   background:url(../image/main/left_txt02.png) no-repeat 100% 130px;}
+.intro_main ul li.auction .area strong{height:55px; margin-bottom:30px; background:url(../image/main/eye_icon01.png) no-repeat 100% 0 }
+.intro_main ul li.auction .copyright{right:90px}
+.intro_main ul li.auction.hover {background:url(../image/main/left_bg.jpg) no-repeat 0 0 / cover;}
+.intro_main ul li.auction.hover .bg_logo{top:40%;}
+.intro_main ul li.auction.hover .area{padding-bottom:348px; width:550px; background:none;}
+.intro_main ul li.auction.hover .area p {top:45%;}
+.intro_main ul li.auction.hover strong{height:35px; margin-bottom:14px; background:url(../image/main/left_txt.png) no-repeat 100% 0}
+.intro_main ul li.bell .bg{left:-50px; background:url(../image/main/right_arrow.png) no-repeat 0 0}
+.intro_main ul li.bell .area{width:600px;padding:0 100px 155px;background:url(../image/main/right_txt02.png) no-repeat 102px 130px}
+.intro_main ul li.bell .area strong {width:105px;height:55px;margin-bottom:30px;background:url(../image/main/eye_icon02.png) no-repeat 2% 0}
+.intro_main ul li.bell .area .btn_go_site {color: #25bcc5;}
+.intro_main ul li.bell .copyright{left:90px}
+.intro_main ul li.bell.hover{background:url(../image/main/right_bg.jpg) no-repeat 0 0 / cover;}
+.intro_main ul li.bell.hover .bg_logo{top:40%;}
+.intro_main ul li.bell.hover .area{padding-bottom:246px;background:url(/resource/autoauction/images/gate/bg_autobell_on.gif) no-repeat 70px 100%}
+.intro_main ul li.bell.hover strong{width:440px; height:35px; margin-bottom:15px;background:url(../image/main/right_txt.png) no-repeat 0 0}
+
+
+
+/* 메인 - 비주얼 */
+
+/*메인 비주얼 */
+.visual_wrap { height:100%; position:relative; padding-top:80px;}
+.visual {position: relative; overflow: hidden; width: 100%; height:100%;}
+.visual img { /* width:178vh; */ width: 100%; margin-left: 50%; transform: translateX(-50%); height: 100%; vertical-align: top;}
+.visual .visual_pc {display: block;}
+.visual .visual_m {display: none;}
+#section0 .iScrollIndicator { background:none !important;}
+.slick-dotted.slick-slider { height:100%;}
+.visual .slick-list { height:100%;}
+.slider div { position:relative; height:100%;overflow: hidden;}
+.visual_txtwrap { position:absolute !important; top:0; width:100%; 
+text-align: center; } 
+.visual_txtwrap p, .visual_txtwrap a { color:#fff; position:absolute; left:0; right:0; margin:auto; }
+.visual_txtwrap .txt01 {top: 15%; font-size: 50px; line-height: 1.3; opacity:0; text-shadow: 2px 2px 2px rgba(0,0,0,0.5); }
+.visual_txtwrap .txt01:after {content: ''; width: 450px; height: 2px; background: #fff; display: block; margin: 20px auto 0; box-shadow: 2px 2px 2px rgba(0,0,0,0.5);}
+.visual_txtwrap .txt02  { font-size:26px; top:20%; opacity:0; text-shadow:2px 2px 2px rgba(0,0,0,0.5)}
+.visual_txtwrap .txt03  { font-size:20px;  top:25%; opacity:0; border: 1px solid #fff; width: 160px;line-height: 50px; border-radius: 8px; box-sizing:border-box; background:rgba(0,0,0,0.3); }
+.visual_txtwrap .txt03:hover { background:#fff; color:#444; transition:0.8s;}
+
+
+
+.visual  .slick-dots { width:100%; bottom:50px;}
+.visual .slick-dots li {  width:70px; height:5px;  border-radius:5px;  vertical-align: middle; margin-right:10px;  background:#fff; border: none;}
+.visual .slick-dots li:last-child { margin-right:0;}
+.visual .slick-dots li.slick-active { background:#812990;}
+.visual .slick-dots li button { width:70px; }
+
+.intro_bar { height:230px ; width:100%; background:#444; position:absolute; bottom:-220px; }
+.intro_bar .inner { position:relative; }
+.intro_bar ul { overflow:hidden; line-height:50px;}
+.intro_bar ul li { float:left; color:#fff; font-size:16px; padding-left:30px; margin-right:120px;}
+.intro_bar ul li:first-child { font-size:20px; font-weight:600; background:url(../image/main/bar_icon01.png)no-repeat center left; }
+.intro_bar ul li:nth-child(2) { background:url(../image/main/bar_icon02.png)no-repeat center left; }
+.intro_bar ul li:nth-child(3) { background:url(../image/main/bar_icon03.png)no-repeat center left; }
+.sms_btn { position:absolute; top:-20px; right:0; width:200px; height:70px; background:url(../image/main/sms_bg.png)no-repeat; color:#fff; font-size:18px; text-align:center;}
+
+.sms_btn a { background:url(../image/main/bar_icon04.png)no-repeat center left; padding-left:30px; margin-top:21px; display: inline-block;
+    margin-left: 18px;}
+
+	
+	
+.intro_bar02 { display:none; position:absolute; bottom:0; width:100%; height:80px;}
+.intro_bar02 ul li { float:left; width:50%; text-align:center; color:#fff; line-height: 80px; font-size:26px}
+.intro_bar02 ul li a { display:inline-block; width:100%; height:100%;}
+.intro_bar02 ul li img { vertical-align:top; margin-right:10px; margin-top:23px;}
+.intro_bar02 ul li:nth-child(1) { background:#25bcc5;}
+.intro_bar02 ul li:nth-child(2) { background:#812990;}
+
+
+
+	
+/* 수술결과 */
+
+.more02 {display: none; width:230px; height:65px; border: 3px solid rgba(180,183,190,0.4); box-sizing:border-box; background: url(../image/main/plus_icon.png) no-repeat 90% center; margin:30px auto; line-height:57px; text-align:center; font-size: 20px; color: #2e2c2e; transition: 0.8s;}
+.more02:hover { background:url(../image/main/plus_icon_on.png)no-repeat 90% center #812990; color:#fff; }
+
+
+
+	
+/* 수술후기 */
+#section1 { background:url(../image/main/review_bg.png)no-repeat 100% 100% / cover;}
+.review_wrap { padding-top:50px; position:relative;}
+.review_wrap .slide_wrap {margin:0 auto;}
+.review_wrap .title_wrap {position: relative;}
+.review_wrap .review_list { background:#fff; width:440px; box-sizing:border-box; } 
+.review_wrap .review_list .img { height:290px; }
+.review_wrap .review_list .txt_wrap { padding:15px; box-sizing:border-box; min-height:110px}
+.review_wrap .review_list .txt_wrap .tit { font-size:20px; color:#2e2c2e; }	
+.review_wrap .review_list .txt_wrap .tit span {color:#666; }	
+.review_wrap .review_list .txt_wrap .days {font-size:16px; color:#999; margin-top:5px;}
+.review_wrap .review_list .img img { width:100%; height:100%;}
+.review_wrap .review_list .txt_wrap .txt03 {display: -webkit-box; overflow: hidden; height: 3.9em; line-height: 1.3em; font-size: 16px; color: #333; text-overflow: ellipsis; white-space: normal; text-align: left; word-wrap: break-word; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+.review_wrap .title_wrap .title { font-size:36px; color:#fff; line-height:65px; font-weight:600; margin-bottom:20px;}
+.review_wrap .slick-dots li {width:16px; height:16px; border-radius:50%; vertical-align: middle; margin-right:25px; background:rgba(255,255,255,0.4); border: none;}
+.review_wrap .slick-dots li:last-child { margin-right:0;}
+.review_wrap .slick-dots li.slick-active { box-sizing: border-box; border:2px solid #fff; background:transparent;}
+.review_list02 { display:none; margin-top:20px;}
+.review_wrap .more02 { color:#fff; }
+
+.review_wrap .slick-prev {content: ''; background: url(../image/main/l_arrow03.png)no-repeat; width: 102px; height: 50px; display: inline-block; margin: auto; top:-14%; right:98px; }
+.review_wrap .slick-next {content: ''; background: url(../image/main/r_arrow03.png)no-repeat; width: 98px; height: 50px; display: inline-block; margin: auto; top:-14%; right:0%; }
+.review_wrap .slick-prev:hover { background: url(../image/main/l_arrow01.png)no-repeat;}
+.review_wrap .slick-next:hover { background: url(../image/main/r_arrow01.png)no-repeat;}
+
+
+
+
+/* 수술 종류 */
+
+.surgery_kind {margin:90px 0;}
+.surgery_kind .surgery_kind_ul {overflow:hidden; margin:0 auto;}
+.surgery_kind .surgery_kind_ul > li {float:left;width:50%; position:relative; }
+.surgery_kind .surgery_kind_ul > li:nth-child(1) .txt01 {font-size:40px; color:#646464;}
+.surgery_kind .surgery_kind_ul > li:nth-child(1) .txt01 span {font-size:52px;}
+.surgery_kind .surgery_kind_ul > li:nth-child(1) .txt02 {font-size:90px; font-weight:600; color:#80288f; letter-spacing:-2px;}
+.surgery_kind .surgery_kind_ul > li:first-child .more_btn {transition:0.5s; position:absolute; bottom:30px; text-align:left; border:1px solid #80288f; width:360px; height:50px; border-radius:10px; font-size:22px; font-weight:600; color:#fff; box-sizing:border-box; background:url(../image/main/result_arrow01.png) no-repeat 85% 40% #80288f; padding-left:38px;}
+.surgery_kind .surgery_kind_ul > li:first-child .more_btn:hover {background:url(../image/main/result_arrow01_on.png) no-repeat 85% 40% #fff; color:#80288f; border:1px solid #80288f;}
+.surgery_kind a {display:block; width:100%; height:100%;}
+.surgery_kind .txt_wrap { position:absolute; top:0; width: 100%; height: 100%;  box-sizing:border-box; padding:30px;}
+.surgery_kind .txt_wrap .txt01 {font-size:20px; font-weight:500; color:#fff;}
+.surgery_kind .txt_wrap .txt02 {font-size:50px; font-weight:600; color:#fff; line-height:1;}
+.surgery_kind img { width:100%; height:100%; vertical-align: middle;}
+.surgery_kind .surgery_kind_ul_inner {overflow:hidden;}
+.surgery_kind .surgery_kind_ul_inner li {width:50%; float:left; position:relative;}
+.surgery_kind .surgery_kind_ul_inner .more_btn {transition:0.5s; border:1px solid #80288f; position:absolute; bottom:30px; text-align:left; width:180px; height:40px; border-radius:10px; font-size:16px; font-weight:500; color:#fff; box-sizing:border-box; background:url(../image/main/result_arrow02.png) no-repeat 85% 40% #80288f; padding-left:30px;}
+.surgery_kind .surgery_kind_ul_inner .more_btn:hover {background:url(../image/main/result_arrow02_on.png) no-repeat 85% 40% #fff; color:#80288f; border:1px solid #80288f;}
+
+/* 의료진 */
+.staff_wrap { width:100%; padding:0 0 100px; background:#f9f9f9; }
+.staff_wrap .title { text-align:left; font-size:36px; color:#333; font-weight:600; padding:55px 0 15px; }
+.staff_wrap .staff_wrap_ul:after {content:''; clear:both; height:0; display:block; visibility:hidden;} 
+.staff_wrap .staff_wrap_ul > li {float:left;}
+.staff_wrap .staff_wrap_ul > li:nth-child(1) {width:925px; height:460px;  margin-right:20px;}
+.staff_box { width:925px;height:460px; background:#fff;  border:1px solid #ddd; box-sizing:border-box}
+.staff_box li { float:left; box-sizing:border-box;}
+.staff_box img {width:100%; height:100%;}
+.staff_box li:nth-child(1) { width: 50%; height:100%;}
+.staff_box li:nth-child(2) { width: 50%; height:100%; padding:0 50px;}
+.staff_box .intro_l {padding-top:65px; box-sizing:border-box; }
+.staff_box .intro_l .txt01 {padding-bottom:15px; font-size:20px; color:#812990; border-bottom:1px solid #666;}
+.staff_box .intro_l .txt01 span{ font-size:26px; margin-right:10px;color:#333;}
+.staff_box .intro_l .txt02 { font-size:28px; color:#6275cf; line-height:34px; margin-top:10px;}
+.staff_box .intro_r { padding:20px 0; padding-left:80px; font-size:16px; color:#666; line-height:2;}
+
+.staff_wrap .slick-prev {content: ''; background: url(../image/main/l_arrow01.png)no-repeat; width: 102px; height: 50px; display: inline-block; margin: auto; top:-9%; right:98px; }
+.staff_wrap .slick-next {content: ''; background: url(../image/main/r_arrow01.png)no-repeat; width: 98px; height: 50px; display: inline-block; margin: auto; top:-9%; right:0%; }
+.staff_wrap .slick-prev:hover { background: url(../image/main/l_arrow01_on.png)no-repeat;}
+.staff_wrap .slick-next:hover { background: url(../image/main/r_arrow01_on.png)no-repeat;}
+.staff_box .name { text-align:center; width:100%; display:none; line-height:60px; font-size:20px;}
+
+.staff_wrap .staff_btn {margin-top:10px; }
+.staff_wrap .staff_btn button {transition:0.5s; width:49%; height:60px; border-radius:10px; background:#fff; border:1px solid #80288f; font-size:20px; font-weight:500; color:#333;}
+.staff_wrap .staff_btn button:hover {background:#80288f; color:#fff;}
+.staff_wrap .staff_btn button:hover .time {background:url(../image/main/call_icon_on.png) no-repeat 0 0}
+.staff_wrap .staff_btn button:hover .map {background:url(../image/main/map_icon_on.png) no-repeat 0 0}
+.staff_wrap .staff_btn i {margin-right:8px}
+.staff_wrap .staff_btn .time {width:28px; height:29px; background:url(../image/main/call_icon.png) no-repeat 0 0;}
+.staff_wrap .staff_btn .map {width:32px; height:30px; background:url(../image/main/map_icon.png) no-repeat 0 0;}
+
+/* 신세계 소식 */
+.m_news_wrap {display:none; padding:30px 0;}
+.m_news_wrap ul {overflow:hidden;}
+.m_news_wrap ul li {float:left; width:25%; text-align:center;}
+.m_news_wrap ul li p {font-size:21px; font-weight:500; color:#666; margin-top:10px;}
+.m_news_wrap ul li i {width:70px; height:70px;}
+.m_news_wrap ul li:nth-child(1) i {background:url(../image/main/notice_icon01.png) no-repeat 0 0;}
+.m_news_wrap ul li:nth-child(2) i {background:url(../image/main/notice_icon02.png) no-repeat 0 0;}
+.m_news_wrap ul li:nth-child(3) i {background:url(../image/main/notice_icon03.png) no-repeat 0 0;}
+.m_news_wrap ul li:nth-child(4) i {background:url(../image/main/notice_icon04.png) no-repeat 0 0;}
+
+.news_wrap {padding-bottom:80px;  background: url(../image/main/news_bg03.png) no-repeat center bottom / cover; position: relative;}
+.news_wrap .title { font-size:36px; color:#fff; font-weight:600; padding:55px 0 15px; }
+.news_wrap .title span {font-weight:normal; font-size:16px; margin-left:10px;}
+.news_wrap .news_box { overflow:hidden; }
+.news_wrap .news_box>li { ; float:left; }
+.news_wrap .news_box>li:nth-child(1) { width:100%;}
+.news_list { width:21.7%; float:left; padding:40px 20px 0; box-sizing:border-box; overflow:hidden; height:380px; background:#fff;}
+.news_list .list_title { font-size:24px; color:#2e2c2e; border-bottom:1px solid #d9d9da; padding-bottom:10px;}
+.news_list .list_title a { font-size:14px; color:#812990; float:right; margin-top: 12px;}
+.news_list .list li {height:65px; box-sizing: border-box; padding: 15px 0px;}
+.news_list .list li:last-child { border-bottom:none;}
+.news_list .list li a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-break: break-all; display:inline-block; width:100%;}
+.news_list .list li a:hover { color:#812990}
+.news_list .list li .day { display:block; font-size:16px; color:#888; }
+.news_list .img { width:100%; height:142px; margin-top:20px; margin-bottom:20px;} 
+.news_list .img img { width:100%; height:100%;}
+.news_list .txt a {  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-break: break-all; display:block; width:100%;}
+.news_list .txt a:hover { color:#812990}
+.news_list .txt .day { display:block; font-size:16px; color:#888; }
+.news_list .txt .con_txt {font-size:14px; color:#666;display: inline-block;overflow: hidden; text-overflow: ellipsis; width:100%; white-space: normal; line-height: 1.5; height:2.8em; text-align: left; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical;}
+
+.advice_form {width:33%; box-sizing:border-box; padding:0 30px 27px; background:#eee; margin-left:1%; float:right;}
+.advice_form h3 {font-size:26px; color:#333; font-weight:500; padding:25px 0 10px; margin-bottom:15px; border-bottom:1px solid #666;}
+.advice_form h3 span { color:#80288f;}
+.advice_form input[type="text"] {margin-bottom:10px; font-size:16px; color:#999; padding:0 20px; box-sizing:border-box; width:100%; height:40px; border-radius:10px; border:1px solid #ddd;}
+.advice_form .call {width:30% !important; }
+.advice_form .apply_btn {width:100%; height:50px; border-radius:10px; background:#80288f; font-size:20px; font-weight:600; color:#fff; border:0;}
+.advice_form .radio_div {width:100%; border-radius:10px; border:1px solid #ddd; box-sizing:border-box; padding:8px 20px; background:#fff; }
+.advice_form .radio_div p {font-size:16px; color:#999;}
+.advice_form select {width:29.7%; padding-right:20px; font-size:16px; color:#999; height:40px; border-radius:10px; -moz-appearance: none;-webkit-appearance: none; appearance: none;
+  background: url(../image/main/select_arrow.png) no-repeat 85% 50% #fff; /* 화살표 모양의 이미지 */ border:1px solid #ddd; padding-left:15px; box-sizing:border-box; vertical-align: top;}
+
+.advice_form .line {display:inline-block; width:16.5px; position:relative; }
+.advice_form .line:before {position:absolute; left:2px; bottom:5px; background-color:#333; width:10px; height:1px; content:''; display:block;} 
+
+select::-ms-expand { display: none; } /* IE 10, 11의 네이티브 화살표 숨기기 */
+
+.advice_form .radio_div input[type="radio"]{display:none;}
+.advice_form .radio_div label {font-size:14px;color:#666; margin-right:5px; }
+.advice_form .radio_div input[type="radio"] + label span {display:inline-block;width:14px;height:14px;vertical-align:middle;background:url(../image/main/radio_off.png) center no-repeat; cursor:pointer; margin-right:2px;}
+.advice_form .radio_div input[type="radio"]:checked + label span {background:url(../image/main/radio_on.png) center no-repeat ;}
+
+.advice_form .check_div {margin:10px 0 15px; position:relative; }
+.advice_form .check_div button {position:absolute; right:0px; width:140px; height:24px; font-size:14px; color:#fff; border-radius:30px; background:#666; border:0;}
+.advice_form .check_div label {font-size:14px; color:#666;}
+
+
+
+
+/* 페이스북 플러그인 */
+.facebook .title {  font-weight:normal;   background: #004a9a url(../image/main/facebook_t.png) 20px center no-repeat;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 30px;
+    color: #fff;
+    font-size: 21px;
+    position: relative;     text-indent: 10px; padding-top:15px;}
+.facebook .timeline { height: 430px;
+    padding-top: 10px; margin-top:10px; overflow: hidden;}
+.facebook .btn_like {     position: absolute;
+    right: 15px;
+    top: 30px;
+    margin: 0;}
+
+.facebook .timeline iframe { margin-top: -81px;}
+
+
+/* 협력업체 */
+.partner_wrap { width:100%; height:445px; background:#f2f5f8; overflow: hidden;}
+.partner_wrap .title { text-align:center; font-size:50px; color:#191919; font-weight:500; padding-top:105px; }
+.partner_wrap .title_txt { text-align:center; color:#333; font-size:20px; font-weight:300; margin-bottom:60px;}
+.partner_list  { max-width:1280px; margin:auto; width:100%; height:100px; }
+.partner_list .slick-slide {     text-align: center;}
+.partner_list .list_img {  margin:0 5px; background:#fff; display:inline-block; text-align:center;}
+.partner_list .list_img img { vertical-align:middle; width:100%; height:100%;}
+.partner_list .slick-prev {     content: '';
+    background: url(../image/main/l_arrow02.png)no-repeat;
+    width: 50px;
+    height: 100px;
+    display: inline-block; margin: auto;
+    top: 95px;
+    bottom: 0; left:-60px; }
+
+.partner_list .slick-next {     content: '';
+    background: url(../image/main/r_arrow02.png)no-repeat;
+    width: 50px;
+    height: 100px;
+    display: inline-block; margin: auto;
+    top: 95px;
+    bottom: 0; right:-60px; }
+
+.partner_wrap .slick-dots { width:100%; bottom: -40px; display:none;}
+.partner_wrap .slick-dots li {  width:16px; height:16px;  border-radius:50%;  vertical-align: middle; margin-right:25px;  background:rgba(180,183,190,0.4); border: none;}
+.partner_wrap .slick-dots li:last-child { margin-right:0;}
+.partner_wrap .slick-dots li.slick-active { box-sizing: border-box; border:2px solid #812990; background:transparent;}
+
+
+
+
+
+
+@media screen and (min-width:1110px) and (max-width:1412px) {
+
+	.facebook {margin-top: 100px}	
+}
+
+/* tablet */
+@media screen and (min-width:768px) and (max-width:1110px) {
+	.staff_box .intro_r {padding-left:20px}
+	.popup .popup_wrap {width:95%}
+	.intro_main ul li.bell.hover {background: url(../image/main/right_bg.jpg) no-repeat -180px 0 / cover;}
+	
+	.visual .slick-dots { bottom: 110px;}
+	.visual_txtwrap .txt01 {padding: 0 50px;}
+	.visual_txtwrap .txt02 {top: 36%;}
+	
+	.intro_bar { display:none;}
+	.intro_bar02 { display:block;}
+	
+	.slide_wrap  { margin-bottom:80px;}
+	.more02 { display: block;}
+	
+	.review_wrap:before {position:absolute; left:0px; top:0px; background-color:#444; width:100%; height:180px; content:''; display:block;}
+	.review_wrap .title_wrap { width: 100%; text-align: center; height: auto; margin-bottom: 40px; float:none; }
+	.review_wrap .title_wrap .title {font-size: 48px; margin-bottom: 20px;}
+	.review_wrap .title_wrap .title_txt {font-size: 26px; }
+	.review_wrap .title_wrap .more { display:none;}
+	.review_wrap .review_list { height:auto; width: 90%; margin: auto;}
+	.review_wrap .review_list .img {height:100%;}
+	.review_wrap .review_list .txt_wrap {padding: 20px; height: auto;}
+	.review_wrap .review_list .txt_wrap .txt03 {font-size: 26px;}
+	.review_wrap .review_list .more_box { margin:0 20px;}
+	.review_wrap .slick-dotted.slick-slider { max-width:1000px; margin:auto;     margin-bottom:80px;}
+	.review_wrap .slick-dots { width:100%; bottom:-40px}
+	.review_wrap .slick-dots li { margin-right:15px;}
+
+	
+	.staff_wrap .slick-dots li { margin-right:15px;}
+	.staff_wrap .slick-prev {right:98px}
+	.staff_box .intro_l .txt02 { font-size: 23px; margin-top: 10px;}
+	
+	.introbox_wrap .intro_box>li .txt_box .txt02 li { float:none; }
+	.introbox_wrap .intro_box>li:nth-child(1) { background:url(../image/main/introbox_icon01.png)no-repeat 20px center;}
+	.introbox_wrap .intro_box>li:nth-child(2) { background:url(../image/main/introbox_icon02.png)no-repeat 20px center;}
+	.introbox_wrap .intro_box>li .txt_box a{ padding-left: 180px; padding-right: 30px;}
+	
+	.news_wrap .title {text-align:center; }
+	.news_wrap .title_txt { text-align:center;}
+	.news_wrap .news_box>li:nth-child(1) { width:100%; margin-right:0;}
+	
+	
+	.partner_wrap .slick-dots { display:block;}
+	.partner_wrap .title {  font-size:42px; }
+	.partner_list .slick-next,.partner_list .slick-prev {display:none !important;}
+	.partner_wrap .title { padding-top:80px;}
+
+	.staff_box {width:100%}
+	.staff_wrap .staff_wrap_ul > li:nth-child(1) {width:100%; margin-right:0;}
+	.staff_wrap .staff_wrap_ul > li:last-child {display:none;}
+	.staff_wrap .staff_btn button {width:49.2%;}
+
+	/* 수술종류 */
+	.surgery_kind .surgery_kind_ul > li {width:100%;}
+
+	/* 상담신청 */
+
+	.advice_form {padding:0 20px 30px; width:50%; box-sizing:border-box; margin-left:0;}
+	.advice_form .radio_div label {margin-right:5px;}
+
+	/* 신세계 후기 */
+	.news_list {width:50%; padding:20px; border-bottom:1px solid #d9d9da; height:384px;}
+	.news_list .list li {border:0; font-size: 18px;}
+	.news_list .list li a { width: 75%; }
+	.news_list .list li .day { display:inline-block; float:right; font-size:16px;}
+	.news_list .img { float:left; width:100%;}
+	.news_list .list_title { border-bottom:0;}
+	.news_list:last-child { border-bottom:0;}
+
+
+
+
+	
+}
+
+
+@media screen and (min-width:481px) and (max-width:767px) {
+	.m_news_wrap ul li p {font-size:26px;}
+	.popup .popup_wrap {width:95%}
+	.intro_bar { display:none;}
+	.intro_bar02 { display:block;}
+	.visual .slick-dots { bottom: 110px;}
+	.more02 {display: block; width: 250px; height: 80px; line-height: 70px; font-size: 30px;}
+	.slider div {max-height: 1070px;}
+	.slide_wrap  { margin-bottom:80px;}
+	.slick-track .slick-slide:nth-child(1) .visual_txtwrap .txt02 {top: 41% !important;}
+	.visual img {width: 100%; height: 100%;}
+	.visual .visual_pc {display: none;}
+	.visual .visual_m {display: block;}
+	.logo_gnb { height:100px;}
+	.logo img { margin-top: 27px;}
+	
+	.visual_txtwrap .txt01 {padding: 0 50px;}
+	.visual_txtwrap .txt01:after {width: 300px;}
+	.visual_txtwrap .txt02 {padding: 0 50px; font-size: 30px;}
+	
+	
+	
+	
+	/* 수술후기 */
+	.review_wrap .title_wrap .title {padding-top:30px;}
+	.review_wrap {padding-top:0;}
+	.review_wrap:before {position:absolute; left:0px; top:0px; background-color:#444; width:100%; height:180px; content:''; display:block;}
+	.review_wrap .review_list {width:97%; }
+	.review_wrap .review_list .img {height:100%;}
+	.review_wrap .review_list .txt_wrap .tit {font-size:24px;}
+	.review_wrap .review_list .txt_wrap .days {font-size:18px}
+
+	/*
+	.review_wrap .title_wrap { width: 100%; text-align: center; height: auto; padding: 40px 0; float:none; }
+	.review_wrap .title_wrap .title {font-size: 48px; margin-bottom: 20px;}
+	.review_wrap .title_wrap .title_txt {font-size: 26px;}
+	.review_wrap .title_wrap .more { display:none;}
+	.review_wrap .review_list {overflow: hidden; width:100%; height: 250px;}
+	.review_wrap .review_list .img {float:left; width: 40%; height:250px;}
+	.review_wrap .review_list .txt_wrap {padding: 20px; height: 250px; width: 60%; float: left;}
+	.review_wrap .review_list .txt_wrap .txt03 {font-size: 26px;}
+	.review_wrap .review_list .more_box { display:none;}
+	.review_list02 { display:block;}
+	.review_wrap .slick-dots { width:100%; bottom:-40px}
+	.review_wrap .slick-dots li { margin-right:15px;}
+	.review_wrap .review_list .txt_wrap .txt01 {font-size: 26px;} */
+
+	
+	
+	
+	/* 의료진소개 */
+	.staff_wrap {padding-top:0;}
+	.staff_wrap .title {font-size:36px; line-height: 50px; margin-bottom: 20px;}
+	.staff_wrap .title_txt {padding: 0 115px; font-size: 30px;}
+	.staff_wrap .slick-dots li { margin-right:15px;}
+
+	.staff_wrap .staff_wrap_ul > li:nth-child(1) {width:100%; height:auto;}
+	.staff_wrap .staff_wrap_ul > li:last-child {display:none;}
+
+	.staff_wrap .slick-prev,.staff_wrap .slick-next {top:-15%;}
+	.staff_box { width:97%; height: auto; background:none; border:0;}
+	.staff_box li { float:none; width: 100%;}
+	.staff_box li:nth-child(1) { width: 100%;}
+	.staff_box li:nth-child(2) { width: 100%; padding:0}
+	.staff_box li img {width:100%; margin:0 auto}
+	.staff_box .intro_l,.staff_box .intro_r {display:none;}
+	.staff_box .name {color:#80288f; display:block; font-size: 21px; line-height:60px; padding-left:20px; text-align:left;}
+	.staff_box .name span {color:#2e2c2e; font-size: 26px; }
+	.staff_wrap .staff_btn button {font-size:26px;}
+	
+	
+	
+	/* 진료시간 */
+	.introbox_wrap {height: auto; padding: 80px 0;}
+	.introbox_wrap .intro_box>li {width: 100%; height: auto;}
+	.introbox_wrap .intro_box>li:nth-child(1) { border-right: 1px solid #e8e9eb; background:url(../image/main/introbox_icon01.png)no-repeat center 40px; margin-bottom: 30px;}
+	.introbox_wrap .intro_box>li:nth-child(2) { background:url(../image/main/introbox_icon02.png)no-repeat center 40px;}
+	.introbox_wrap .intro_box>li .txt_box { text-align:center;}
+	.introbox_wrap .intro_box>li .txt_box .txt02 {padding: 0 30px; font-size: 26px;}
+	.introbox_wrap .intro_box>li .txt_box .txt02 li { float:none; }
+	.introbox_wrap .intro_box>li .txt_box a {padding: 180px 30px 30px 30px; display:inline-block; padding-top: 180px; box-sizing:border-box; }
+	.introbox_wrap .btn {width: 250px; height: 80px; line-height: 80px; font-size: 30px;}
+	
+	
+	/* 신세계 소식 */
+
+	.m_news_wrap {display:block;}
+	.news_wrap {background: url(../image/main/news_bg02.png)no-repeat center bottom / cover; background:#fff !important; padding-bottom:0px;}
+	.news_wrap .inner { padding:0}
+	.news_wrap .title {display:none; font-size:48px; line-height: 50px; text-align:center; padding-top:60px; margin-bottom: 20px;}
+	.news_wrap .title span {display:block; font-size:26px; margin-left:0px; padding-bottom:10px;}
+	.news_wrap .title_txt {font-size: 30px; text-align:center; padding: 0 20px;}
+	.news_wrap .news_box>li { height:auto; }
+	.news_wrap .news_box>li:nth-child(1) { width:100%; margin-right:0; padding:10px 0; }
+	.news_wrap .news_box>li:nth-child(2) {width:100%;}
+	.news_list {display:none; width:100%; height:340px;  float:none; padding:20px; border-bottom:1px solid #d9d9da;}
+	.news_list:last-child { border-bottom:0;}
+	.news_list .list li { height: 50px ;border:0; font-size: 26px;}
+	.news_list .list li a { width: 65%; }
+	.news_list .list li .day { display:inline-block; float:right; font-size: 22px;}
+	.news_list .img { float:left; width:40%;}
+	.news_list .txt { float:left; margin-top: 20px; margin-bottom: 20px; padding:0 20px; box-sizing:border-box; width:60%;}
+	.news_list .txt a {font-size: 28px;}
+	.news_list .txt .day {font-size: 22px;}
+	.news_list .txt .con_txt {font-size: 22px;}
+	.news_list .list_title { border-bottom:0; font-size: 34px;}
+	.news_list .list_title a {font-size: 22px;}
+
+	
+
+	
+	/* 협력업체 */
+	.partner_wrap .title {font-size:48px; line-height: 50px; margin-bottom: 20px;}
+	.partner_wrap .title_txt {font-size: 30px; padding: 0 20px;}
+	.partner_wrap { height:auto; padding:70px 0; }
+	.partner_wrap .title { padding-top:0;}
+	.partner_wrap .slick-dots { display:block;}
+	.partner_list .slick-next,.partner_list .slick-prev { display:none !important;}
+	
+
+	
+	/* 인트로 */
+	.intro_main.pc_ver {display: none;}
+	.m_ver {display: block; position: relative;}
+	.m_ver .m_logo {height: 100px; text-align: center;}
+	.m_ver .m_logo img {margin-top: 20px; vertical-align: top;}
+	.m_ver ul li {position: relative; float: none; width: 100%; height: 45vh;}
+	.m_ver ul li.m_auction {background: url(../image/main/m_left_bg.jpg) no-repeat 0 0 / cover;}
+	.m_ver ul li.m_bell {background: url(../image/main/m_right_bg.jpg) no-repeat 0 0 / cover;}
+	.m_ver ul li .area {position: absolute; top: 50%; transform: translateY(-50%); right: 50px; padding: 60px 0 0 0; text-align: right;}
+	.m_ver ul li .area p {font-size: 34px; color: #fff;}
+	.m_ver ul li.m_auction .area {background: url(../image/main/m_eye_icon01.png) no-repeat right top;}
+	.m_ver ul li.m_bell .area {background: url(../image/main/m_eye_icon02.png) no-repeat right top; z-index: 100;}
+	.m_ver ul li .area .btn_go_site {display: inline-block; width: 200px; height: 40px; line-height: 40px; margin-top: 10px; border-radius: 20px; font-size: 20px; background-color: #fff; color: #b457c4; text-align: center;}
+	.m_ver ul li.m_bell .area .btn_go_site {color: #31beca;}
+	.m_ver .m_bg {position: absolute; bottom: 0; left: -50px;}
+	.m_ver .m_bg img {width: 85%; vertical-align: top;}
+	.intro_main ul li.bell.hover {background: url(../image/main/right_bg.jpg) no-repeat -180px 0 / cover;}
+
+	/* 수술종류 */
+	.surgery_kind .surgery_kind_ul > li {width:100%;}
+	.surgery_kind .surgery_kind_ul_inner li {width:100%;}
+	.surgery_kind .txt_wrap .txt01 {font-size:36px;}
+	.surgery_kind .txt_wrap .txt02 {font-size:62px;}
+	.surgery_kind .surgery_kind_ul > li {width:100%;}
+	.surgery_kind .surgery_kind_ul_inner li {width:100%;}
+	.surgery_kind .surgery_kind_ul > li:first-child .more_btn {width:210px; height:50px; font-size:22px; background:url(../image/main/result_arrow02.png) no-repeat 85% 40% #80288f;}
+	.surgery_kind .surgery_kind_ul_inner .more_btn {width:210px; height:50px; font-size:22px;}
+	.surgery_kind .surgery_kind_ul > li:nth-child(1) .txt01 {font-size:34px; color:#646464;}
+	.surgery_kind .surgery_kind_ul > li:nth-child(1) .txt01 span {font-size:36px;}
+	.surgery_kind .surgery_kind_ul > li:nth-child(1) .txt02 {font-size:62px; font-weight:600; color:#80288f; letter-spacing:-2px;}
+
+
+
+
+	/* 상담신청 */
+	.advice_form {padding:0 20px 30px; width:100%; box-sizing:border-box; margin-left:0;}
+	.advice_form h3 {font-size:34px;}
+	.advice_form input[type="text"] {height:60px; font-size:24px;}
+	.advice_form select {height:60px}
+	.advice_form .radio_div p {font-size:21px}
+	.advice_form .radio_div label {font-size:24px; margin-right:5px;}
+	.advice_form .check_div {margin:20px 0 30px;}
+	.advice_form .check_div label {font-size:18px;}
+	.advice_form .check_div button {width:150px; height:30px; font-size:18px;}
+
+	.advice_form .radio_div input[type="radio"] + label span {width:25px; height:25px; background:url(../image/main/radio_off_m.png) center no-repeat}
+	.advice_form .radio_div input[type="radio"]:checked + label span {background:url(../image/main/radio_on_m.png) center no-repeat}
+}
+
+
+
+/* mobile */
+@media screen and (max-width:480px) {
+	.popup .popup_wrap {width:95%}
+	.intro_bar { display:none;}
+	.intro_bar02 { display:block;}
+	.intro_bar02 ul li {font-size:18px;}
+	.slider div {max-height: 1000px;}
+	.slide_wrap  { margin-bottom:80px;}
+	.visual img {width: 100%; height: 100%;}
+	.visual .visual_pc {display: none;}
+	.visual .visual_m {display: block;}
+	.logo_gnb { height:100px;}
+	.logo img { margin-top: 27px;}
+	.visual .slick-dots { bottom: 110px;}
+	
+	
+	.visual_txtwrap .txt01 {padding: 0 50px; font-size: 40px;}
+	.visual_txtwrap .txt01:after {width: 300px;}
+	.visual_txtwrap .txt02 {top: 41% !important; padding: 0 50px; font-size: 30px;}
+	
+	
+	/* 수술후기 */
+
+	.review_wrap .slick-prev {content: ''; background: url(../image/main/l_arrow01_s.png)no-repeat; width:41px; height:20px; display: inline-block; margin: auto; top:-14%; right:39px; }
+	.review_wrap .slick-next {content: ''; background: url(../image/main/r_arrow01_s.png)no-repeat; width:39px; height:20px; display: inline-block; margin: auto; top:-14%; right:0%; }
+	.review_wrap .slick-prev:hover {content: ''; background: url(../image/main/l_arrow01_s.png)no-repeat; width:41px; height:20px; display: inline-block; margin: auto; top:-14%; right:39px; }
+	.review_wrap .slick-next:hover {content: ''; background: url(../image/main/r_arrow01_s.png)no-repeat; width:39px; height:20px; display: inline-block; margin: auto; top:-14%; right:0%; }
+
+
+	.review_wrap {padding-top:0;}
+	.review_wrap:before {position:absolute; left:0px; top:0px; background-color:#444; width:100%; height:280px; content:''; display:block;}
+	.review_wrap .slick-dots li { margin-right:15px;}
+	.review_wrap .title_wrap {width: 100%; text-align: center; height: auto; padding: 40px 0; float:none; }
+	.review_wrap .title_wrap .title {font-size: 41px; text-align:left; }
+	.review_wrap .title_wrap .title_txt {font-size: 26px;}
+	.review_wrap .title_wrap .more { display:none;}
+	.review_wrap .review_list {width: 97%;}
+	.review_wrap .review_list .txt_wrap .txt03 {font-size: 26px;}
+	.review_wrap .review_list .img {height:150px;}
+	.review_wrap .slick-dots { width:100%; bottom:-40px}
+	.review_wrap .slick-dots li { margin-right:15px;}
+	.review_wrap .review_list .txt_wrap .txt01 {font-size: 26px;}
+	.more02 {display: block; width: 250px; height: 80px; line-height: 70px; font-size: 30px;}
+
+	
+	
+	/* 의료진소개 */
+	.staff_wrap {padding-top:0; padding-bottom:0px;}
+	.staff_wrap .title { font-size: 41px; line-height: 1.3; margin-bottom: 20px; }
+	.staff_wrap .title_txt {font-size: 30px; padding: 0 20px;}
+	.staff_wrap .slick-dots li { margin-right:15px;}
+	.staff_wrap .slick-prev {content: ''; background: url(../image/main/l_arrow01_s.png)no-repeat; width:41px; height:20px; display: inline-block; margin: auto;  right:39px; }
+	.staff_wrap .slick-next {content: ''; background: url(../image/main/r_arrow01_s.png)no-repeat; width:39px; height:20px; display: inline-block; margin: auto;  right:0%; }
+	.staff_wrap .slick-prev:hover {content: ''; background: url(../image/main/l_arrow01_s.png)no-repeat; width:41px; height:20px; display: inline-block; margin: auto; right:39px; }
+	.staff_wrap .slick-next:hover {content: ''; background: url(../image/main/r_arrow01_s.png)no-repeat; width:39px; height:20px; display: inline-block; margin: auto; right:0%; }
+
+	.staff_wrap .slick-prev,.staff_wrap .slick-next {top:-15%;}
+	.staff_wrap .staff_wrap_ul > li:nth-child(1) {width:100%;}
+	.staff_wrap .staff_wrap_ul > li:last-child {display:none;}
+	.staff_box { width: 97%; height: auto; background:none; border:0;}
+	.staff_box li { float:none; width: 100%;}
+	.staff_box li:nth-child(1) { width: 100%;}
+	.staff_box li:nth-child(2) { width: 100%; padding:0}
+	.staff_box li img {width: 100%;}
+	.staff_box .intro_l,.staff_box .intro_r { display:none;}
+	
+	.staff_box .name {color:#80288f; display:block; font-size: 18px; line-height:60px; padding-left:20px; text-align:left;}
+	.staff_box .name span {color:#2e2c2e; font-size: 21px; }
+
+	
+	/* 진료시간 */
+	
+	.introbox_wrap { height:auto; padding:80px 0;}
+	.introbox_wrap .intro_box>li {width: 100%; height: auto;}
+	.introbox_wrap .intro_box>li:nth-child(1) { border-right: 1px solid #e8e9eb; background:url(../image/main/introbox_icon01.png)no-repeat center 40px; margin-bottom: 30px;}
+	.introbox_wrap .intro_box>li:nth-child(2) { background:url(../image/main/introbox_icon02.png)no-repeat center 40px;}
+	.introbox_wrap .intro_box>li .txt_box { text-align:center;}
+	.introbox_wrap .intro_box>li .txt_box .txt02 {font-size: 26px;}
+	.introbox_wrap .intro_box>li .txt_box .txt02 li { float:none; }
+	.introbox_wrap .intro_box>li .txt_box a {padding: 180px 30px 30px 30px; display:inline-block; padding-top: 180px; box-sizing:border-box; }
+	.introbox_wrap .btn {width: 250px; height: 80px; line-height: 80px; font-size: 30px;}
+	
+	
+	/* 신세계소식 */
+	.m_news_wrap {display:block;}
+	.news_wrap { background:#fff; padding-bottom:0px}
+	.news_wrap .inner {padding: 0;}
+	.news_wrap .title {padding-top: 60px; margin-bottom: 20px; font-size:41px; line-height: 50px; text-align:center; display:none;}
+	.news_wrap .title span {display:block; font-size:24px; margin-left:0px; padding:0 20px 10px;}	
+	.news_wrap .title_txt {padding: 0 20px; font-size: 30px; text-align:center;}
+	.news_wrap .news_box>li { height:auto;}
+	.news_wrap .news_box>li:nth-child(1) { width:100%; margin-right:0;}
+	.news_wrap .news_box>li:nth-child(2) {width:100%;}
+	.news_list {display:none; width:100%; height:340px; float:none; padding:20px; border-bottom:1px solid #d9d9da;}
+	.news_list:last-child { border-bottom:0;}
+	.news_list .list li { height: 50px ;border:0; font-size: 26px;}
+	.news_list .list li a { width: 65%; }
+	.news_list .list li .day { display:inline-block; float:right; font-size: 22px;}
+	.news_list .img { float:left; width:40%;}
+	.news_list .txt { float:left; margin-top: 20px; margin-bottom: 20px; padding:0 20px; box-sizing:border-box; width:60%;}
+	.news_list .txt a {font-size: 28px;}
+	.news_list .txt .day {font-size: 22px;}
+	.news_list .txt .con_txt {font-size: 22px;}
+	.news_list .list_title { border-bottom:0; font-size: 34px;}
+	.news_list .list_title a {font-size: 22px;}
+	
+	
+	/* 협력업체 */
+	.partner_wrap { height:auto; padding:70px 0;}
+	.partner_wrap .title {padding-top: 0; margin-bottom: 20px; font-size:48px; line-height: 50px;}
+	.partner_wrap .title_txt {padding: 0 20px; font-size: 30px;}
+	.partner_wrap .slick-dots {display: block;}
+	.partner_list .slick-next,.partner_list .slick-prev {display: none !important;}
+	
+	
+	
+	
+	
+	/* 인트로 */
+	.intro_main.pc_ver {display: none;}
+	.m_ver {display: block; position: relative;}
+	.m_ver .m_logo {height: 100px; text-align: center;}
+	.m_ver .m_logo img {margin-top: 20px; vertical-align: top;}
+	.m_ver ul li {position: relative; float: none; width: 100%; height: 45vh;}
+	.m_ver ul li.m_auction {background: url(../image/main/m_left_bg.jpg) no-repeat 0 0 / cover;}
+	.m_ver ul li.m_bell {background: url(../image/main/m_right_bg.jpg) no-repeat 0 0 / cover;}
+	.m_ver ul li .area {position: absolute; top: 50%; transform: translateY(-50%); right: 20px; padding: 60px 0 0 0; text-align: right;}
+	.m_ver ul li .area p {font-size: 30px; color: #fff; letter-spacing: -1px;}
+	.m_ver ul li.m_auction .area {background: url(../image/main/m_eye_icon01.png) no-repeat right top;}
+	.m_ver ul li.m_bell .area {background: url(../image/main/m_eye_icon02.png) no-repeat right top; z-index: 100;}
+	.m_ver ul li .area .btn_go_site {display: inline-block; width: 200px; height: 40px; line-height: 40px; margin-top: 10px; border-radius: 20px; font-size: 20px; background-color: #fff; color: #b457c4; text-align: center;}
+	.m_ver ul li.m_bell .area .btn_go_site {color: #31beca;}
+	.m_ver .m_bg {position: absolute; bottom: 0; left: -50px;}
+	.m_ver .m_bg img {width: 75%; vertical-align: top;}
+
+
+	/* 수술종류 */
+	.surgery_kind .txt_wrap .txt01 {font-size:28px;}
+	.surgery_kind .surgery_kind_ul > li {width:100%;}
+	.surgery_kind .surgery_kind_ul_inner li {width:100%;}
+	.surgery_kind .surgery_kind_ul > li:first-child .more_btn {width:210px; height:50px; font-size:22px; background:url(../image/main/result_arrow02.png) no-repeat 85% 40% #80288f;}
+	.surgery_kind .surgery_kind_ul_inner .more_btn {width:210px; height:50px; font-size:22px;}
+
+	.surgery_kind .surgery_kind_ul > li:nth-child(1) .txt01 {font-size:26px; color:#646464;}
+	.surgery_kind .surgery_kind_ul > li:nth-child(1) .txt01 span {font-size:28px;}
+	.surgery_kind .surgery_kind_ul > li:nth-child(1) .txt02 {font-size:50px; font-weight:600; color:#80288f; letter-spacing:-2px;}
+
+
+	/* 상담신청 */
+
+	.advice_form h3 {font-size:34px;}
+	.advice_form {padding:0 20px 30px; width:100%;}
+	.advice_form input[type="text"] {height:60px; font-size:24px;}
+	.advice_form select {height:60px}
+	.advice_form .radio_div p {font-size:21px}
+	.advice_form .radio_div label {font-size:21px;}
+	.advice_form .check_div {margin:20px 0 30px;}
+	.advice_form .check_div label {font-size:18px;}
+	.advice_form .check_div button {width:150px; height:30px; font-size:18px;}
+
+
+	
+}
+
+
