@@ -226,7 +226,7 @@ End Function
 	  <li><a href="sub.asp?lasik=K101">로그인</a></li>
 	  <li><a href="sub.asp?lasik=J101">회원가입</a></li>
 	  <%End if%>
-	  <li><a href="/main02">노안·백내장센터 바로가기</a></li>
+	  <li><a href="/main02">노안·백내장 바로가기</a></li>
 	</ul>
   </div>
 </div>
@@ -284,7 +284,7 @@ End Function
 	  <div class="dp2">
 	    <ul>
 		  <li><a href="sub.asp?lasik=C101">신세계라식이란</a></li>
-		  <li><a href="sub.asp?lasik=C102">신세계라식의 종류</a></li>
+		  <li><a href="sub.asp?lasik=C103">신세계라식의 종류</a></li>
 	    </ul>
 	  </div>	
     </li>
@@ -292,7 +292,7 @@ End Function
 	  <div class="dp2">
 	    <ul>
 		  <li><a href="sub.asp?lasik=D101">신세계라섹이란</a></li>
-		  <li><a href="sub.asp?lasik=D102">신세계라섹의 종류</a></li>
+		  <li><a href="sub.asp?lasik=D103">신세계라섹의 종류</a></li>
 	    </ul>
 	  </div>
     </li>
@@ -375,14 +375,14 @@ End Function
         <ul>
           <li class="tit"><a href="sub.asp?lasik=C101" title="라식">라식</a></li>
           <li><a href="sub.asp?lasik=C101">신세계라식이란</a></li>
-          <li><a href="sub.asp?lasik=C102">신세계라식의 종류</a></li>
+          <li><a href="sub.asp?lasik=C103">신세계라식의 종류</a></li>
         </ul>
       </li>
       <li class="full_dp1">
         <ul>
           <li class="tit"><a href="sub.asp?lasik=D101" title="라섹">라섹</a></li>
           <li><a href="sub.asp?lasik=D101">신세계라섹이란</a></li>
-          <li><a href="sub.asp?lasik=D102">신세계라섹의 종류</a></li>
+          <li><a href="sub.asp?lasik=D103">신세계라섹의 종류</a></li>
         </ul>
       </li>
       <li class="full_dp1">
@@ -442,7 +442,7 @@ End Function
 	  <li><a href="sub.asp?lasik=K101">로그인</a></li>
 	  <li><a href="sub.asp?lasik=J101">회원가입</a></li>
 	  <%End if%>
-      <li><a href="/main02">노안·백내장센터</a></li>
+      <li><a href="/main02">노안·백내장</a></li>
     </ul>
     <ul class="lnb1">
 	  <li><p>병원소개</p>
@@ -463,13 +463,13 @@ End Function
 	  <li><p>라식</p>
 	    <ul class="ss_menu">
 		  <li><a href="sub.asp?lasik=C101">신세계라식이란</a></li>
-		  <li><a href="sub.asp?lasik=C102">신세계라식의 종류</a></li>
+		  <li><a href="sub.asp?lasik=C103">신세계라식의 종류</a></li>
 		</ul>
 	  </li>
 	  <li><p>라섹</p>
 		<ul class="ss_menu">
 		  <li><a href="sub.asp?lasik=D101">신세계라섹이란</a></li>
-		  <li><a href="sub.asp?lasik=D102">신세계라섹의 종류</a></li>
+		  <li><a href="sub.asp?lasik=D103">신세계라섹의 종류</a></li>
 		</ul>
 	  </li>
 	  <li><p>렌즈삽입술</p>

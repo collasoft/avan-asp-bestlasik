@@ -7,7 +7,7 @@
 				<li><a href="sub.asp?lasik=I106">검사·진료예약</a></li>-->
 				<li><a href="sub.asp?eye=K102">이용약관</a></li>
 				<li><a href="sub.asp?eye=K101" class="pt">개인정보처리방침</a></li>
-				<li><a href="/main01/">스마일·라식센터 바로가기</a></li>
+				<li><a href="/main01/">스마일·라식 바로가기</a></li>
 			</ul>
 			<ul class="sns_list">
 				<li><a href="https://www.youtube.com/channel/UCbpEbNLa17AP6sK9zKynq6w" target="_blank"></a></li>

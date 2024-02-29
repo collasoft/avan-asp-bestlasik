@@ -5,7 +5,7 @@ Function menu1(eye)
   ElseIf Left(eye,3) = "B10" Or Left(eye,3) = "B11" Then
     Response.write "백내장"
   ElseIf Left(eye,3) = "C10" Or Left(eye,3) = "C11" Then
-    Response.write "노안클리닉"
+    Response.write "신세계노안"
   ElseIf Left(eye,3) = "D10" Then
     Response.write "안성형"
   ElseIf Left(eye,3) = "E10" Or Left(eye,3) = "E11" Then
@@ -266,7 +266,7 @@ End Function
 	  <li><a href="sub.asp?eye=J101">로그인</a></li>
 	  <li><a href="sub.asp?eye=I101">회원가입</a></li>
 	  <%End if%>
-	  <li><a href="/main01">스마일·라식센터 바로가기</a></li>
+	  <li><a href="/main01">스마일·라식 바로가기</a></li>
 	</ul>
   </div>
 
@@ -321,7 +321,7 @@ End Function
 		</ul>
 	  </div>
 	</li>
-	<li class="dp1"><a href="sub.asp?eye=C102" title="노안클리닉">노안클리닉</a><span class="line"></span>
+	<li class="dp1"><a href="sub.asp?eye=C102" title="신세계노안">신세계노안</a><span class="line"></span>
 	  <div class="dp2">
 		<ul>
 	     <li><a href="sub.asp?eye=C102">왜 신세계 노안·백내장일까</a></li>
@@ -419,7 +419,7 @@ End Function
       </li>
       <li class="full_dp1">
         <ul>
-          <li class="tit"><a href="sub.asp?eye=C101" title="노안클리닉">노안클리닉</a></li>
+          <li class="tit"><a href="sub.asp?eye=C101" title="신세계노안">신세계노안</a></li>
           <li><a href="sub.asp?eye=C102">왜 신세계 노안·백내장일까</a></li>
           <li><a href="sub.asp?eye=C101">노안이란</a></li>          
           <li><a href="sub.asp?eye=B105">다초점 인공수정체</a></li>
@@ -493,7 +493,7 @@ End Function
 	  <li><a href="sub.asp?eye=J101">로그인</a></li>
 	  <li><a href="sub.asp?eye=I101">회원가입</a></li>
 	  <%End if%>
-	  <li><a href="/main01">스마일·라식센터</a></li>
+	  <li><a href="/main01">스마일·라식</a></li>
     </ul>
     <ul class="lnb1">
 	  <li><p>병원소개</p>
@@ -511,7 +511,7 @@ End Function
 		  <!-- <li><a href="sub.asp?eye=B105">다초점 인공수정체</a></li> -->
 		</ul>
 	  </li>
-	  <li><p>노안클리닉</p>
+	  <li><p>신세계노안</p>
 		<ul class="ss_menu">
       <li><a href="sub.asp?eye=C102">왜 신세계 노안·백내장일까</a></li>
 		  <li><a href="sub.asp?eye=C101">노안이란</a></li>		  

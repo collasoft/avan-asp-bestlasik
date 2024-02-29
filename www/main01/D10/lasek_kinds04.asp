@@ -12,7 +12,7 @@
 	</div>
 	
 	<ul class="sub_tab sub_tab02"> 
-		<li><a href="sub.asp?lasik=D102#ctab">아이디자인라섹</a></li>
+		<!-- <li><a href="sub.asp?lasik=D102#ctab">아이디자인라섹</a></li> -->
 		<li><a href="sub.asp?lasik=D103#ctab">프라임라섹</a></li>
 		<li><a href="sub.asp?lasik=D104#ctab">프리미엄라섹</a></li>
 		<li class="on"><a href="sub.asp?lasik=D105#ctab">ASA라섹</a></li>

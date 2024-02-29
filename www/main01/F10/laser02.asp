@@ -14,7 +14,7 @@
 	
 	<ul class="sub_tab sub_tab02"> 
 		<li><a href="sub.asp?lasik=F103#ctab">신세계스마일 노안교정술</a></li>
-		<li class="on"><a href="sub.asp?lasik=F104#ctab">커스텀뷰 노안교정술</a></li>
+		<!-- <li class="on"><a href="sub.asp?lasik=F104#ctab">커스텀뷰 노안교정술</a></li> -->
 	</ul>
 	
 	<p class="cont_title" id="ctab">커스텀뷰 노안교정술</p>
