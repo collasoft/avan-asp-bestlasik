@@ -105,7 +105,7 @@ if nowprotocol = "off" Or InStr(Request.ServerVariables("SERVER_NAME"),"www") = 
 			  <li><a href="sub.asp?lasik=C102">신세계라식의 종류</a></li>
 			  <%ElseIf Left(request("lasik"),3) = "D10" then%>
 			  <li><a href="sub.asp?lasik=D101">신세계라섹이란</a></li>
-			  <li><a href="sub.asp?lasik=D102">신세계라섹의 종류</a></li>
+			  <li><a href="sub.asp?lasik=D103">신세계라섹의 종류</a></li>
 			  <%ElseIf Left(request("lasik"),3) = "E10" then%>
 			  <li><a href="sub.asp?lasik=E101">신세계렌즈삽입술이란?</a></li>
 			  <li><a href="sub.asp?lasik=E102">렌즈의 종류</a></li>
