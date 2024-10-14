@@ -1,0 +1,901 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');
+}
+
+@font-face { font-family: 'S-Core Dream'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: 300; font-style: normal; }
+@font-face { font-family: 'S-Core Dream'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'S-Core Dream'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'S-Core Dream'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: 600; font-style: normal; }
+@font-face { font-family: 'S-Core Dream'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: 800; font-style: normal; }
+@font-face { font-family: 'S-Core Dream'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff'); font-weight: 900; font-style: normal; }
+
+/* common */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Noto Sans KR", 'S-Core Dream';
+    outline: none;
+}
+
+ul>li>a {
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
+}
+
+em {
+    font-style: normal
+}
+
+table {
+    border-collapse: collapse;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+textarea {
+    -webkit-border-radius: 0;
+    -webkit-appearance: none;
+    resize: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header_bottom {
+    padding: 22px 0;
+}
+
+.banner_section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.banner_section > div {
+    width: calc((100% - 6px) / 4);
+    display: flex;
+}
+
+.banner_section img {
+    height: 174px;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.service_section {
+    margin-top: 180px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #555;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+.title {
+    color: #812990;
+    text-align: center;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+.service_items {
+    margin-top: 80px;
+    display: flex;
+    gap: 100px;
+}
+
+
+.service_section .title {
+    font-weight: 900;
+}
+
+.service_items h2 {
+    margin-top: 64px;
+    font-weight: 700;
+    line-height: 113px;
+    text-align: left;
+}
+
+.service_items .service_item {
+    width: calc((100% - 100px) / 2);
+    text-align: left;
+}
+
+.paragraph {
+    color: #555;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 136.4%;
+}
+
+.service_item .paragraph span {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.service_item ul li {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 136.4%;
+    color: #555;
+    list-style: disc;
+    margin-top: 25px;
+}
+
+.service_item ul {
+    padding-left: 35px;
+}
+
+.lasik_section {
+    margin-top: 180px;
+    text-align: center;
+}
+
+.lasik_section .title {
+    margin-bottom: 32px;
+}
+
+.lasik_items {
+    margin-top: 72px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.lasik_item h4 {
+    margin-top: 36px;
+    color: #111;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+p.noted {
+    color: #555;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136.4%;
+}
+
+.pro_section {
+    margin-top: 180px;
+    text-align: center;
+}
+
+.pro_section h2 {
+    margin-bottom: 32px;
+}
+
+.pro_section h4 {
+    color: #555;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+.pro_section p {
+    color: #555;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.pro_section .pro_bg {
+    margin-top: 72px;
+    margin-bottom: 32px;
+    width: 100%;
+    height: 815px;
+    background: url('../img/pro_bg.png') no-repeat;
+}
+
+.candidate_items {
+    margin-top: 56px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 130px;
+    padding-bottom: 56px;
+}
+
+.candidate_item p {
+    color: #812990;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 136.4%;
+    margin-top: 16px;
+}
+
+.lens_section .title {
+    margin-bottom: 36px;
+}
+
+.lens_section {
+    margin-top: 180px;
+    text-align: center;
+}
+
+.lens_info {
+    margin-top: 56px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.lens_info > * {
+    width: 50%;
+}
+
+.lens_info h4 {
+    color: #111;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 18px;
+}
+
+.lens_info ul li {
+    list-style: disc;
+    list-style-position: inside;
+    color: #555;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 12px;
+}
+
+.lens_info > div {
+    padding-left: 36px;
+    box-sizing: border-box;
+}
+
+.lens_info ul li:last-child {
+    margin-bottom: 0;
+}
+
+.evo_section {
+    margin-top: 180px;
+    text-align: center;
+}
+
+.evo_section .title {
+    margin-bottom: 36px;
+}
+
+.evo_section .paragraph {
+    margin-bottom: 56px;
+}
+
+.compare_section {
+    margin-top: 180px;
+    text-align: center;
+}
+
+.compare_section h3 {
+    color: #812990;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 64px;
+    margin-bottom: 36px;
+}
+
+.compare_section .tabs {
+    margin-top: 48px;
+}
+
+.tabs-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 72px;
+    margin-bottom: 72px;
+}
+
+.tabs-nav li {
+    color: #812990;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 1;
+    min-width: 300px;
+    border: 1px solid #812990;
+    border-radius: 8px;
+    padding: 13px 0;
+}
+
+.tabs-nav li.active, .tabs-nav li:hover {
+    background: #812990;
+    color: #fff;
+    transition: .3s ease;
+}
+
+.compare_section .tab-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+}
+
+.compare_section .tab-content > div {
+    width: calc((100% - 56px) / 2);
+}
+
+.compare_img {
+    max-height: 515px;
+    overflow: hidden;
+}
+
+.compare_info {
+    text-align: left;
+}
+
+.compare_info h4 {
+    color: #555;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 12px;
+}
+
+.compare_info p {
+    color: #555;
+    text-align: justify;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136.6%;
+}
+
+.youtube_section {
+    height: 652px;
+    position: relative;
+    background: url("../img/bottom_bg.png") no-repeat;
+    margin-top: -32px;
+}
+
+.youtube_section p {
+    color: #FFF;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 56px;
+}
+
+.youtube_section a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    background: #fff;
+    padding: 3px 16px;
+}
+
+.youtube_section > div {
+    position: absolute;
+    left: 35%;
+    top: 22%;
+}
+
+footer {
+    background: #30354B;
+    padding: 56px 0;
+}
+
+footer .inner {
+    display: flex;
+    gap: 56px;
+    flex-wrap: wrap;
+}
+
+footer .map {
+    width: 628px;
+    height: 628px;
+}
+
+footer .map .wrap_map {
+    height: 100%;
+}
+
+footer h4 {
+    color: #FFF;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+footer th, footer p.f-title {
+    color: #888;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+}
+
+footer td, footer p {
+    color: #888;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+footer td {
+    padding-left: 48px;
+}
+
+footer td, footer th {
+    padding-bottom: 12px;
+}
+
+footer table {
+    margin-bottom: 63px;
+}
+
+footer p {
+    margin-bottom: 12px;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+.intro_section {
+    margin-top: 126px;
+    text-align: center;
+}
+
+.intro_section .mobile_ver {
+    display: none;
+}
+
+@media (max-width:1410px) {
+    .inner {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+}
+
+@media(max-width: 1200px) {
+    .lasik_items {
+        gap: 15px;
+        align-items: baseline;
+    }
+    
+    .lasik_item {
+        width: calc((100% - 30px) / 3);
+    }
+    
+    .pro_section .pro_bg {
+        background-size: 100%;
+        height: 450px;
+    }
+    
+    .candidate_items {
+        align-items: center;
+    }
+    
+    .youtube_section {
+        background-position: bottom;
+    }
+    
+    .youtube_section > div {
+        left: 15%;
+    }
+
+    footer .map {
+        width: 100%;
+    }
+}
+
+@media(max-width: 1023px) {
+    .title {
+        font-size: 40px;
+    }
+    
+    .subtitle {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .service_section {
+        margin-top: 100px;
+    }
+    
+    .intro_section {
+        margin-top: 100px;
+    }
+    
+    .service_items {
+        gap: 30px;
+    }
+    
+    .service_items .service_item {
+        width: calc((100% - 30px) / 2);
+    }
+    
+    .service_items h2 {
+        margin: 30px 0;
+        line-height: normal;
+    }
+    
+    .paragraph {
+        font-size: 20px;
+    }
+    
+    .service_item .paragraph span {
+        font-size: 24px;
+    }
+    
+    .service_item ul li {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+    
+    .service_item ul {
+        padding-left: 20px;
+    }
+    
+    .lasik_section {
+        margin-top: 100px;
+    }
+    
+    .lasik_item h4 {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+    
+    p.noted {
+        font-size: 18px;
+    }
+    
+    .pro_section {
+        margin-top: 100px;
+    }
+    
+    .pro_section h4 {
+        font-size: 28px;
+    }
+    
+    .pro_section p {
+        font-size: 20px;
+    }
+    
+    .pro_section .pro_bg {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .candidate_items {
+        gap: 30px;
+        row-gap: 50px;
+        padding-bottom: 0;
+    }
+    
+    .candidate_item {
+        width: calc((100% - 60px) / 3);
+    }
+    
+    .lens_section {
+        margin-top: 100px;
+    }
+    
+    .lens_info h4 {
+        font-size: 20px;
+    }
+    
+    .lens_info ul li {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    .evo_section {
+        margin-top: 100px;
+    }
+    
+    .compare_section {
+        margin-top: 100px;
+    }
+    
+    .compare_section h3 {
+        font-size: 30px;
+        line-height: normal;
+    }
+    
+    .tabs-nav li {
+        font-size: 28px;
+        min-width: auto;
+        padding: 13px 15px;
+    }
+    
+    .tabs-nav {
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    
+    .compare_info h4 {
+        font-size: 24px;
+    }
+    
+    .compare_info p {
+        font-size: 18px;
+    }
+    
+    .youtube_section p {
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 767px) {
+    .banner_section > div {
+        width: calc((100% - 2px) / 2);
+    }
+    
+    .title {
+        font-size: 28px;
+        line-height: normal;
+    }
+    
+    .subtitle {
+        font-size: 20px;
+    }
+    
+    .service_items {
+        margin-top: 50px;
+        flex-direction: column;
+    }
+    
+    .service_items .service_item {
+        width: 100%;
+    }
+    
+    .paragraph {
+        font-size: 18px;
+    }
+    
+    .service_item .paragraph span {
+        font-size: 20px;
+    }
+    
+    .service_item ul li {
+        font-size: 18px;
+    }
+    
+    .service_items h2 {
+        margin: 15px 0;
+    }
+    
+    .lasik_section {
+        margin-top: 80px;
+    }
+    
+    .lasik_items {
+        margin-top: 40px;
+        gap: 30px;
+    }
+    
+    .lasik_item {
+        width: 100%;
+    }
+    
+    p.noted {
+        font-size: 16px;
+    }
+    
+    .pro_section {
+        margin-top: 80px;
+    }
+    
+    .pro_section h4 {
+        font-size: 19px;
+    }
+    
+    .pro_section p {
+        font-size: 16px;
+    }
+    
+    .candidate_item p {
+        font-size: 14px;
+    }
+    
+    .lens_section {
+        margin-top: 80px;
+    }
+    
+    .lens_info {
+        flex-direction: column;
+    }
+    
+    .lens_info > * {
+        width: 100%;
+    }
+    
+    .lens_info > div {
+        padding-top: 30px;
+        padding-left: 0;
+    }
+    
+    .lens_info ul li {
+        font-size: 16px;
+    }
+    
+    .intro_section,
+    .service_section,
+    .evo_section {
+        margin-top: 80px;
+    }
+    
+    .compare_section {
+        margin-top: 80px;
+    }
+    
+    .tabs-nav li {
+        font-size: 20px;
+    }
+    
+    .compare_section .tab-content {
+        gap: 30px;
+    }
+    
+    .compare_section .tab-content > div {
+        width: 100%;
+    }
+    
+    .compare_img {
+        height: auto;
+        max-height: unset;
+    }
+    
+    .compare_info p {
+        font-size: 16px;
+    }
+    
+    .youtube_section p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .youtube_section a {
+        font-size: 20px;
+    }
+    
+    .youtube_section img {
+        max-width: 200px;
+    }
+    
+    .youtube_section > div {
+        left: 10%;
+    }
+    
+    .youtube_section {
+        background-position: left;
+        height: 300px;
+        margin-top: 80px;
+    }
+    
+    footer h4 {
+        font-size: 20px;
+    }
+    
+    footer th, footer p.f-title {
+        font-size: 18px;
+    }
+    
+    footer td, footer p {
+        font-size: 18px;
+    }
+    
+    footer td {
+        padding-left: 20px;
+    }
+    
+    footer table {
+        margin-bottom: 30px;
+    }
+    
+    footer p br {
+        display: none;
+    }
+
+    .pro_section .pro_bg {
+        background-size: 100%;
+        height: 200px;
+    }
+
+    footer .map {
+        height: 400px;
+    }
+}
