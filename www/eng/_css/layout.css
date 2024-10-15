@@ -284,6 +284,11 @@ p.noted {
     justify-content: center;
     gap: 130px;
     padding-bottom: 56px;
+    align-items: center;
+}
+
+.candidate_item {
+    width: calc((100% - 520px) / 5);
 }
 
 .candidate_item p {
@@ -564,8 +569,8 @@ footer p:last-child {
         height: 450px;
     }
     
-    .candidate_items {
-        align-items: center;
+    .candidate_item {
+        width: auto;
     }
     
     .youtube_section {
