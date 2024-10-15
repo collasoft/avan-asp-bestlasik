@@ -151,7 +151,7 @@ img {
 .subtitle {
     color: #555;
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
     margin-bottom: 24px;
 }
@@ -190,7 +190,7 @@ img {
 .paragraph {
     color: #555;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 136.4%;
 }
 
@@ -201,7 +201,7 @@ img {
 
 .service_item ul li {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 136.4%;
     color: #555;
     list-style: disc;
@@ -266,7 +266,7 @@ p.noted {
     color: #555;
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 136.4%;
 }
 
@@ -300,6 +300,7 @@ p.noted {
     width: 100%;
     height: 815px;
     background: url('../img/pro_bg.png') no-repeat;
+    background-size: 100%;
 }
 
 .candidate_items {
@@ -360,7 +361,7 @@ p.noted {
     list-style-position: inside;
     color: #555;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
     margin-bottom: 12px;
 }
@@ -440,7 +441,7 @@ p.noted {
 }
 
 .compare_img {
-    max-height: 515px;
+    height: 515px;
     overflow: hidden;
 }
 
@@ -461,7 +462,7 @@ p.noted {
     text-align: justify;
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 136.6%;
 }
 
@@ -538,7 +539,7 @@ footer th, footer p.f-title {
 footer td, footer p {
     color: #888;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
 }
 
@@ -569,6 +570,18 @@ footer p:last-child {
 
 .intro_section .mobile_ver {
     display: none;
+}
+
+@media(min-width: 1921px) {
+    .pro_section .pro_bg {
+        background-position: center;
+        height: 1000px;
+    }
+
+    .youtube_section {
+        background-position-y: 5px;
+        background-size: 100%;
+    }
 }
 
 @media (max-width:1410px) {
@@ -894,7 +907,7 @@ footer p:last-child {
     }
     
     .youtube_section {
-        background-position: left;
+        background-size: cover;
         height: 300px;
         margin-top: 80px;
     }
