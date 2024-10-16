@@ -12,7 +12,7 @@
         <!-- #include file="_inc/lang_switch.html" -->
         <div class="header_bottom">
             <div class="inner">
-                <a href="./index.html">
+                <a href="./index.asp">
                     <img src="./img/logo.png" alt="Logo" />
                 </a>
             </div>
@@ -236,7 +236,7 @@
         <div class="inner">
             <!-- <div id="daumRoughmapContainer1728887754485" class="map root_daum_roughmap root_daum_roughmap_landing"></div> -->
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.801249949137!2d126.88131627646186!3d35.16157717275946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718c0e74af5113%3A0x493b64087cf0c235!2sShinsegae%20Eye%20Clinic!5e0!3m2!1sen!2s!4v1728966848026!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1630.900624428369!2d126.88517866038985!3d35.161577199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718c0e74af5113%3A0x493b64087cf0c235!2sShinsegae%20Eye%20Clinic!5e0!3m2!1svi!2s!4v1729066741437!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div>
                 <h4>CONSULTATION TIME</h4>
