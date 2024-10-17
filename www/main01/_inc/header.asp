@@ -216,19 +216,48 @@ End Function
 		</div>
 	</div>
 </div>
-<div class="login_wrap">
-  <div class="inner">
-	<ul class="login">
-	  <%If Len(session("useridid")) > 0 then%>
-	  <li><a href="/main01/K10/logout.asp">로그아웃</a></li>
-	  <li><a href="sub.asp?lasik=J104">회원정보수정</a></li>
-	  <%else%>
-	  <li><a href="sub.asp?lasik=K101">로그인</a></li>
-	  <li><a href="sub.asp?lasik=J101">회원가입</a></li>
-	  <%End if%>
-	  <li><a href="/main02">노안·백내장 바로가기</a></li>
-	</ul>
-  </div>
+<div class="top_header">
+    <div class="inner">
+        <div class="language_switch">
+            <div class="inner">
+                <div class="language_current">
+                    <img src="../../eng/img/american_flag.svg" />
+                    ENG
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17" fill="none">
+                        <path d="M7 13L0.937822 5.5L13.0622 5.5L7 13Z" fill="black"/>
+                    </svg>
+                </div>
+                <ul class="language_list">
+                    <li>
+                        <a href="/eng">
+                            <img src="../../eng/img/american_flag.svg" />
+                            ENG
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/main01">
+                            <img src="../../eng/img/korean_flag.png" />
+                            KOR
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="login_wrap">
+        <div class="inner">
+            <ul class="login">
+            <%If Len(session("useridid")) > 0 then%>
+            <li><a href="/main01/K10/logout.asp">로그아웃</a></li>
+            <li><a href="sub.asp?lasik=J104">회원정보수정</a></li>
+            <%else%>
+            <li><a href="sub.asp?lasik=K101">로그인</a></li>
+            <li><a href="sub.asp?lasik=J101">회원가입</a></li>
+            <%End if%>
+            <li><a href="/main02">노안·백내장 바로가기</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
 </div>
 <div class="logo_gnb">
   <ul class="menubar">
@@ -444,6 +473,31 @@ End Function
 	  <%End if%>
       <li><a href="/main02">노안·백내장</a></li>
     </ul>
+    <div class="language_switch">
+        <div class="inner">
+            <div class="language_current">
+                <img src="../../eng/img/american_flag.svg" />
+                ENG
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17" fill="none">
+                    <path d="M7 13L0.937822 5.5L13.0622 5.5L7 13Z" fill="black"/>
+                </svg>
+            </div>
+            <ul class="language_list">
+                <li>
+                    <a href="/eng">
+                        <img src="../../eng/img/american_flag.svg" />
+                        ENG
+                    </a>
+                </li>
+                <li>
+                    <a href="/main01">
+                        <img src="../../eng/img/korean_flag.png" />
+                        KOR
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <ul class="lnb1">
 	  <li><p>병원소개</p>
 	    <ul class="ss_menu">

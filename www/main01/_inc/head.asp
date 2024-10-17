@@ -9,6 +9,7 @@
 <meta name="description" content="광주대표안과, 광천동 신세계백화점 대각선 눈모양빌딩, 스마일라식, 광주라식, 광주라섹, 광주ICL,광주노안수술, 광주백내장수술">
 <link rel="canonical" href="https://www.best-lasik.co.kr">
 <link rel="stylesheet" href="/main01/_css/layout.css" />
+<link rel="stylesheet" href="../../eng/_css/lang_switch.css" />
 <link href="/main01/_css/slick.css" rel="stylesheet" type="text/css">
 <link href="/main01/_css/slick-theme.css" rel="stylesheet" type="text/css">
 <link href="/main01/_css/aos.css" rel="stylesheet" type="text/css">
@@ -27,6 +28,10 @@ $(document).ready(function(){
 	})
 	$('.gnb>li').mouseleave(function(){
 		$(this).children('.line').stop().animate({'width':'0%'},300)
+	})
+
+	$(".language_current").click(function() {
+		$(this).parent().find(".language_list").toggleClass("show")
 	})
 })
 </script><!-- //상단메뉴 GNB -->

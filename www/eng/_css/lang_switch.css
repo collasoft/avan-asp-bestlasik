@@ -1,6 +1,7 @@
 .language_switch {
     background: #F2F4F6;
     padding: 8px 0;
+    position: relative;
 }
 
 .language_list img {
@@ -41,6 +42,8 @@
     border-radius: 8px;
     position: absolute;
     display: none;
+    top: 36px;
+    z-index: 99;
 }
 
 .language_list.show {
@@ -54,4 +57,35 @@
 
 .language_list li:last-child {
     margin-bottom: 0;
+}
+
+.top_header {
+    background-color: #f2f4f6;
+}
+
+.top_header .inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top_header .login_wrap {
+    width: auto;
+}
+
+.full_wrap .language_current {
+    font-size: 20px;
+}
+
+.full_wrap .language_list a {
+    font-size: 20px;
+}
+
+.full_wrap .language_list {
+    min-width: 90px;
+}
+
+@media screen and (min-width: 481px) and (max-width: 867px) {
+    .top_header {
+        display: none;
+    }
 }

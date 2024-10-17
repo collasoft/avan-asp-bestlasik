@@ -8,6 +8,7 @@
 <meta name="keywords" content="<%'bPrint("metatag")%>">
 
 <link rel="stylesheet" href="_css/layout.css" />
+<link rel="stylesheet" href="../../eng/_css/lang_switch.css" />
 <link href="_css/slick.css" rel="stylesheet" type="text/css">
 <link href="_css/slick-theme.css" rel="stylesheet" type="text/css">
 <link href="_css/aos.css" rel="stylesheet" type="text/css">
@@ -28,7 +29,9 @@ $(document).ready(function(){
 		$(this).children('.line').stop().animate({'width':'0%'},300)
 	})
 	
-	
+	$(".language_current").click(function() {
+		$(this).parent().find(".language_list").toggleClass("show")
+	})
 	
 })
 </script><!-- //상단메뉴 GNB -->

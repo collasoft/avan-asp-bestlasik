@@ -10,5 +10,6 @@ $('.tabs-nav li').click(function () {
 });
 
 $(".language_current").click(function() {
+    console.log("test")
     $(this).parent().find(".language_list").toggleClass("show")
 })
