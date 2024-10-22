@@ -12,7 +12,7 @@
         <!-- #include file="_inc/lang_switch.html" -->
         <div class="header_bottom">
             <div class="inner">
-                <a href="./index.asp">
+                <a href="./index.html">
                     <img src="./img/logo.png" alt="Logo" />
                 </a>
             </div>
@@ -20,7 +20,7 @@
     </header>
 
     <main>
-        <div class="banner_section">
+        <div class="banner_section pc_ver">
             <div><img src="./img/banner_1.png" /></div>
             <div><img src="./img/banner_2.png" /></div>
             <div><img src="./img/banner_3.png" /></div>
@@ -32,14 +32,9 @@
                 <div class="pc_ver">
                     <img src="./img/intro_pc.png" />
                 </div>
-                <!-- <div class="mobile_ver">
-                    <img src="./img/intro.png" />
-                    <h4>The best Medical Services</h4>
-                    <h4>Development</h4>
-                    <h4>Belief and Trust</h4>
-                    <h4>Service and Dedication</h4>
-                    <h4>Customer Happiness</h4>
-                </div> -->
+                <div class="mobile_ver">
+                    <img src="./img/main_banner.png" />
+                </div>
             </div>
         </div>
 

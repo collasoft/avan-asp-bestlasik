@@ -680,7 +680,7 @@ footer p:last-child {
     }
     
     .lasik_item h4 {
-        font-size: 24px;
+        font-size: 22px;
         margin-top: 15px;
     }
     
@@ -753,7 +753,7 @@ footer p:last-child {
     }
     
     .compare_info h4 {
-        font-size: 24px;
+        font-size: 22px;
     }
     
     .compare_info p {
@@ -771,12 +771,12 @@ footer p:last-child {
     }
     
     .title {
-        font-size: 28px;
+        font-size: 22px;
         line-height: normal;
     }
     
     .subtitle {
-        font-size: 20px;
+        font-size: 16px;
     }
     
     .service_items {
@@ -789,15 +789,15 @@ footer p:last-child {
     }
     
     .paragraph {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .service_item .paragraph span {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .service_item ul li {
-        font-size: 18px;
+        font-size: 14px;
     }
     
     .service_items h2 {
@@ -826,11 +826,11 @@ footer p:last-child {
     }
     
     .pro_section h4 {
-        font-size: 19px;
+        font-size: 18px;
     }
     
     .pro_section p {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .candidate_item p {
@@ -858,7 +858,9 @@ footer p:last-child {
         font-size: 16px;
     }
     
-    .intro_section,
+    .intro_section {
+        margin-top: 0;
+    }
     .service_section,
     .evo_section {
         margin-top: 80px;
@@ -869,7 +871,7 @@ footer p:last-child {
     }
     
     .tabs-nav li {
-        font-size: 20px;
+        font-size: 14px;
     }
     
     .compare_section .tab-content {
@@ -890,16 +892,16 @@ footer p:last-child {
     }
     
     .youtube_section p {
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 30px;
     }
     
     .youtube_section a {
-        font-size: 20px;
+        font-size: 16px;
     }
     
     .youtube_section img {
-        max-width: 200px;
+        max-width: 140px;
     }
     
     .youtube_section > div {
@@ -910,6 +912,7 @@ footer p:last-child {
         background-size: cover;
         height: 300px;
         margin-top: 80px;
+        background-position-x: -300px;
     }
     
     footer h4 {
@@ -938,10 +941,23 @@ footer p:last-child {
 
     .pro_section .pro_bg {
         background-size: 100%;
-        height: 200px;
+        height: 582px;
+        background-image: url('../img/m_pro_bg.png');
     }
 
     footer .map {
         height: 400px;
+    }
+    .header_bottom a img {
+        max-width: 210px;
+    }
+    .pc_ver {
+        display: none;
+    }
+    .intro_section .mobile_ver {
+        display: block;
+    }
+    .intro_section .mobile_ver img {
+        width: 100%;
     }
 }

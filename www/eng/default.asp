@@ -32,14 +32,9 @@
                 <div class="pc_ver">
                     <img src="./img/intro_pc.png" />
                 </div>
-                <!-- <div class="mobile_ver">
-                    <img src="./img/intro.png" />
-                    <h4>The best Medical Services</h4>
-                    <h4>Development</h4>
-                    <h4>Belief and Trust</h4>
-                    <h4>Service and Dedication</h4>
-                    <h4>Customer Happiness</h4>
-                </div> -->
+                <div class="mobile_ver">
+                    <img src="./img/main_banner.png" />
+                </div>
             </div>
         </div>
 
