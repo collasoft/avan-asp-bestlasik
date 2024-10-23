@@ -114,7 +114,10 @@
                 This is made possible by ZEISS’s cutting-edge precision scanning technology. <br/>
                 The significantly reduced laser exposure time lowers the risk of suction loss and minimizes the patient’s psychological stress during the procedure. SMILE PRO is exclusively available at our clinic in Gwangju.</p>
             </div>
-            <div class="pro_bg"></div>
+            <div class="pro_bg">
+                <img src="./img/pro_bg.png" alt="pro_bg" class="pc_ver">
+                <img src="./img/m_pro_bg.png" alt="pro_bg" class="mobile_ver">
+            </div>
             <div class="inner">
                 <h4>Good candidates for SMILE PRO</h4>
                 <div class="candidate_items">

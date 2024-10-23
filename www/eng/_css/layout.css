@@ -297,10 +297,9 @@ p.noted {
 .pro_section .pro_bg {
     margin-top: 72px;
     margin-bottom: 32px;
-    width: 100%;
-    height: 815px;
-    background: url('../img/pro_bg.png') no-repeat;
-    background-size: 100%;
+}
+.pro_section .pro_bg .mobile_ver {
+    display: none;
 }
 
 .candidate_items {
@@ -573,10 +572,6 @@ footer p:last-child {
 }
 
 @media(min-width: 1921px) {
-    .pro_section .pro_bg {
-        background-position: center;
-        height: 1000px;
-    }
 
     .youtube_section {
         background-position-y: 5px;
@@ -604,10 +599,6 @@ footer p:last-child {
     .lasik_item div::after {
         background: transparent;
         backdrop-filter: blur(0);
-    }
-    .pro_section .pro_bg {
-        background-size: 100%;
-        height: 450px;
     }
     
     .candidate_item {
@@ -700,10 +691,6 @@ footer p:last-child {
         font-size: 20px;
     }
     
-    .pro_section .pro_bg {
-        background-size: cover;
-        background-position: center;
-    }
     
     .candidate_items {
         gap: 30px;
@@ -939,11 +926,6 @@ footer p:last-child {
         display: none;
     }
 
-    .pro_section .pro_bg {
-        background-size: 100%;
-        height: 582px;
-        background-image: url('../img/m_pro_bg.png');
-    }
 
     footer .map {
         height: 400px;
@@ -959,5 +941,12 @@ footer p:last-child {
     }
     .intro_section .mobile_ver img {
         width: 100%;
+    }
+    .pro_section .pro_bg .mobile_ver {
+        display: block;
+        width: 100%;
+    }
+    .pro_section .pro_bg .pc_ver { 
+        display: none;
     }
 }
