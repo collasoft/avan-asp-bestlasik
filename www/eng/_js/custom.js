@@ -9,7 +9,6 @@ $('.tabs-nav li').click(function () {
     $(activeTab).css("display", "flex");
 });
 
-$(".language_current").click(function() {
-    console.log("test")
-    $(this).parent().find(".language_list").toggleClass("show")
+$(".language_current li:nth-child(1) a").click(function() {
+    $('.language_current').toggleClass("show")
 })

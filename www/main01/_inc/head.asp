@@ -30,8 +30,8 @@ $(document).ready(function(){
 		$(this).children('.line').stop().animate({'width':'0%'},300)
 	})
 
-	$(".language_current").click(function() {
-		$(this).parent().find(".language_list").toggleClass("show")
+	$(".language_current li:nth-child(1) a").click(function() {
+		$('.language_current').toggleClass("show")
 	})
 })
 </script><!-- //상단메뉴 GNB -->

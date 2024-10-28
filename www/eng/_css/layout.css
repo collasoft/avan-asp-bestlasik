@@ -187,6 +187,13 @@ img {
     text-align: left;
 }
 
+.service_items .service_item img {
+    border-radius: 0px 0px 0px 116px;
+}
+.service_items .service_item:nth-of-type(2) img {
+    border-radius: 0px 0px 116px 0px;
+}
+
 .paragraph {
     color: #555;
     font-size: 24px;
@@ -241,6 +248,9 @@ img {
     color: #111;
     font-size: 36px;
     font-weight: 500;
+}
+.lasik_item h4 br {
+    display: none;
 }
 .lasik_item div {
     position: relative;
@@ -671,8 +681,11 @@ footer p:last-child {
     }
     
     .lasik_item h4 {
-        font-size: 22px;
-        margin-top: 15px;
+        font-size: 12px;
+        margin-top: 14px;
+    }
+    .lasik_item h4 br {
+        display: block;
     }
     
     p.noted {
@@ -696,6 +709,7 @@ footer p:last-child {
         gap: 30px;
         row-gap: 50px;
         padding-bottom: 0;
+        margin-top: 0;
     }
     
     .candidate_item {
@@ -724,8 +738,9 @@ footer p:last-child {
     }
     
     .compare_section h3 {
-        font-size: 30px;
+        font-size: 25px;
         line-height: normal;
+        margin-bottom: 32px;
     }
     
     .tabs-nav li {
@@ -740,7 +755,7 @@ footer p:last-child {
     }
     
     .compare_info h4 {
-        font-size: 22px;
+        font-size: 18px;
     }
     
     .compare_info p {
@@ -758,10 +773,16 @@ footer p:last-child {
     }
     
     .title {
-        font-size: 22px;
+        font-size: 25px;
         line-height: normal;
+        font-weight: 900;
     }
-    
+    .lasik_section .title {
+        margin-bottom: 10px;
+    }
+    .lens_section .title {
+        margin-bottom: 32px;
+    }
     .subtitle {
         font-size: 16px;
     }
@@ -769,14 +790,24 @@ footer p:last-child {
     .service_items {
         margin-top: 50px;
         flex-direction: column;
+        gap: 40px;
+    }
+
+    .service_items h2 {
+        text-align: center;
     }
     
     .service_items .service_item {
         width: 100%;
     }
+    .service_items .service_item img {
+        border-radius: 16px !important;
+    }
     
     .paragraph {
-        font-size: 16px;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 400;
     }
     
     .service_item .paragraph span {
@@ -784,11 +815,11 @@ footer p:last-child {
     }
     
     .service_item ul li {
-        font-size: 14px;
+        font-size: 16px;
     }
     
     .service_items h2 {
-        margin: 15px 0;
+        margin: 0;
     }
     
     .lasik_section {
@@ -796,16 +827,21 @@ footer p:last-child {
     }
     
     .lasik_items {
-        margin-top: 40px;
-        gap: 30px;
+        margin-top: 50px;
+        margin-bottom: 36px;
+        gap: 0;
+    }
+    .lasik_item {
+        width: calc((100% - 16px) / 3);
     }
     
-    .lasik_item {
+    /* .lasik_item {
         width: 100%;
-    }
+    } */
     
     p.noted {
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: ;
     }
     
     .pro_section {
@@ -814,14 +850,21 @@ footer p:last-child {
     
     .pro_section h4 {
         font-size: 18px;
+        margin-bottom: 24px;
+    }
+    .pro_section .pro_bg {
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     
     .pro_section p {
         font-size: 14px;
+        font-weight: 400;
     }
     
     .candidate_item p {
-        font-size: 14px;
+        font-size: 12px;
+        font-weight: 700;
     }
     
     .lens_section {
@@ -830,6 +873,7 @@ footer p:last-child {
     
     .lens_info {
         flex-direction: column;
+        margin-top: 32px;
     }
     
     .lens_info > * {
@@ -837,12 +881,14 @@ footer p:last-child {
     }
     
     .lens_info > div {
-        padding-top: 30px;
+        padding-top: 24px;
         padding-left: 0;
     }
     
+    
     .lens_info ul li {
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 400;
     }
     
     .intro_section {
@@ -859,6 +905,11 @@ footer p:last-child {
     
     .tabs-nav li {
         font-size: 14px;
+        width: 115px;
+        display: grid;
+        place-items: center;
+        min-height: 34px;
+        padding: 0;
     }
     
     .compare_section .tab-content {
@@ -868,6 +919,10 @@ footer p:last-child {
     .compare_section .tab-content > div {
         width: 100%;
     }
+
+    .compare_section .tab-content > div img {
+        max-width: calc(100% - 128px);
+    }
     
     .compare_img {
         height: auto;
@@ -875,16 +930,18 @@ footer p:last-child {
     }
     
     .compare_info p {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .youtube_section p {
-        font-size: 18px;
-        margin-bottom: 30px;
+        font-size: 13px;
+        margin-bottom: 21px;
     }
     
     .youtube_section a {
-        font-size: 16px;
+        font-size: 12px;
+        padding-inline: 8px;
+        gap: 4px;
     }
     
     .youtube_section img {
@@ -901,20 +958,28 @@ footer p:last-child {
         margin-top: 80px;
         background-position-x: -300px;
     }
+    footer {
+        padding-top: 40px;
+    }
+    footer .inner {
+        gap: 24px;
+    }
     
     footer h4 {
-        font-size: 20px;
+        font-size: 14px;
+        margin-bottom: 12px;
     }
     
     footer th, footer p.f-title {
-        font-size: 18px;
+        font-size: 12px;
     }
     
     footer td, footer p {
-        font-size: 18px;
+        font-size: 12px;
     }
     
     footer td {
+        font-size: 12px;
         padding-left: 20px;
     }
     
@@ -948,5 +1013,8 @@ footer p:last-child {
     }
     .pro_section .pro_bg .pc_ver { 
         display: none;
+    }
+    .inner:has(.mobile_ver) {
+        padding-inline: 0;
     }
 }

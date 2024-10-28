@@ -45,7 +45,7 @@
                     SHINSEGAE EYE CLINIC</h2>
                 <div class="service_items">
                     <div class="service_item">
-                        <img src="./img/service_1.png" />
+                        <img src="./img/service_1.jpg" />
                         <h2 class="title">LASEK</h2>
                         <p class="paragraph">
                             <span>LASEK</span>
@@ -57,7 +57,7 @@
                         </ul>
                     </div>
                     <div class="service_item">
-                        <img src="./img/service_2.png" />
+                        <img src="./img/service_2.jpg" />
                         <h2 class="title">LASIK</h2>
                         <p class="paragraph">
                             <span>LASIK</span>
@@ -80,19 +80,19 @@
                         <div>
                             <img src="./img/lasik_1.png" />
                         </div>
-                        <h4>20mm LASIK</h4>
+                        <h4>20mm <br>LASIK</h4>
                     </div>
                     <div class="lasik_item">
                         <div>
                             <img src="./img/lasik_2.png" />
                         </div>
-                        <h4>1mm SHINSEGAE SMILE</h4>
+                        <h4>1mm <br>SHINSEGAE SMILE</h4>
                     </div>
                     <div class="lasik_item">
                         <div>
                             <img src="./img/lasik_3.png" />
                         </div>
-                        <h4>2 ~ 4mm SMILE</h4>
+                        <h4>2 ~ 4mm <br>SMILE</h4>
                     </div>
                 </div>
                 <p class="noted">
@@ -234,7 +234,7 @@
         <div class="inner">
             <!-- <div id="daumRoughmapContainer1728887754485" class="map root_daum_roughmap root_daum_roughmap_landing"></div> -->
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1630.900624428369!2d126.88517866038985!3d35.161577199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718c0e74af5113%3A0x493b64087cf0c235!2sShinsegae%20Eye%20Clinic!5e0!3m2!1svi!2s!4v1729066741437!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1630.900624428369!2d126.88517866038985!3d35.161577199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718c0e74af5113%3A0x493b64087cf0c235!2sShinsegae%20Eye%20Clinic!5e0!3m2!1svi!2s!4v1729066741437!5m2!1sen!2sen" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div>
                 <h4>CONSULTATION TIME</h4>
@@ -268,7 +268,7 @@
 
     <script src="../main01/js/jquery-1.11.3.min.js"></script>
     <script src="./_js/custom.js"></script>
-    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+    <!-- <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script> -->
 
     <!-- <script charset="UTF-8">
         new daum.roughmap.Lander({
