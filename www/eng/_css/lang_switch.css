@@ -112,4 +112,16 @@
     .top_header {
         display: none;
     }
+    .language_current.mobile li a {
+        font-size: 30px;
+        gap: 20px;
+    }
+    .language_current.mobile li a img {
+        width: 28px;
+        height: 28px;
+    }
+    .language_current.mobile {
+        padding-block: 20px;
+    }
+    
 }
