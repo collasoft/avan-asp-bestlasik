@@ -12,7 +12,7 @@
         <!-- #include file="_inc/lang_switch.html" -->
         <div class="header_bottom">
             <div class="inner">
-                <a href="./index.html">
+                <a href="./index.asp">
                     <img src="./img/logo.png" alt="Logo" />
                 </a>
             </div>
@@ -33,7 +33,7 @@
                     <img src="./img/intro_pc.png" />
                 </div>
                 <div class="mobile_ver">
-                    <img src="./img/main_banner.png" />
+                    <img src="./img/main_banner_2.png" />
                 </div>
             </div>
         </div>
@@ -189,7 +189,7 @@
                     </ul>
                     <div class="tabs-content">
                         <div id="tab1" class="tab-content">
-                            <div class="compare_img">
+                            <div class="compare_img img_full">
                                 <img src="./img/cataract.png" />
                             </div>
                             <div class="compare_info">

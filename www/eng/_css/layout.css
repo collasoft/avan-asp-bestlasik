@@ -923,6 +923,11 @@ footer p:last-child {
     .compare_section .tab-content > div img {
         max-width: calc(100% - 128px);
     }
+
+    .compare_section .tab-content > div.img_full img {
+        max-width: unset;
+        width: 100%;
+    }
     
     .compare_img {
         height: auto;
